@@ -1,4 +1,9 @@
 RiskPortfolio::Application.routes.draw do
+  scope :api do
+    resources :risks, only: [:index], defaults: {format: :json}
+  end
+
+  root "risks#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
