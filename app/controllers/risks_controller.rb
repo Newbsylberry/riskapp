@@ -4,4 +4,19 @@ class RisksController < ApplicationController
   def index
     respond_with Risk.all
   end
+
+  def create
+    respond_with Risk.create(risk_params)
+  end
+
+  def destroy
+    respond_with Risk.destroy(params[:id])
+  end
+
+private
+
+  def risk_params
+    params.require(:risk).permit(:name, :description)
+  end
 end
+

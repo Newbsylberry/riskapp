@@ -1,0 +1,19 @@
+<div ng-controller="RisksCtrl">
+    <h1>Risks</h1>
+    <form ng-submit="createRisk()">
+      <label>Risk Name:</label>
+      <input type="text" ng-model='newRisk.name' placeholder="Enter Name of Risk to Be Tracked"><br>
+      <label>Risk Description</label>
+      <input type="text" ng-model='newRisk.description' placeholder="Describe this risk">
+      <input type="submit" value="Add Risk to Project">
+    </form><br>
+    <h2>Existing Risks</h2>
+      <ul>
+        <li ng-repeat="risk in risks">
+          {{risk.name}} - {{risk.description}}
+          <a href='' ng-click="deleteRisk(risk.id, $index)">Remove</a>
+        </li>
+      </ul>
+</div>
+{{newRisk.name}}<br>
+{{newRisk.description}}
