@@ -2,7 +2,7 @@ class RisksController < ApplicationController
   respond_to :json
 
   def index
-    respond_with Risk.all
+    @risks = Risk.all
   end
 
   def create
@@ -11,6 +11,10 @@ class RisksController < ApplicationController
 
   def destroy
     respond_with Risk.destroy(params[:id])
+  end
+
+  def show
+    @risk = Risk.find(params[:id])
   end
 
 private

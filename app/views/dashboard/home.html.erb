@@ -12,6 +12,7 @@
         <li ng-repeat="risk in risks">
           {{risk.name}} - {{risk.description}}
           <a href='' ng-click="deleteRisk(risk.id, $index)">Remove</a>
+          <a href={{risk.url}}>Go to Risk</a>
         </li>
       </ul>
 </div>
