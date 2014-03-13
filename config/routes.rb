@@ -1,9 +1,13 @@
 RiskPortfolio::Application.routes.draw do
+
+
   scope :api do
     resources :risks, defaults: {format: :json}
+    resources :portfolios, defaults: {format: :json}
   end
 
-  root "dashboard#home"
+  root "static_pages#home"
+  get "static_pages/new_portfolio"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
