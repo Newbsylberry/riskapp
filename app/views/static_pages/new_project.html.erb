@@ -1,0 +1,11 @@
+<div ng-controller="ProjectsCtrl">
+  <h1>Create New Project</h1>
+  <form ng-submit="createProject()">
+    <label>Project Name:</label>
+    <input type="text" ng-model='newProject.name' placeholder="Enter Name of New Project"><br>
+    <label>Project Description</label>
+    <input type="text" ng-model='newProject.description' placeholder="Describe this Project">
+    <label>You need to set up portfolio_id, stupid man</label> <br>
+    <input type="submit" value="Add Project">
+  </form>
+</div>

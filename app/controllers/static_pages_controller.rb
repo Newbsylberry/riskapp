@@ -4,4 +4,7 @@ class StaticPagesController < ApplicationController
 
   def new_portfolio
   end
+
+  def new_project
+  end
 end
