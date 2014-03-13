@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/production.rb" afterPath="$PROJECT_DIR$/config/environments/production.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="riskPortfolio.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,6 +21,7 @@
     <file path="/unicorn_init.sh" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394674891685" ignored="false" />
     <file path="/nginx.conf" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394675018624" ignored="false" />
     <file path="/deploy.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394682997903" ignored="false" />
+    <file path="/production.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394684814943" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +67,7 @@
       <file leaf-file-name="production.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="92" selection-start="1178" selection-end="1178" vertical-scroll-proportion="0.37306502">
+            <state line="25" column="37" selection-start="1123" selection-end="1123" vertical-scroll-proportion="0.37306502">
               <folding />
             </state>
           </provider>
@@ -705,7 +703,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="92" selection-start="1178" selection-end="1178" vertical-scroll-proportion="0.37306502">
+        <state line="25" column="37" selection-start="1123" selection-end="1123" vertical-scroll-proportion="0.37306502">
           <folding />
         </state>
       </provider>
