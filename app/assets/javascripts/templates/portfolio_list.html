@@ -1,4 +1,4 @@
-<div ng-controller="PortfoliosCtrl">
+
   <h1>Portfolios</h1>
   <h3>Create New Portfolio</h3>
   <form ng-submit="createPortfolio()">
@@ -12,7 +12,7 @@
     <li ng-repeat="portfolio in portfolios">
       {{portfolio.name}} - {{portfolio.description}}
       <a href='' ng-click="deletePortfolio(portfolio.id, $index)">Remove</a> |
-      <a href={{portfolio.url}}>Link to Portfolio Page</a>
+      <a href="#/{{portfolio.id}}">Link to {{portfolio.name}} Home</a>
     </li>
   </ul>
-</div>
+
