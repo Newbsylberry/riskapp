@@ -1,0 +1,18 @@
+<div ng-controller="PortfoliosCtrl">
+  <h1>Portfolios</h1>
+  <h3>Create New Portfolio</h3>
+  <form ng-submit="createPortfolio()">
+    <label>Portfolio Name:</label>
+    <input type="text" ng-model='newPortfolio.name' placeholder="Enter Name of New Portfolio"><br>
+    <label>Risk Description</label>
+    <input type="text" ng-model='newPortfolio.description' placeholder="Describe this Portfolio">
+    <input type="submit" value="Add Portfolio">
+  </form>
+  <ul>
+    <li ng-repeat="portfolio in portfolios">
+      {{portfolio.name}} - {{portfolio.description}}
+      <a href='' ng-click="deletePortfolio(portfolio.id, $index)">Remove</a> |
+      <a href={{portfolio.url}}>Link to Portfolio Page</a>
+    </li>
+  </ul>
+</div>

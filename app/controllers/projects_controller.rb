@@ -6,7 +6,14 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    respond_with Project.create(project_params)
+    @portfolio = Portfolio.find_by_id(:id)
+    @project = Project.new(project_params)
+    @project.portfolio = @portfolio
+    if @project.save
+      render json: @project
+    else
+      head :error
+    end
   end
 
   def destroy
@@ -20,6 +27,6 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :description)
+    params.require(:project).permit(:name, :description, :portfolio_id)
   end
 end

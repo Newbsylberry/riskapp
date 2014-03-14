@@ -7,4 +7,7 @@ class StaticPagesController < ApplicationController
 
   def new_project
   end
+
+  def index
+  end
 end
