@@ -13,7 +13,7 @@ app.config(['$routeProvider',
             }).
             when('/:portfolioId', {
                 templateUrl: 'portfolio_home.html',
-                controller: 'PortfoliosCtrl'
+                controller: 'PortfolioHomeCtrl'
             }).
             otherwise({
                 redirectTo: '/'
