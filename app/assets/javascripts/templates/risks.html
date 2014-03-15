@@ -45,10 +45,27 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label>Risk Impact on Schedule</label><br>
+                                <p>The amount of extra days that will be required to complete the task
+                                if the risk happens:</p>
+                        <input ng-model="newRisk.schedule_impact" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label>Risk Potential Impact on Project:</label>
+                        <input ng-model="newRisk.impact_rating" type="range"
+                               name="impact_rating" min="1" max="10">
+                    </div>
+                    <div class="form-group">
+                        <label>Probability of Risk Occurring</label>
+                        <input ng-model="newRisk.probability" type="range"
+                               name="probability" min="1" max="100">
+                    </div>
+                    <div class="form-group">
                         <input type="submit" value="Add Risk to Project"><br>
                     </div>
                     </div>
                     <a href='/'>Back to Portfolio Page</a>
+                    <a id="bottom"></a>
                 </form><br>
         </div>
         <div class="col-xs-8">
@@ -56,13 +73,23 @@
             <ul>
                 <div ng-repeat="risk in risks" class="row">
                     <div class="col-xs-8">
-                        </p><h4>{{risk.name}}</h4>
-                        <p>{{risk.description}}</p>
+                        </p><h4>Risk: {{risk.name}}</h4>
+                        <p class="small">{{risk.description}}</p>
+                        Impact (out of 10): {{risk.impact_rating}}<br>
+                        <strong>Schedule Impact: {{risk.schedule_impact}} days</strong><br>
+                        <strong>Probability of Impact: {{risk.probability}} %</strong>
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{risk.probability}}"
+                                 aria-valuemin="0" aria-valuemax="100" style="width: {{risk.probability}}%">
+                                <span class="sr-only">40% Complete (success)</span>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="col-xs-4">
-                        <p>Earliest Possible Impact:</p><br>
-                        <p>{{risk.early_impact_date | date:'medium'}}</p>
-                        <p>Latest Possible Impact:</p> <br>
+                        <p>Earliest Possible Impact:</p>
+                        <p>{{risk.early_impact_date | date:'MMM-dd-yyyy'}}</p>
+                        <p>Latest Possible Impact:</p>
                         <p>{{risk.late_impact_date | date:'MMM-dd-yyyy'}}</p>
                         <a href='' ng-click="deleteRisk(risk.id, $index)">Remove</a>
                     </div>
