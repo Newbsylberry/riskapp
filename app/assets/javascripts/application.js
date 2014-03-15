@@ -18,6 +18,8 @@
 //= require main.js
 //= require_tree ./angular
 //= require_tree ./angular/partials
+//= require jquery
+//= require jquery_ujs
 //= require bootstrap.min
 //= require_tree .
 
