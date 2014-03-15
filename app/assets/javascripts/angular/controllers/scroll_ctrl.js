@@ -1,6 +1,5 @@
 function ScrollCtrl($scope, $location, $anchorScroll) {
-    $scope.gotoBottom = function (){
-
-        %location.hash('bottom');
+    $scope.gotoBottom = function () {
+        $location.hash('bottom');
         $anchorScroll();
     }};
