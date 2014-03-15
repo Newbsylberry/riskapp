@@ -17,7 +17,7 @@
 //= require angular-route
 //= require main.js
 //= require_tree ./angular
-//= require_tree ./angular/partials
+//= require_tree ./templates
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap.min
