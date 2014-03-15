@@ -15,10 +15,6 @@ app.config(['$routeProvider',
                 templateUrl: 'risks.html',
                 controller: 'RisksCtrl'
             }).
-            when('/:portfolioId', {
-                templateUrl: 'portfolio_home.html',
-                controller: 'PortfolioHomeCtrl'
-            }).
             otherwise({
                 redirectTo: '/'
             });
