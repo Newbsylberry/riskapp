@@ -9,6 +9,7 @@ app.controller('RisksCtrl', ['$scope', 'Risk', function($scope, Risk) {
         $scope.risks.push(newRisk);
         $scope.newRisk.name = "";
         $scope.newRisk.description = "";
+        $scope.newRisk.date_identified = "";
     };
 
     $scope.deleteRisk = function(id, idx) {

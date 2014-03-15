@@ -8,8 +8,12 @@ app.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
             when('/', {
-                templateUrl: 'portfolio_list.html',
+                templateUrl: 'portfolios.html',
                 controller: 'PortfoliosCtrl'
+            }).
+            when('/risks', {
+                templateUrl: 'risks.html',
+                controller: 'RisksCtrl'
             }).
             when('/:portfolioId', {
                 templateUrl: 'portfolio_home.html',

@@ -1,0 +1,2 @@
+module RiskControlCategoriesHelper
+end

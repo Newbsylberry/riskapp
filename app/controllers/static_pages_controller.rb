@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  def home
+  def risk_form_show
   end
 
   def new_portfolio

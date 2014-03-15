@@ -18,5 +18,6 @@
 //= require main.js
 //= require_tree ./angular
 //= require_tree ./angular/partials
+//= require bootstrap.min
 //= require_tree .
 

@@ -1,15 +1,17 @@
 RiskPortfolio::Application.routes.draw do
 
 
-
-
   scope :api do
     resources :risks, defaults: {format: :json}
     resources :portfolios, defaults: {format: :json}
     resources :projects, defaults: {format: :json}
+    resources :risk_types, defaults: {format: :json}
+    resources :risk_statuses, defaults: {format: :json}
+    resources :risk_control_categories, defaults: {format: :json}
   end
 
-  root "static_pages#index"
+  root 'static_pages#index'
+  get '/static_pages/risk_form_show'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

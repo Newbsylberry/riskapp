@@ -1,0 +1,67 @@
+<div ng-controller="RisksCtrl">
+    <div class="row">
+        <div class="col-xs-1">
+        </div>
+        <div class="col-xs-3">
+                <form role="form" class="form-horizontal" ng-submit="createRisk()">
+                    <div class="form-group">
+                        <h2>Enter New Risk</h2>
+                    </div>
+                    <div class="form-group">
+                        <label>Risk Name:</label><br>
+                        <input type="text" ng-model='newRisk.name' placeholder="Enter Name of Risk to Be Tracked"><br>
+                    </div>
+                    <div class="form-group">
+                        <label>Risk Description:</label><br>
+                        <input type="text" ng-model='newRisk.description' placeholder="Describe this risk">
+                    </div>
+                    <div class="form-group">
+                        <label>The earliest possible date a risk will occur:</label>
+                        <details>This the first possible date that the risk will come to fruition if
+                            it is not managed.</details>
+                        <input type="date" ng-model='newRisk.early_impact_date' name="early_impact_date">
+                    </div>
+                    <div class="form-group">
+                        <label>The date when the risk will not occur:</label>
+                        <input type="date" ng-model='newRisk.late_impact_date' name="early_impact_date">
+                    </div>
+                    <div class="form-group">
+                    <div class="form-group">
+                        <h3><secondary>Select whether risk is critical or not (must select one):</secondary></h3>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" ng-model="newRisk.critical" value="true">
+                                <small>Check this box if the risk critically affects the ability to complete
+                                the task/project</small>
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" ng-model="newRisk.critical" value="false">
+                                <small>The risk is not critical.</small>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Add Risk to Project"><br>
+                    </div>
+                    </div>
+                    <a href='/'>Back to Portfolio Page</a>
+                </form><br>
+        </div>
+        <div class="col-xs-8">
+            <h2>Existing Risks</h2>
+            <ul>
+                <li ng-repeat="risk in risks">
+                    {{risk.name}} - {{risk.description}} - {{risk.date_identified}}
+                    <a href='' ng-click="deleteRisk(risk.id, $index)">Remove</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+
