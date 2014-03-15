@@ -41,11 +41,6 @@ group :doc do
 end
 
 
-gem 'capistrano', :require => false
-gem 'capistrano-rails', :require => false
-gem 'rvm1-capistrano3', :require => false
-gem 'capistrano3-unicorn', :require => false
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
