@@ -1,15 +1,45 @@
-root = "/home/riskapp/apps/riskapp/current"
-working_directory root
-pid "#{root}/tmp/pids/unicorn.pid"
-stderr_path "#{root}/log/unicorn.log"
-stdout_path "#{root}/log/unicorn.log"
+# Set your full path to application.
+    app_path = "/home/riskapp/riskapp/current"
 
-listen "/tmp/unicorn.riskapp.sock"
+# Set unicorn options
 worker_processes 2
-timeout 30
+preload_app true
+timeout 180
 
-# Force the bundler gemfile environment variable to
-# reference the capistrano "current" symlink
-before_exec do |_|
-  ENV["BUNDLE_GEMFILE"] = File.join(root, 'Gemfile')
+# Spawn unicorn master worker for user apps (group: apps)
+
+# Fill path to your app
+working_directory app_path
+
+listen "#{app_path}/tmp/sockets/unicorn.sock", :backlog => 64
+
+# Should be 'production' by default, otherwise use other env
+rails_env = ENV['RAILS_ENV'] || 'production'
+
+# Log everything to one file
+stderr_path "log/unicorn.log"
+stdout_path "log/unicorn.log"
+
+# Set master PID location
+pid "#{app_path}/tmp/pids/unicorn.pid"
+
+before_fork do |server, worker|
+  defined?(ActiveRecord::Base) and ActiveRecord::Base.connection.disconnect!
+
+  # Before forking, kill the master process that belongs to the .oldbin PID.
+  # This enables 0 downtime deploys.
+  old_pid = "tmp/pids/unicorn.pid.oldbin"
+  if File.exists?(old_pid) && server.pid != old_pid
+    begin
+      Process.kill("QUIT", File.read(old_pid).to_i)
+    rescue Errno::ENOENT, Errno::ESRCH
+      # someone else did our job for us
+    end
+  end
 end
+
+after_fork do |server, worker|
+  defined?(ActiveRecord::Base) and ActiveRecord::Base.establish_connection
+end
+
+

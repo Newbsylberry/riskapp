@@ -6,7 +6,7 @@ gem 'rails', '4.0.2'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
-gem 'rails_12factor', group: :production
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -16,6 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
+gem 'net-ssh', '~> 2.8.1', :git => "https://github.com/net-ssh/net-ssh"
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -38,10 +39,11 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-#Deployment gems
-gem 'unicorn'
-gem 'capistrano'
-gem 'rvm-capistrano'
+
+gem 'capistrano', :require => false
+gem 'capistrano-rails', :require => false
+gem 'rvm1-capistrano3', :require => false
+gem 'capistrano3-unicorn', :require => false
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
