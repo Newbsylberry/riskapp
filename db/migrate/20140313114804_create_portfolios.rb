@@ -5,6 +5,11 @@ class CreatePortfolios < ActiveRecord::Migration
       t.string :description
 
       t.timestamps
+
+      create_table :risks do |t|
+        t.string :name
+        t.string :description
+      end
     end
   end
 end
