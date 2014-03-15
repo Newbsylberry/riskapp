@@ -1,6 +1,4 @@
 RiskPortfolio::Application.routes.draw do
-  root 'static_pages#index'
-
   scope :api do
     resources :risks, defaults: {format: :json}
     resources :portfolios, defaults: {format: :json}
@@ -10,7 +8,7 @@ RiskPortfolio::Application.routes.draw do
     resources :risk_control_categories, defaults: {format: :json}
   end
 
-
+  root 'static_pages#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
