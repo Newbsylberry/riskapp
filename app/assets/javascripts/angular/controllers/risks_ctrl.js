@@ -5,11 +5,22 @@ app.controller('RisksCtrl', ['$scope', 'Risk', function($scope, Risk) {
         var attr = {};
         attr.name = ($scope.newRisk.name);
         attr.description = ($scope.newRisk.description);
+        attr.early_impact_date = ($scope.newRisk.early_impact_date);
+        attr.late_impact_date = ($scope.newRisk.late_impact_date);
+        attr.impact_rating = ($scope.newRisk.impact_rating);
+        attr.probability = ($scope.newRisk.probability);
+        attr.schedule_impact = ($scope.newRisk.schedule_impact ="");
+        attr.critical = ($scope.newRisk.critical="");
         var newRisk = Risk.create(attr);
         $scope.risks.push(newRisk);
         $scope.newRisk.name = "";
         $scope.newRisk.description = "";
-        $scope.newRisk.date_identified = "";
+        $scope.newRisk.early_impact_date = "";
+        $scope.newrisk.late_impact_date = "";
+        $scope.newRisk.impact_rating = "";
+        $scope.newRisk.probability = "";
+        $scope.newRisk.schedule_impact = "";
+        $scope.newRisk.critical ="";
     };
 
     $scope.deleteRisk = function(id, idx) {

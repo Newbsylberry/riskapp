@@ -13,7 +13,7 @@
                     </div>
                     <div class="form-group">
                         <label>Risk Description:</label><br>
-                        <input type="text" ng-model='newRisk.description' placeholder="Describe this risk">
+                        <input type="textarea" rows="4" columns ="4" ng-model='newRisk.description' placeholder="Describe this risk">
                     </div>
                     <div class="form-group">
                         <label>The earliest possible date a risk will occur:</label>
@@ -30,14 +30,16 @@
                         <h3><secondary>Select whether risk is critical or not (must select one):</secondary></h3>
                         <div class="radio">
                             <label>
-                                <input type="radio" ng-model="newRisk.critical" value="true">
+                                <input type="radio" ng-model="newRisk.critical"
+                                        value="true">
                                 <small>Check this box if the risk critically affects the ability to complete
                                 the task/project</small>
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" ng-model="newRisk.critical" value="false">
+                                <input type="radio" ng-model="newRisk.critical" value="false"
+                                       checked>
                                 <small>The risk is not critical.</small>
                             </label>
                         </div>
@@ -52,9 +54,19 @@
         <div class="col-xs-8">
             <h2>Existing Risks</h2>
             <ul>
-                <li ng-repeat="risk in risks">
-                    {{risk.name}} - {{risk.description}} - {{risk.date_identified}}
-                    <a href='' ng-click="deleteRisk(risk.id, $index)">Remove</a>
+                <div ng-repeat="risk in risks" class="row">
+                    <div class="col-xs-8">
+                        </p><h4>{{risk.name}}</h4>
+                        <p>{{risk.description}}</p>
+                    </div>
+                    <div class="col-xs-4">
+                        <p>Earliest Possible Impact:</p><br>
+                        <p>{{risk.early_impact_date | date:'medium'}}</p>
+                        <p>Latest Possible Impact:</p> <br>
+                        <p>{{risk.late_impact_date | date:'MMM-dd-yyyy'}}</p>
+                        <a href='' ng-click="deleteRisk(risk.id, $index)">Remove</a>
+                    </div>
+                </div>
                 </li>
             </ul>
         </div>

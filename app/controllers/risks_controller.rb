@@ -20,7 +20,8 @@ class RisksController < ApplicationController
 private
 
   def risk_params
-    params.require(:risk).permit(:name, :description)
+    params.require(:risk).permit(:name, :description, :impact_rating, :early_impact_date,
+    :late_impact_date, :critical, :probability, :schedule_impact)
   end
 end
 
