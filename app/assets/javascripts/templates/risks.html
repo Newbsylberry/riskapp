@@ -69,25 +69,27 @@
         </div>
         <div class="col-xs-8">
             <h2>Existing Risks</h2>
-                <div ng-repeat="risk in risks" class="row">
-                    <div class="col-xs-8">
-                        </p><h4>Risk: {{risk.name}}</h4>
-                        <p class="small">{{risk.description}}</p>
-                        <p>Impact (out of 10): {{risk.impact_rating}}</p>
-                        <strong>Schedule Impact: {{risk.schedule_impact}} days</strong><br>
-                        <strong>Probability of Impact: {{risk.probability}} %</strong>
-                        <div class="progress progress-striped active">
-                            <div class="progress-bar progress-bar-danger" role="progressbar"
-                                 aria-valuemin="0" aria-valuemax="100" style="width:{{risk.probability}}%">
+                <div ng-repeat="risk in risks">
+                    <div class="row">
+                        <div class="col-xs-8">
+                            </p><h4>Risk: {{risk.name}}</h4>
+                            <p class="small">{{risk.description}}</p>
+                            <p>Impact (out of 10): {{risk.impact_rating}}</p>
+                            <strong>Schedule Impact: {{risk.schedule_impact}} days</strong><br>
+                            <strong>Probability of Impact: {{risk.probability}} %</strong>
+                            <div class="progress progress-striped active">
+                                <div class="progress-bar progress-bar-danger" role="progressbar"
+                                     aria-valuemin="0" aria-valuemax="100" style="width:{{risk.probability}}%">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xs-4">
-                        <bold>Earliest Possible Impact:</bold>
-                        <p>{{risk.early_impact_date | date:'MMM-dd-yyyy'}}</p>
-                        <bold>Latest Possible Impact:</bold>
-                        <p>{{risk.late_impact_date | date:'MMM-dd-yyyy'}}</p>
-                        <a href='' ng-click="deleteRisk(risk.id, $index)">Remove</a>
+                        <div class="col-xs-4">
+                            <bold>Earliest Possible Impact:</bold>
+                            <p>{{risk.early_impact_date | date:'MMM-dd-yyyy'}}</p>
+                            <bold>Latest Possible Impact:</bold>
+                            <p>{{risk.late_impact_date | date:'MMM-dd-yyyy'}}</p>
+                            <a href='' ng-click="deleteRisk(risk.id, $index)">Remove</a>
+                        </div>
                     </div>
                 </div>
         </div>
