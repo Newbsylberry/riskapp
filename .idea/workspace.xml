@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/templates/risks.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/templates/risks.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/angular/controllers/risks_ctrl.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/angular/controllers/risks_ctrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="riskPortfolio.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,7 +54,7 @@
     <file path="/20140315003906_change_risk_impact_name.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394844011880" ignored="false" />
     <file path="/portfolios.html" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394906640504" ignored="false" />
     <file path="/application.css" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394845776886" ignored="false" />
-    <file path="/risks.html" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394977614151" ignored="false" />
+    <file path="/risks.html" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394982302544" ignored="false" />
     <file path="/Capfile" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394866446566" ignored="false" />
     <file path="/20140313114804_create_portfolios.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394898864147" ignored="false" />
     <file path="/scroll_ctrl.js" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394922485766" ignored="false" />
@@ -131,21 +131,19 @@
       <file leaf-file-name="risks.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/templates/risks.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="43" selection-start="1611" selection-end="1611" vertical-scroll-proportion="0.28674698">
+            <state line="49" column="0" selection-start="2813" selection-end="2813" vertical-scroll-proportion="0.4698795">
               <folding>
                 <element signature="tag#div#0;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
                 <element signature="tag#div#1;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
                 <element signature="tag#div#2;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
                 <element signature="tag#div#3;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
                 <element signature="tag#div#4;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#div#0;tag#div#5;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#div#1;tag#div#5;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#div#2;tag#div#5;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#div#3;tag#div#5;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#div#4;tag#div#5;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#div#2;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="tag#div#1;tag#div#0;tag#div#0;tag#div#2;tag#div#0;tag#div#0" expanded="false" />
+                <element signature="tag#div#5;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
+                <element signature="tag#div#6;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
+                <element signature="tag#div#7;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
+                <element signature="tag#div#8;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
+                <element signature="tag#div#9;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
+                <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#2;tag#div#0;tag#div#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -811,21 +809,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/templates/risks.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="43" selection-start="1611" selection-end="1611" vertical-scroll-proportion="0.28674698">
+        <state line="49" column="0" selection-start="2813" selection-end="2813" vertical-scroll-proportion="0.4698795">
           <folding>
             <element signature="tag#div#0;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
             <element signature="tag#div#1;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
             <element signature="tag#div#2;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
             <element signature="tag#div#3;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
             <element signature="tag#div#4;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#div#0;tag#div#5;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#div#1;tag#div#5;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#div#2;tag#div#5;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#div#3;tag#div#5;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#div#4;tag#div#5;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#div#2;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="tag#div#1;tag#div#0;tag#div#0;tag#div#2;tag#div#0;tag#div#0" expanded="false" />
+            <element signature="tag#div#5;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
+            <element signature="tag#div#6;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
+            <element signature="tag#div#7;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
+            <element signature="tag#div#8;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
+            <element signature="tag#div#9;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
+            <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#2;tag#div#0;tag#div#0" expanded="false" />
           </folding>
         </state>
       </provider>

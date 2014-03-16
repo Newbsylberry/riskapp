@@ -26,7 +26,6 @@
                         <input type="date" ng-model='newRisk.late_impact_date' name="early_impact_date">
                     </div>
                     <div class="form-group">
-                    <div class="form-group">
                         <h3><secondary>Select whether risk is critical or not (must select one):</secondary></h3>
                         <div class="radio">
                             <label>
@@ -61,7 +60,7 @@
                     <div class="form-group">
                         <input type="submit" value="Add Risk to Project"><br>
                     </div>
-                    </div>
+
                     <a href='/'>Back to Portfolio Page</a>
                 </form><br>
         </div>
@@ -75,11 +74,13 @@
                             <p>Impact (out of 10): {{risk.impact_rating}}</p>
                             <strong>Schedule Impact: {{risk.schedule_impact}} days</strong><br>
                             <strong>Probability of Impact: {{risk.probability}} %</strong>
+                            <!--
                             <div class="progress progress-striped active">
                                 <div class="progress-bar progress-bar-danger" role="progressbar"
                                      aria-valuemin="0" aria-valuemax="100" style="width:{{risk.probability}}%">
                                 </div>
                             </div>
+                            -->
                         </div>
                         <div class="col-xs-4">
                             <bold>Earliest Possible Impact:</bold>
