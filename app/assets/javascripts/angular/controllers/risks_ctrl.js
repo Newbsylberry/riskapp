@@ -10,7 +10,7 @@ app.controller('RisksCtrl', ['$scope', 'Risk', function($scope, Risk) {
         attr.impact_rating = ($scope.newRisk.impact_rating);
         attr.probability = ($scope.newRisk.probability);
         attr.schedule_impact = ($scope.newRisk.schedule_impact);
-        attr.critical = ($scope.newRisk.critical="");
+        attr.critical = ($scope.newRisk.critical);
         var newRisk = Risk.create(attr);
         $scope.risks.push(newRisk);
         $scope.newRisk.name = "";
