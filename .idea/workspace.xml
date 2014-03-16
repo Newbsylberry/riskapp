@@ -53,11 +53,10 @@
     <file path="/20140315003906_change_risk_impact_name.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394844011880" ignored="false" />
     <file path="/portfolios.html" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394906640504" ignored="false" />
     <file path="/application.css" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394845776886" ignored="false" />
-    <file path="/risks.html" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394982302544" ignored="false" />
+    <file path="/risks.html" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394988656193" ignored="false" />
     <file path="/Capfile" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394866446566" ignored="false" />
     <file path="/20140313114804_create_portfolios.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394898864147" ignored="false" />
     <file path="/scroll_ctrl.js" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394922485766" ignored="false" />
-    <file path="$PROJECT_DIR$/log/development.log" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394978065701" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,11 +129,10 @@
       <file leaf-file-name="risks.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/templates/risks.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="0.18877551">
+            <state line="15" column="41" selection-start="727" selection-end="727" vertical-scroll-proportion="0.39577836">
               <folding>
                 <element signature="tag#div#0;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
                 <element signature="tag#div#1;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#div#2;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
                 <element signature="tag#div#3;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
                 <element signature="tag#div#4;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
                 <element signature="tag#div#5;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
@@ -142,8 +140,8 @@
                 <element signature="tag#div#7;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
                 <element signature="tag#div#8;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
                 <element signature="tag#div#9;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#div#2;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#2;tag#div#0;tag#div#0" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="tag#div#1;tag#div#0;tag#div#0;tag#div#2;tag#div#0;tag#div#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -757,23 +755,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/templates/portfolios.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="27" selection-start="773" selection-end="773" vertical-scroll-proportion="-12.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/risks/index.json.jbuilder">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="47" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/services/risk.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -785,13 +769,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/services/risk.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/templates/portfolios.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="27" selection-start="773" selection-end="773" vertical-scroll-proportion="-12.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/templates/risks.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="0.18877551">
+        <state line="15" column="41" selection-start="727" selection-end="727" vertical-scroll-proportion="0.39577836">
           <folding>
             <element signature="tag#div#0;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
             <element signature="tag#div#1;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#div#2;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
             <element signature="tag#div#3;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
             <element signature="tag#div#4;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
             <element signature="tag#div#5;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
@@ -799,8 +796,8 @@
             <element signature="tag#div#7;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
             <element signature="tag#div#8;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
             <element signature="tag#div#9;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#div#2;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#2;tag#div#0;tag#div#0" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="tag#div#1;tag#div#0;tag#div#0;tag#div#2;tag#div#0;tag#div#0" expanded="false" />
           </folding>
         </state>
       </provider>

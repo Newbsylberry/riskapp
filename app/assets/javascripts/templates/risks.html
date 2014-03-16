@@ -13,7 +13,8 @@
                     </div>
                     <div class="form-group">
                         <label>Risk Description:</label><br>
-                        <input type="textarea" rows="4" columns ="4" ng-model='newRisk.description' placeholder="Describe this risk">
+                        <textarea rows="8" columns ="5" ng-model='newRisk.description'
+                               placeholder="Describe this risk"></textarea>
                     </div>
                     <div class="form-group">
                         <label>The earliest possible date a risk will occur:</label>
@@ -73,13 +74,11 @@
                             <p>Impact (out of 10): {{risk.impact_rating}}</p>
                             <strong>Schedule Impact: {{risk.schedule_impact}} days</strong><br>
                             <strong>Probability of Impact: {{risk.probability}} %</strong>
-                            <!--
                             <div class="progress progress-striped active">
                                 <div class="progress-bar progress-bar-danger" role="progressbar"
                                      aria-valuemin="0" aria-valuemax="100" style="width:{{risk.probability}}%">
                                 </div>
                             </div>
-                            -->
                         </div>
                         <div class="col-xs-4">
                             <bold>Earliest Possible Impact:</bold>
