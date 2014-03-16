@@ -1,6 +1,5 @@
 app.controller('ProjectsCtrl', ['$scope', 'Project', function($scope, Project) {
     $scope.projects = Project.all();
-
     $scope.createProject = function() {
         var attr = {};
         attr.name = ($scope.newProject.name);

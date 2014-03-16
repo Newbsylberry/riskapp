@@ -2,6 +2,7 @@ class RisksController < ApplicationController
   respond_to :json
 
   def index
+    @project = Project.find(params[:id])
     @risks = Risk.all
   end
 
