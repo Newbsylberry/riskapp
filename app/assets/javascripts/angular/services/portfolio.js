@@ -8,8 +8,8 @@ app.factory('Portfolio', ['$resource', function($resource) {
     Portfolio.prototype.delete = function(pId) {
         this.service.remove({portfolioId: pId});
     };
-    Portfolio.prototype.get = function(id) {
-        this.service.get(id);
+    Portfolio.prototype.get = function(id, successCallback, errorCallback) {
+        this.service.get(id, successCallback, errorCallback);
     };
     Portfolio.prototype.create = function(attr) {
         return this.service.save(attr);
