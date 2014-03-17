@@ -17,7 +17,9 @@
                         <input type="text" ng-model='newProject.name' placeholder="Enter Name of New Project"><br>
                         <label>Project Description</label>
                         <input type="text" ng-model='newProject.description' placeholder="Describe this Project">
-                        <input type ="number" {{portfolio.id}} ' " placeholder="{{portfolio.id}}"/>
+                        <select ng-model='newProject.portfolio_id'>
+                            <option value="{{ portfolio.id }}">{{portfolio.name}}</option>
+                        </select>
                         <input type="submit" value="Add Project">
                     </form>
                 </li>

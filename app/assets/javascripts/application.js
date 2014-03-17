@@ -15,7 +15,6 @@
 //= require angular
 //= require angular-resource
 //= require angular-route
-//= require angular-ui
 //= require main.js
 //= require jquery
 //= require jquery_ujs
