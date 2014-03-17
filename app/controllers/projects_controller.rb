@@ -6,9 +6,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @portfolio = Portfolio.find_by_id(:id)
     @project = Project.new(project_params)
-    @project.portfolio = @portfolio
     if @project.save
       render json: @project
     else

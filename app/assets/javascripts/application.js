@@ -15,11 +15,12 @@
 //= require angular
 //= require angular-resource
 //= require angular-route
+//= require angular-ui
 //= require main.js
-//= require_tree ./angular
-//= require_tree ./templates
 //= require jquery
 //= require jquery_ujs
+//= require_tree ./angular
+//= require_tree ./templates
 //= require bootstrap.min
 //= require_tree .
 

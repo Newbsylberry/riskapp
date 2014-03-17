@@ -16,9 +16,6 @@ gem 'rvm-capistrano'
 gem 'sass-rails', '~> 4.0.0'
 gem 'rails_12factor', group: :production
 
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 gem 'net-ssh', '~> 2.8.1', :git => "https://github.com/net-ssh/net-ssh"
@@ -32,6 +29,8 @@ gem 'jquery-rails'
 # Angular stuff goes here
 gem 'angularjs-rails'
 gem 'angular-rails-templates'
+gem 'angular-ui-rails'
+
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

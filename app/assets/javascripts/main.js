@@ -1,7 +1,8 @@
 var app = angular.module("RiskPortfolio", [
     'ngResource',
     'ngRoute',
-    'templates'
+    'templates',
+    'ui'
     ]);
 
 app.config(['$routeProvider',
@@ -15,9 +16,13 @@ app.config(['$routeProvider',
                 templateUrl: 'risks.html',
                 controller: 'RisksCtrl'
             }).
-            when('/:portfolioId', {
+            when('/portfolio_home/:portfolioId', {
                 templateUrl: 'portfolio_home.html',
                 controller: 'PortfolioHomeCtrl'
+            }).
+            when('/project_home/:projectId', {
+                templateUrl: 'project_home.html',
+                controller:  'ProjectHomeCtrl'
             }).
             otherwise({
                 redirectTo: '/'

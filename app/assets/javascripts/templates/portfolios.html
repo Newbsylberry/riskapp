@@ -12,9 +12,10 @@
     <li ng-repeat="portfolio in portfolios">
       {{portfolio.name}} - {{portfolio.description}}
       <a href='' ng-click="deletePortfolio(portfolio.id, $index)">Remove</a> |
-      <a href='#/{{portfolio.id}}'>Link to {{portfolio.name}} Home</a>
+      <a href='#/portfolio_home/{{portfolio.id}}'>Link to {{portfolio.name}} Home</a>
     </li>
   </ul>
+
 <a href='#/risks'>Link to the Risk Playground</a>
   {{newPortfolio.name}}
 

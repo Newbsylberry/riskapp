@@ -23,6 +23,8 @@ app.controller('RisksCtrl', ['$scope', 'Risk', function($scope, Risk) {
         $scope.newRisk.critical ="";
     };
 
+    $scope.orderProp = 'impact_rating';
+
     $scope.deleteRisk = function(id, idx) {
         $scope.risks.splice(idx, 1);
         return Risk.delete(id);

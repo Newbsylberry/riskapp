@@ -34,9 +34,10 @@ GEM
     angular-rails-templates (0.0.7)
       railties (>= 3.1)
       sprockets
+    angular-ui-rails (0.4.0.3)
     angularjs-rails (1.2.14)
     arel (4.0.2)
-    atomic (1.1.15)
+    atomic (1.1.16)
     builder (3.1.4)
     capistrano (2.15.5)
       highline
@@ -133,9 +134,6 @@ GEM
     turbolinks (2.2.1)
       coffee-rails
     tzinfo (0.3.39)
-    uglifier (2.5.0)
-      execjs (>= 0.3.0)
-      json (>= 1.8.0)
     unicorn (4.8.2)
       kgio (~> 2.6)
       rack
@@ -146,6 +144,7 @@ PLATFORMS
 
 DEPENDENCIES
   angular-rails-templates
+  angular-ui-rails
   angularjs-rails
   capistrano
   coffee-rails (~> 4.0.0)
@@ -159,5 +158,4 @@ DEPENDENCIES
   sass-rails (~> 4.0.0)
   sdoc
   turbolinks
-  uglifier (>= 1.3.0)
   unicorn
