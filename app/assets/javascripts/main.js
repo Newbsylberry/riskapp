@@ -1,8 +1,7 @@
 var app = angular.module("RiskPortfolio", [
     'ngResource',
     'ngRoute',
-    'templates',
-    'ui'
+    'templates'
     ]);
 
 app.config(['$routeProvider',
