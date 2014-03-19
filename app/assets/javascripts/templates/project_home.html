@@ -77,7 +77,7 @@
             <option value="name">Alphabetical</option>
             <option value="impact_rating">Impact Rating</option>
         </select>
-        <div ng-repeat="risk in project.risks | filter:query | orderBy:orderProp ">
+        <div ng-repeat="risk in project.risks">
             <div class="row">
                 <div class="col-xs-8">
                     <!-- <h4>Risk:</h4> -->
