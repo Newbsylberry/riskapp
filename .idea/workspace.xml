@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/templates/project_home.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/templates/project_home.html" />
-    </list>
+    <list default="true" id="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" name="Default" comment="" />
     <ignored path="riskPortfolio.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394861066613" ignored="false" />
@@ -85,19 +83,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="show.json.jbuilder" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="show.json.jbuilder" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/projects/show.json.jbuilder">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="38" selection-start="272" selection-end="272" vertical-scroll-proportion="0.0">
+            <state line="8" column="38" selection-start="272" selection-end="272" vertical-scroll-proportion="0.19769357">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="production.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="production.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.025252525">
+            <state line="13" column="70" selection-start="593" selection-end="593" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -711,13 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/controllers/risks_ctrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="36" selection-start="1098" selection-end="1098" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/controllers/project_home_ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="25" selection-start="476" selection-end="476" vertical-scroll-proportion="0.0">
@@ -725,16 +716,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/projects/show.json.jbuilder">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/controllers/risks_ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="38" selection-start="272" selection-end="272" vertical-scroll-proportion="0.0">
+        <state line="23" column="36" selection-start="1098" selection-end="1098" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.025252525">
+        <state line="13" column="70" selection-start="593" selection-end="593" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/projects/show.json.jbuilder">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="38" selection-start="272" selection-end="272" vertical-scroll-proportion="0.19769357">
           <folding />
         </state>
       </provider>
