@@ -12,7 +12,6 @@
             <ul class="list-group">
                 <li class="list-group-item">
                     <form ng-submit="createProject()">
-                        <input type="hidden" ng-init="newProject.portfolio_id={{ portfolio.id }}" />
                         <label>Project Name:</label>
                         <input type="text" ng-model='newProject.name' placeholder="Enter Name of New Project"><br>
                         <label>Project Description</label>
@@ -23,7 +22,7 @@
                         <input type="submit" value="Add Project">
                     </form>
                 </li>
-                <li class="list-group-item" ng-repeat="project in projects">
+                <li class="list-group-item" ng-repeat="project in portfolio.projects">
                        <p>{{project.name}}</p>
                        <a href='' ng-click="deleteProject(project.id, $index)">Remove</a><br>
                        <a href='#/project_home/{{project.id}}'>Link to {{project.name}} Home</a>
@@ -40,7 +39,7 @@
             <option value="name">Alphabetical</option>
             <option value="impact_rating">Impact Rating</option>
         </select>
-            <div ng-repeat="risk in risks | filter:query | orderBy:orderProp ">
+            <div ng-repeat="risk in portfolio.risks | filter:query | orderBy:orderProp ">
                 <div class="row">
                     <div class="col-xs-8">
                         <!-- <h4>Risk:</h4> -->

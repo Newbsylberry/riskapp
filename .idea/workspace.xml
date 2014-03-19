@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/main.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/portfolio.rb" afterPath="$PROJECT_DIR$/app/models/portfolio.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/production.rb" afterPath="$PROJECT_DIR$/config/environments/production.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/project.rb" afterPath="$PROJECT_DIR$/app/models/project.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/templates/project_home.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/templates/project_home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/angular/controllers/risks_ctrl.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/angular/controllers/risks_ctrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/risks_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/risks_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/portfolios/show.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/portfolios/show.json.jbuilder" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/projects/show.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/projects/show.json.jbuilder" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="riskPortfolio.iws" />
@@ -20,8 +21,8 @@
     <file path="/application.html.erb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394798206093" ignored="false" />
     <file path="/main.js" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1395035337076" ignored="false" />
     <file path="/index.html.erb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394654081250" ignored="false" />
-    <file path="/risks_controller.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394995205890" ignored="false" />
-    <file path="/risks_ctrl.js" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1395112055466" ignored="false" />
+    <file path="/risks_controller.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1395171279956" ignored="false" />
+    <file path="/risks_ctrl.js" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1395171365342" ignored="false" />
     <file path="/risk.js" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394658502357" ignored="false" />
     <file path="/home.html.erb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394723624960" ignored="false" />
     <file path="/unicorn.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394894931106" ignored="false" />
@@ -31,7 +32,7 @@
     <file path="/production.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1395096136541" ignored="false" />
     <file path="/index.json.jbuilder" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1395032101303" ignored="false" />
     <file path="/show.html.erb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394710663344" ignored="false" />
-    <file path="/show.json.jbuilder" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1395035513013" ignored="false" />
+    <file path="/show.json.jbuilder" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1395191988834" ignored="false" />
     <file path="/static_pages_controller.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394844882418" ignored="false" />
     <file path="/new_portfolio.html.erb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394719820943" ignored="false" />
     <file path="/portfolio_ctrl.js" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394716489875" ignored="false" />
@@ -43,16 +44,16 @@
     <file path="/project.js" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1395036734550" ignored="false" />
     <file path="/projects_controller.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394761045513" ignored="false" />
     <file path="/portfolio_list.html.erb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394747693924" ignored="false" />
-    <file path="/portfolio.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394747760289" ignored="false" />
+    <file path="/portfolio.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1395188900778" ignored="false" />
     <file path="/portfolio_list.html" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394839957813" ignored="false" />
     <file path="/portolio_home.html" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394802505210" ignored="false" />
-    <file path="/portfolio_home.html" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1395113780041" ignored="false" />
+    <file path="/portfolio_home.html" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1395189523634" ignored="false" />
     <file path="/portfolio_home_ctrl.js" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394991930234" ignored="false" />
     <file path="/20140314233426_add_columns_to_project.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394840223537" ignored="false" />
     <file path="/risk_status.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394842111445" ignored="false" />
     <file path="/risk_control_category.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394842119235" ignored="false" />
     <file path="/risk_type.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394842133396" ignored="false" />
-    <file path="/project.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394842367077" ignored="false" />
+    <file path="/project.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1395179890654" ignored="false" />
     <file path="/risk_control_categories_controller.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394843308333" ignored="false" />
     <file path="/risk_statuses_controller.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394842910072" ignored="false" />
     <file path="/risk.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394844503178" ignored="false" />
@@ -66,7 +67,8 @@
     <file path="/scroll_ctrl.js" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394922485766" ignored="false" />
     <file path="/a.dummy" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394991696357" ignored="false" />
     <file path="/development.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1395009546155" ignored="false" />
-    <file path="/project_home.html" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1395169871521" ignored="false" />
+    <file path="/project_home.html" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1395191901769" ignored="false" />
+    <file path="/project_home_ctrl.js" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1395191672327" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,8 +93,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="application.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
+      <file leaf-file-name="show.json.jbuilder" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/projects/show.json.jbuilder">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="55" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="portfolio_home.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="54" selection-start="528" selection-end="528" vertical-scroll-proportion="-7.5">
+              <folding>
+                <element signature="tag#div#0;tag#div#0" expanded="false" />
+                <element signature="tag#div#2;tag#div#0" expanded="false" />
+                <element signature="tag#select#0;tag#div#2;tag#div#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.json.jbuilder" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/portfolios/show.json.jbuilder">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="107" selection-start="363" selection-end="363" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="risk.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/risk.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -103,51 +136,19 @@
       <file leaf-file-name="project_home.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/templates/project_home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="29" selection-start="3752" selection-end="3752" vertical-scroll-proportion="0.11627907">
+            <state line="70" column="67" selection-start="3502" selection-end="3502" vertical-scroll-proportion="0.5546624">
               <folding>
-                <element signature="tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#div#0;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#div#1;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#div#2;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#div#3;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#div#4;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#div#5;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#div#6;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#div#7;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#div#8;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#input#0;tag#div#8;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#div#9;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#select#0;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#div#2;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="tag#select#0;tag#div#2;tag#div#0;tag#div#0" expanded="false" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="tag#div#1;tag#div#0;tag#div#0;tag#div#2;tag#div#0;tag#div#0" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="portfolio_home.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html">
+      <file leaf-file-name="project_home_ctrl.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/controllers/project_home_ctrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="15" selection-start="1730" selection-end="3824" vertical-scroll-proportion="-2.5">
-              <folding>
-                <element signature="tag#div#1;tag#div#0" expanded="false" />
-                <element signature="tag#div#0;tag#div#1;tag#div#0" expanded="false" />
-                <element signature="tag#div#2;tag#div#0" expanded="false" />
-                <element signature="tag#select#0;tag#div#2;tag#div#0" expanded="false" />
-                <element signature="tag#div#0;tag#div#2;tag#div#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="projects_ctrl.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/controllers/projects_ctrl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="56" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0">
+            <state line="3" column="45" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -156,43 +157,7 @@
       <file leaf-file-name="risks_ctrl.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/controllers/risks_ctrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="114" selection-start="1272" selection-end="1272" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="projects_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/projects_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="42" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="portfolio.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/services/portfolio.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="58" selection-start="610" selection-end="610" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="production.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="63" selection-start="1331" selection-end="1331" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="71" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0">
+            <state line="23" column="36" selection-start="1098" selection-end="1098" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -216,12 +181,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/assets/javascripts/angular/services/portfolio.js" />
-        <option value="$PROJECT_DIR$/app/views/projects/index.json.jbuilder" />
-        <option value="$PROJECT_DIR$/app/controllers/projects_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/projects/show.json.jbuilder" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/angular/controllers/project_home_ctrl.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/angular/services/project.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/templates/portfolios.html" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/Gemfile" />
@@ -229,8 +188,14 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/main.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html.erb.html" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/angular/controllers/projects_ctrl.js" />
+        <option value="$PROJECT_DIR$/app/controllers/risks_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/angular/controllers/risks_ctrl.js" />
+        <option value="$PROJECT_DIR$/app/models/project.rb" />
+        <option value="$PROJECT_DIR$/app/models/portfolio.rb" />
+        <option value="$PROJECT_DIR$/app/views/portfolios/show.json.jbuilder" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/angular/controllers/project_home_ctrl.js" />
+        <option value="$PROJECT_DIR$/app/views/projects/show.json.jbuilder" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/templates/project_home.html" />
       </list>
     </option>
@@ -297,22 +262,8 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="riskPortfolio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="riskapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -330,37 +281,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="riskPortfolio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="riskapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
+              <option name="myItemId" value="projects" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -375,48 +300,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="riskPortfolio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="riskapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="partials" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -714,7 +597,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924837" sideWeight="0.6700143" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2496361" sideWeight="0.49928263" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38723713" sideWeight="0.6700143" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38723713" sideWeight="0.6700143" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4362745" sideWeight="0.32998565" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
@@ -790,73 +673,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/controllers/project_home_ctrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="56" selection-start="476" selection-end="476" vertical-scroll-proportion="0.2538071">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/templates/portfolios.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="32" selection-start="641" selection-end="641" vertical-scroll-proportion="0.19292605">
-          <folding>
-            <element signature="tag#form#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/projects/show.json.jbuilder">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="14" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/services/project.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="58" selection-start="250" selection-end="250" vertical-scroll-proportion="0.11210762">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/controllers/portfolio_home_ctrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="454" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="60" selection-start="855" selection-end="855" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="84" selection-start="821" selection-end="821" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="71" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="63" selection-start="1331" selection-end="1331" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/projects_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="42" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0">
@@ -871,33 +687,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/controllers/risks_ctrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="114" selection-start="1272" selection-end="1272" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="15" selection-start="1730" selection-end="3824" vertical-scroll-proportion="-2.5">
-          <folding>
-            <element signature="tag#div#1;tag#div#0" expanded="false" />
-            <element signature="tag#div#0;tag#div#1;tag#div#0" expanded="false" />
-            <element signature="tag#div#2;tag#div#0" expanded="false" />
-            <element signature="tag#select#0;tag#div#2;tag#div#0" expanded="false" />
-            <element signature="tag#div#0;tag#div#2;tag#div#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/controllers/projects_ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="56" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0">
@@ -905,29 +694,100 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/risks/index.json.jbuilder">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="41" selection-start="32" selection-end="235" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/risks_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="77" selection-start="480" selection-end="480" vertical-scroll-proportion="0.5340557">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/projects/index.json.jbuilder">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="16" selection-start="138" selection-end="138" vertical-scroll-proportion="0.089686096">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/project.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="17" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/controllers/risks_ctrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="36" selection-start="1098" selection-end="1098" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/risk.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/portfolio.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="18" selection-start="76" selection-end="76" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/portfolios/show.json.jbuilder">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="107" selection-start="363" selection-end="363" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/projects/show.json.jbuilder">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="55" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="54" selection-start="528" selection-end="528" vertical-scroll-proportion="-7.5">
+          <folding>
+            <element signature="tag#div#0;tag#div#0" expanded="false" />
+            <element signature="tag#div#2;tag#div#0" expanded="false" />
+            <element signature="tag#select#0;tag#div#2;tag#div#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/controllers/project_home_ctrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="45" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/templates/project_home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="29" selection-start="3752" selection-end="3752" vertical-scroll-proportion="0.11627907">
+        <state line="70" column="67" selection-start="3502" selection-end="3502" vertical-scroll-proportion="0.5546624">
           <folding>
-            <element signature="tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#div#0;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#div#1;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#div#2;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#div#3;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#div#4;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#div#5;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#div#6;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#div#7;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#div#8;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#input#0;tag#div#8;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#div#9;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#select#0;tag#form#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#div#2;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="tag#select#0;tag#div#2;tag#div#0;tag#div#0" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="tag#div#1;tag#div#0;tag#div#0;tag#div#2;tag#div#0;tag#div#0" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

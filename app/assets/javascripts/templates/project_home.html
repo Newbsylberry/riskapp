@@ -1,115 +1,117 @@
-<div ng-controller="RisksCtrl">
-    <div class="row">
-        <div class="col-xs-1">
-        </div>
-        <div class="col-xs-2">
-            <h1>{{ project.name }}</h1>
-            <p class="lead">{{portfolio.description}}</p>
-            <form ng-scroll-viewport role="form" class="form-horizontal" ng-submit="createRisk()">
-                <div class="form-group">
-                    <h2>Enter New Risk</h2>
+<div class="row" ng-controller="RisksCtrl">
+    <div class="col-xs-1">
+    </div>
+    <div class="col-xs-2">
+        <h1>{{ project.name }}</h1>
+        <p class="lead">{{project.description}}</p>
+        <form ng-scroll-viewport role="form" class="form-horizontal" ng-submit="createRisk()">
+            <div class="form-group">
+                <h2>Enter New Risk</h2>
+            </div>
+            <div class="form-group">
+                <label>Risk Name:</label><br>
+                <input type="text" ng-model='newRisk.name' placeholder="Enter Name of Risk to Be Tracked"><br>
+            </div>
+            <div class="form-group">
+                <label>Risk Description:</label><br>
+                <textarea rows="8" columns ="5" ng-model='newRisk.description'
+                          placeholder="Describe this risk"></textarea>
+            </div>
+            <div class="form-group">
+                <label>The earliest possible date a risk will occur:</label>
+                <details>This the first possible date that the risk will come to fruition if
+                    it is not managed.</details>
+                <input type="date" ng-model='newRisk.early_impact_date' name="early_impact_date">
+            </div>
+            <div class="form-group">
+                <label>The date when the risk will not occur:</label>
+                <input type="date" ng-model='newRisk.late_impact_date' name="early_impact_date">
+            </div>
+            <div class="form-group">
+                <h3><secondary>Select whether risk is critical or not (must select one):</secondary></h3>
+                <div class="radio">
+                    <label>
+                        <input type="radio" ng-model="newRisk.critical" value="true">
+                        <small>Check this box if the risk critically affects the ability to complete
+                            the task/project</small>
+                    </label>
                 </div>
-                <div class="form-group">
-                    <label>Risk Name:</label><br>
-                    <input type="text" ng-model='newRisk.name' placeholder="Enter Name of Risk to Be Tracked"><br>
+                <div class="radio">
+                    <label>
+                        <input type="radio" ng-model="newRisk.critical" value="false">
+                        <small>The risk is not critical.</small>
+                    </label>
                 </div>
-                <div class="form-group">
-                    <label>Risk Description:</label><br>
-                    <textarea rows="8" columns ="5" ng-model='newRisk.description'
-                              placeholder="Describe this risk"></textarea>
-                </div>
-                <div class="form-group">
-                    <label>The earliest possible date a risk will occur:</label>
-                    <details>This the first possible date that the risk will come to fruition if
-                        it is not managed.</details>
-                    <input type="date" ng-model='newRisk.early_impact_date' name="early_impact_date">
-                </div>
-                <div class="form-group">
-                    <label>The date when the risk will not occur:</label>
-                    <input type="date" ng-model='newRisk.late_impact_date' name="early_impact_date">
-                </div>
-                <div class="form-group">
-                    <h3><secondary>Select whether risk is critical or not (must select one):</secondary></h3>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" ng-model="newRisk.critical" value="true">
-                            <small>Check this box if the risk critically affects the ability to complete
-                                the task/project</small>
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" ng-model="newRisk.critical" value="false">
-                            <small>The risk is not critical.</small>
-                        </label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Risk Impact on Schedule</label><br>
-                    <p>The amount of extra days that will be required to complete the task
-                        if the risk happens:</p>
-                    <input ng-model="newRisk.schedule_impact" type="number">
-                </div>
-                <div class="form-group">
-                    <label>Risk Potential Impact on Project:</label>
-                    <input ng-model="newRisk.impact_rating" type="range"
-                           name="impact_rating" min="1" max="100">
-                </div>
-                <div class="form-group">
-                    <label>Probability of Risk Occurring</label>
-                    <input ng-model="newRisk.probability" type="range"
-                           name="probability" min="1" max="100">
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Add Risk to Project"><br>
-                </div>
+            </div>
+            <div class="form-group">
+                <label>Risk Impact on Schedule</label><br>
+                <p>The amount of extra days that will be required to complete the task
+                    if the risk happens:</p>
+                <input ng-model="newRisk.schedule_impact" type="number">
+            </div>
+            <div class="form-group">
+                <label>Risk Potential Impact on Project:</label>
+                <input ng-model="newRisk.impact_rating" type="range"
+                       name="impact_rating" min="1" max="100">
+            </div>
+            <div class="form-group">
+                <label>Probability of Risk Occurring</label>
+                <input ng-model="newRisk.probability" type="range"
+                       name="probability" min="1" max="100">
+            </div>
+            <div class="form-group">
                 <select ng-model='newRisk.project_id'>
                     <option value="{{ project.id }}" selected>{{project.name}}</option>
                 </select><br>
-                <a href='#/'>Back to Portfolio Home Page</a>
-            </form><br>
-        </div>
-        <div class="col-xs-9">
-            <h1>List of Project Risks</h1>
-            <select ng-model="orderProp">
-                <small>Sort Risks:</small>
-                <option value="name">Alphabetical</option>
-                <option value="impact_rating">Impact Rating</option>
-            </select>
-            <div ng-repeat="risk in risks | filter:query | orderBy:orderProp ">
-                <div class="row">
-                    <div class="col-xs-8">
-                        <!-- <h4>Risk:</h4> -->
-                        <p class="lead">{{risk.name}}</p>
-                        <p class="small">{{risk.description}}</p><br>
-                        <strong>Impact (out of 10): {{risk.impact_rating}}</strong>
-                        <div class="progress progress-striped active">
-                            <div class="progress-bar progress-bar-danger" role="progressbar"
-                                 are-valuenow="{{risk.impact_rating}}"
-                                 aria-valuemin="0" aria-valuemax="10"
-                                 style="width:{{risk.impact_rating}}%">
-                            </div>
-                        </div>
-                        <strong>Probability of Impact: {{risk.probability}} %</strong>
-                        <div class="progress progress-striped active">
-                            <div class="progress-bar" role="progressbar"
-                                 aria-valuemin="0" aria-valuemax="100"
-                                 style="width:{{risk.probability}}%">
-                            </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add Risk to Project"><br>
+            </div>
+        </form><br>
+        <a href='#/portfolio_home/{{project.portfolio_id}}'>Back to Home Page</a>
+    </div>
+    <div class="col-xs-9">
+        <h1>List of Project Risks</h1>
+        <select ng-model="orderProp">
+            <small>Sort Risks:</small>
+            <option value="name">Alphabetical</option>
+            <option value="impact_rating">Impact Rating</option>
+        </select>
+        <div ng-repeat="risk in project.risks | filter:query | orderBy:orderProp ">
+            <div class="row">
+                <div class="col-xs-8">
+                    <!-- <h4>Risk:</h4> -->
+                    <p class="lead">{{risk.name}}</p>
+                    <p class="small">{{risk.description}}</p><br>
+                    <strong>Impact (out of 100): {{risk.impact_rating}}</strong>
+                    <div class="progress progress-striped active">
+                        <div class="progress-bar progress-bar-danger" role="progressbar"
+                             are-valuenow="{{risk.impact_rating}}"
+                             aria-valuemin="0" aria-valuemax="10"
+                             style="width:{{risk.impact_rating}}%">
                         </div>
                     </div>
-                    <div class="col-xs-4">
-                        <bold>Earliest Possible Impact:</bold>
-                        <p>{{risk.early_impact_date | date:'MMM-dd-yyyy'}}</p>
-                        <bold>Latest Possible Impact:</bold>
-                        <p>{{risk.late_impact_date | date:'MMM-dd-yyyy'}}</p>
-                        <a href='' ng-click="deleteRisk(risk.id, $index)">Remove</a>
+                    <strong>Probability of Impact: {{risk.probability}} %</strong>
+                    <div class="progress progress-striped active">
+                        <div class="progress-bar" role="progressbar"
+                             aria-valuemin="0" aria-valuemax="100"
+                             style="width:{{risk.probability}}%">
+                        </div>
                     </div>
+                </div>
+                <div class="col-xs-4">
+                    <bold>Earliest Possible Impact:</bold>
+                    <p>{{risk.early_impact_date | date:'MMM-dd-yyyy'}}</p>
+                    <bold>Latest Possible Impact:</bold>
+                    <p>{{risk.late_impact_date | date:'MMM-dd-yyyy'}}</p>
+                    <a href='' ng-click="deleteRisk(risk.id, $index)">Remove</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
 
 
 
