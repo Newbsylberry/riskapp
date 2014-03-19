@@ -10,13 +10,18 @@
     <input type="text" ng-model='newPortfolio.description' placeholder="Describe this Portfolio">
     <input type="submit" value="Add Portfolio">
   </form>
-  <ul class="list-group">
-    <li class="list-group-item "portfolio in portfolios">
-      {{portfolio.name}} - {{portfolio.description}}
-      <a href='' ng-click="deletePortfolio(portfolio.id, $index)">Remove</a> |
-      <a href='#/portfolio_home/{{portfolio.id}}'>Link to {{portfolio.name}} Home</a>
-    </li>
-  </ul>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="portfolio in portfolios">
+                    {{portfolio.name}} - {{portfolio.description}}
+                    <a href='' ng-click="deletePortfolio(portfolio.id, $index)">Remove</a> |
+                    <a href='#/portfolio_home/{{portfolio.id}}'>Link to {{portfolio.name}} Home</a>
+                </li>
+            </ul>
+            </div>
+            <div class="col-xs-2"><p class="lead">A list of portfolios with projects.</p></div>
+        </div>
     </div>
 </div>
 
