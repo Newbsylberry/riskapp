@@ -8,4 +8,6 @@ app.controller('ProjectHomeCtrl', ['$scope', '$routeParams', 'Project',
             console.log("error response");
             console.log(errorResponse);
         });
+
+
     }]);

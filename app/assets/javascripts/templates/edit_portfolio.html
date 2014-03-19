@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-xs-1">
+    </div>
+    <div class="col-xs-9">
+        <h1>Edit {{portfolio.name}}</h1>
+        <a href='#/portfolio_home/{{portfolio.id}}'>Back to Portfolio Home</a>
+        <br>
+        <div ng-controller="EventsCtrl">
+            <div class="row">
+                <div class="col-xs-3">
+                    <p class="lead">In the portfolio (and project) configuration panels,
+                    managers can add risk categories, types, and events which can
+                        be assigned to individual risks as they are created.
+                    </p><br>
+                    <p class="lead">Events are shown here as an example.</p>
+                </div>
+                <div class="col-xs-9">
+                    <form class="form-inline" role="form" ng-submit="createEvent()">
+                        <div class="form-group">
+                            <label class="sr-only">Event Name:</label>
+                            <input type="text" ng-model='newEvent.name'
+                                   placeholder="Enter Name of New Event"
+                                   class="form-control"><br>
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only">Event Description</label>
+                            <input type="text" ng-model='newEvent.description'
+                                   placeholder="Describe this Event"
+                                   class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="date" ng-model='newEvent.event_date'
+                                   name='event_date'>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-default" value="Add Event">
+                        </div>
+                    </form>
+                    <h3>List of {{portfolio.name}} Events:</h3>
+                    <div class="row" ng-repeat="event in events">
+                        <div class="col-xs-9 col-xs-offset-3">
+                            {{event.name}} - {{event.description}}
+                            <a href='' ng-click="deleteEvent(event.id, $index)">Remove</a>
+                        </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

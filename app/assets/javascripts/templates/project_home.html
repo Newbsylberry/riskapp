@@ -19,6 +19,11 @@
                 <textarea rows="8" columns ="5" ng-model='newRisk.description'
                           placeholder="Describe this risk"></textarea>
             </div>
+            <div class="form-group" ng-controller="EventsCtrl">
+                <select ng-repeat="event in events">
+                    <option value="{{event.id}}">{{event.name}}</option>
+                </select>
+            </div>
             <div class="form-group">
                 <label>The earliest possible date a risk will occur:</label>
                 <details>This the first possible date that the risk will come to fruition if

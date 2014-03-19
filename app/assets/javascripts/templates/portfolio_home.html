@@ -4,6 +4,8 @@
     <div class="col-xs-2">
         <h1>{{portfolio.name}}</h1>
         <p class="lead">{{portfolio.description}}</p>
+        <a href='#/edit_portfolio/{{portfolio.id}}'>Configure Portfolio</a><br>
+        <a href='#/'>Back to Portfolio Home</a>
         <p>Search Open Risks</p>
         <input ng-model="query" placeholder="Search risks">
         <div ng-controller="ProjectsCtrl">
@@ -30,10 +32,9 @@
             </ul>
             <br>
             </div>
-        <a href='#/'>Back to Portfolio Home</a>
     </div>
     <div class="col-xs-9">
-        <h1>List of Project Risks</h1>
+        <h1>List of Portfolio Risks</h1>
         <select ng-model="orderProp">
             <small>Sort Risks:</small>
             <option value="name">Alphabetical</option>
@@ -72,7 +73,7 @@
             </div>
         </div>
     </div>
-</div>
+
 
 
 

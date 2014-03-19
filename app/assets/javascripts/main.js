@@ -19,6 +19,10 @@ app.config(['$routeProvider',
                 templateUrl: 'portfolio_home.html',
                 controller: 'PortfolioHomeCtrl'
             }).
+            when('/edit_portfolio/:portfolioId', {
+                templateUrl: 'edit_portfolio.html',
+                controller: 'EditPortfolioCtrl'
+            }).
             when('/project_home/:projectId', {
                 templateUrl: 'project_home.html',
                 controller:  'ProjectHomeCtrl'
