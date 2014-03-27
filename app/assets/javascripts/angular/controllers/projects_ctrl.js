@@ -5,7 +5,7 @@ app.controller('ProjectsCtrl', ['$scope', 'Project', function($scope, Project) {
         var attr = {};
         attr.name = ($scope.newProject.name);
         attr.description = ($scope.newProject.description);
-        attr.portfolio_id = ($scope.newProject.portfolio_id);
+        attr.portfolio_id = ($scope.portfolio.id);
         var newProject = Project.create(attr);
         $scope.projects.push(newProject);
         $scope.newProject.name = "";
