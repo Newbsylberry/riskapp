@@ -1,42 +1,66 @@
-<div class="row" ng-controller="RisksCtrl">
-    <div class="col-xs-1">
+<div ng-controller="RisksCtrl">
+    <div class="row">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-2">
+            <h1>{{portfolio.name}}</h1>
+            <p class="lead">{{portfolio.description}}</p>
+            <a href='#/edit_portfolio/{{portfolio.id}}'>Configure Portfolio</a><br>
+            <a href='#/'>Back to Portfolio Home</a>
+        </div>
+        <div class="col-xs-9"></div>
     </div>
-    <div class="col-xs-2">
-        <h1>{{portfolio.name}}</h1>
-        <p class="lead">{{portfolio.description}}</p>
-        <a href='#/edit_portfolio/{{portfolio.id}}'>Configure Portfolio</a><br>
-        <a href='#/'>Back to Portfolio Home</a>
-        <p>Search Open Risks</p>
-        <input ng-model="query" placeholder="Search risks">
-        <div ng-controller="ProjectsCtrl">
-            <br>
-            <h4>Portfolio Projects:</h4>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <form ng-submit="createProject()">
-                        <label>Project Name:</label>
-                        <input type="text" ng-model='newProject.name' placeholder="Enter Name of New Project"><br>
-                        <label>Project Description</label>
-                        <input type="text" ng-model='newProject.description' placeholder="Describe this Project">
-                        <input type="submit" value="Add Project">
-                    </form>
-                </li>
-                <li class="list-group-item" ng-repeat="project in portfolio.projects">
-                       <p>{{project.name}}</p>
-                       <a href='' ng-click="deleteProject(project.id, $index)">Remove</a><br>
-                       <a href='#/project_home/{{project.id}}'>Link to {{project.name}} Home</a>
-                </li>
-            </ul>
-            <br>
+    <div class="row">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-9">
+            <div class="btn-group-lg">
+                <button type="button" class="btn btn-default" ng-click="display = 'list'">
+                    List of Risks
+                </button>
+                <button type="button" class="btn btn-default" ng-click="display = 'charts'">
+                    Risk Charts
+                </button>
             </div>
+        </div>
     </div>
-    <div class="col-xs-9">
-        <h1>List of Portfolio Risks</h1>
-        <select ng-model="orderProp">
-            <small>Sort Risks:</small>
-            <option value="name">Alphabetical</option>
-            <option value="impact_rating">Impact Rating</option>
-        </select>
+    <div class="row">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-2">
+            <div ng-controller="ProjectsCtrl">
+                <br>
+                <h4>Portfolio Projects:</h4>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <form ng-submit="createProject()">
+                            <label>Project Name:</label>
+                            <input type="text" ng-model='newProject.name' placeholder="Enter Name of New Project"><br>
+                            <label>Project Description</label>
+                            <input type="text" ng-model='newProject.description' placeholder="Describe this Project">
+                            <input type="submit" value="Add Project">
+                        </form>
+                    </li>
+                    <li class="list-group-item" ng-repeat="project in portfolio.projects">
+                        <p>{{project.name}}</p>
+                        <a href='' ng-click="deleteProject(project.id, $index)">Remove</a><br>
+                        <a href='#/project_home/{{project.id}}'>Link to {{project.name}} Home</a>
+                    </li>
+                </ul>
+                <br>
+            </div>
+        </div>
+        <div ng-init="display = 'list'" class="col-xs-9">
+            <div ng-if="display == 'list'">
+            <form class="form-inline center-block">
+                <div class="form-group">
+                    <input class= "form-control" ng-model="query" placeholder="Search risks">
+                </div>
+                <div class="form-group">
+                    <select class="form-control" ng-model="orderProp">
+                <small>Sort Risks:</small>
+                <option value="name">Alphabetical</option>
+                <option value="impact_rating">Impact Rating</option>
+            </select>
+                </div>
+            </form>
             <div ng-repeat="risk in portfolio.risks | filter:query | orderBy:orderProp ">
                 <div class="row">
                     <div class="col-xs-8">
@@ -68,8 +92,13 @@
                     </div>
                 </div>
             </div>
+            </div>
+            <div ng-if="display == 'charts'">
+            <p class="lead">Our charts are going to go here</p>
+            </div>
         </div>
     </div>
+</div>
 
 
 
