@@ -1,6 +1,9 @@
 app.controller('PortfolioHomeCtrl', ['$scope', '$routeParams', 'Portfolio',
     function($scope, $routeParams, Portfolio) {
-    Portfolio.get({portfolioId: $routeParams.portfolioId}, function(successResponse) {
+
+        $scope.display = '';
+
+        Portfolio.get({portfolioId: $routeParams.portfolioId}, function(successResponse) {
         $scope.portfolio = successResponse;
         console.log("success response");
         console.log(successResponse);

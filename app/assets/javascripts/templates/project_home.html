@@ -4,7 +4,8 @@
     <div class="col-xs-2">
         <h1>{{ project.name }}</h1>
         <p class="lead">{{project.description}}</p>
-        <a href='#/portfolio_home/{{project.portfolio_id}}'>Back to Home Page</a>
+        <a href='#/portfolio_home/{{project.portfolio_id}}'>Back to Home Page</a><br>
+        <a href='#/edit_project/{{project.id}}'>Configure Project</a>
         <br>
         <form ng-scroll-viewport role="form" class="form-horizontal" ng-submit="createRisk()">
             <div class="form-group">

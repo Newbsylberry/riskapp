@@ -27,6 +27,10 @@ app.config(['$routeProvider',
                 templateUrl: 'project_home.html',
                 controller:  'ProjectHomeCtrl'
             }).
+            when('/edit_project/:projectId', {
+                templateUrl: 'edit_project.html',
+                controller: 'EditProjectCtrl'
+            }).
             otherwise({
                 redirectTo: '/'
             });
