@@ -20,6 +20,6 @@ class RiskControlCategoriesController < ApplicationController
   private
 
   def risk_params
-    params.require(:risk_control_category).permit(:name, :description)
+    params.require(:risk_control_category).permit(:name, :description, :portfolio_id)
   end
 end

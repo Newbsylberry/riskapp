@@ -1,7 +1,8 @@
 var app = angular.module("RiskPortfolio", [
     'ngResource',
     'ngRoute',
-    'templates'
+    'templates',
+    "highcharts-ng"
     ]);
 
 app.config(['$routeProvider',
