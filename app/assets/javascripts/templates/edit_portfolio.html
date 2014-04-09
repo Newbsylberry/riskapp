@@ -55,7 +55,7 @@
                     </div>
                 </form>
                 <h3>List of {{portfolio.name}} Events:</h3>
-                <div class="row" ng-repeat="event in events">
+                <div class="row" ng-repeat="event in portfolio.events">
                     <div class="col-xs-9 col-xs-offset-3">
                         {{event.name}} - {{event.description}}
                         <a href='' ng-click="deleteEvent(event.id, $index)">Remove</a>
@@ -65,7 +65,7 @@
         </div>
         <div ng-if="display == 'portfolio_risk_controls'">
             {{display}}
-            <div ng-controller="RiskControlCatCtrl">
+            <div ng-controller="RiskControlCatsCtrl">
                 <form class="form-inline" role="form" ng-submit="createRiskControlCat()">
                     <div class="form-group">
                         <label class="sr-only">Risk Control Category Name:</label>
@@ -84,7 +84,7 @@
                     </div>
                 </form>
                 <h3>List of {{portfolio.name}} Risk Control Categories:</h3>
-                <div class="row" ng-repeat="risk_control_category in risk_control_categories">
+                <div class="row" ng-repeat="risk_control_category in portfolio.risk_control_categories">
                     <div class="col-xs-9 col-xs-offset-3">
                         {{risk_control_category.name}} - {{risk_control_category.description}}
                         <a href='' ng-click="deleteRiskControlCat(risk_control_category.id, $index)">Remove</a>
@@ -94,6 +94,32 @@
         </div>
         <div ng-if="display == 'portfolio_risk_statuses'">
             {{display}}
+            <div ng-controller="RiskStatusesCtrl">
+                <form class="form-inline" role="form" ng-submit="createRiskStatus()">
+                    <div class="form-group">
+                        <label class="sr-only">Risk Status Name:</label>
+                        <input type="text" ng-model='newRiskStatus.name'
+                               placeholder="Enter Name of Risk Status"
+                               class="form-control"><br>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only">Risk Status Description</label>
+                        <input type="text" ng-model='newRiskStatus.description'
+                               placeholder="Describe this Risk Status"
+                               class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-default" value="Add Risk Status Category">
+                    </div>
+                </form>
+                <h3>List of {{portfolio.name}} Risk Statuses:</h3>
+                <div class="row" ng-repeat="risk_status in portfolio.risk_statuses">
+                    <div class="col-xs-9 col-xs-offset-3">
+                        {{risk_status.name}} - {{risk_status.description}}
+                        <a href='' ng-click="deleteRiskStatus(risk_status.id, $index)">Remove</a>
+                    </div>
+                </div>
+            </div>
         </div>
         <div ng-if="display == 'portfolio_risk_types'">
             {{display}}

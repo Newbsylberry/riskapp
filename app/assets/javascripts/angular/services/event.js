@@ -1,18 +1,18 @@
-app.factory('Event', ['$resource', function($resource) {
-    function Event() {
+app.factory('Events', ['$resource', function($resource) {
+    function Events() {
         this.service = $resource('/api/events/:eventId', {eventId: '@id'});
     };
-    Event.prototype.all = function() {
+    Events.prototype.all = function() {
         return this.service.query();
     };
-    Event.prototype.delete = function(eId) {
+    Events.prototype.delete = function(eId) {
         this.service.remove({eventId: eId});
     };
-    Event.prototype.get = function(id, successCallback, errorCallback) {
+    Events.prototype.get = function(id, successCallback, errorCallback) {
         this.service.get(id, successCallback, errorCallback);
     };
-    Event.prototype.create = function(attr) {
+    Events.prototype.create = function(attr) {
         return this.service.save(attr);
     }
-    return new Event;
+    return new Events;
 }]);

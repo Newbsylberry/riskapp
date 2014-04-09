@@ -10,3 +10,15 @@ json.risks @portfolio.risks do |json, risk|
          :schedule_impact, :probability)
     end
 
+json.risk_control_categories @portfolio.risk_control_categories do |json, risk_control_category|
+    json.(risk_control_category, :id, :name, :description)
+    end
+
+json.risk_statuses @portfolio.risk_statuses do |json, risk_statuses|
+    json.(risk_statuses, :id, :name, :description)
+    end
+
+json.events @portfolio.events do |json, event|
+    json.(event, :id, :name, :description)
+    end
+
