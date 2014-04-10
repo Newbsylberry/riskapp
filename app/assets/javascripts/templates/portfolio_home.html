@@ -31,13 +31,17 @@
     <div class="col-xs-9">
         <div class="btn-group-lg">
             <button type="button" class="btn btn-default"
-                    ng-model="display" ng-click="display = 'risk_list'">
-                        List of Risks
-            </button>
-            <button type="button" class="btn btn-default"
                     ng-model="display" ng-click="display = 'risk_charts'">
                 Risk Charts
             </button>
+            <button type="button" class="btn btn-default"
+                    ng-model="display" ng-click="display = 'risk_list'">
+                        List of Risks
+            </button>
+        </div>
+        <div ng-if="display == 'risk_charts'">
+            <p class="lead">Our charts are going to go here</p>
+            <highchart id="chart1" config="chartConfig" class="span9" ></highchart>
         </div>
         <div ng-if="display == 'risk_list'">
             <div class="RisksCtrl">
@@ -85,10 +89,6 @@
                 </div>
             </div>
             </div>
-        </div>
-        <div ng-if="display == 'risk_charts'">
-            <p class="lead">Our charts are going to go here</p>
-            <highchart id="chart1" config="chartConfig" class="span9" ></highchart>
         </div>
     </div>
 </div>

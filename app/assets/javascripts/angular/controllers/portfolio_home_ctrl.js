@@ -1,7 +1,7 @@
 app.controller('PortfolioHomeCtrl', ['$scope', '$routeParams', 'Portfolio',
     function($scope, $routeParams, Portfolio) {
 
-        $scope.display = 'risk_list';
+        $scope.display = 'risk_charts';
 
         // addRiskToChart pushes the risks from the Portfolio.get into chartConfig.series.data
         //  so that it can be displayed in html
