@@ -1,6 +1,7 @@
 class RisksController < ApplicationController
   respond_to :json
 
+
   def index
     @risks = Risk.all
   end
@@ -16,6 +17,7 @@ class RisksController < ApplicationController
   def show
     @risk = Risk.find(params[:id])
   end
+
 
 private
 

@@ -15,6 +15,31 @@ class PortfoliosController < ApplicationController
 
   def show
     @portfolio = Portfolio.find(params[:id])
+    @short_term_risks = Array.new
+    Risk.all.each do |risk|
+      if risk.short_term_risk?
+        @short_term_risks << risk
+      else
+        false
+      end
+    end
+
+    @mid_term_risks = Array.new
+    Risk.all.each do |risk|
+      if risk.mid_term_risk?
+        @mid_term_risks << risk
+      else
+        false
+      end
+    end
+    @long_term_risks = Array.new
+    Risk.all.each do |risk|
+      if risk.long_term_risk?
+        @long_term_risks << risk
+      else
+        false
+      end
+    end
   end
 
   private

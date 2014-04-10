@@ -38,6 +38,18 @@
                     ng-model="display" ng-click="display = 'risk_list'">
                         List of Risks
             </button>
+            <button type="button" class="btn btn-default"
+                    ng-model="display" ng-click="display = 'short_term_risks'">
+                Short Term Risks
+            </button>
+            <button type="button" class="btn btn-default"
+                    ng-model="display" ng-click="display = 'mid_term_risks'">
+                Mid Term Risks
+            </button>
+            <button type="button" class="btn btn-default"
+                    ng-model="display" ng-click="display = 'long_term_risks'">
+                Long Term Risks
+            </button>
         </div>
         <div ng-if="display == 'risk_charts'">
             <p class="lead">Our charts are going to go here</p>
@@ -88,6 +100,107 @@
                     </div>
                 </div>
             </div>
+            </div>
+        </div>
+        <div ng-if="display == 'short_term_risks'">
+            <div class="RisksCtrl">
+                <div ng-repeat="risk in portfolio.short_term_risks">
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <!-- <h4>Risk:</h4> -->
+                            <p class="lead">{{risk.name}}</p>
+                            <p class="small">{{risk.description}}</p><br>
+                            <strong>Impact (out of 10): {{risk.impact_rating}}</strong>
+                            <div class="progress progress-striped active">
+                                <div class="progress-bar progress-bar-danger" role="progressbar"
+                                     are-valuenow="{{risk.impact_rating}}"
+                                     aria-valuemin="0" aria-valuemax="10"
+                                     style="width:{{risk.impact_rating}}%">
+                                </div>
+                            </div>
+                            <strong>Probability of Impact: {{risk.probability}} %</strong>
+                            <div class="progress progress-striped active">
+                                <div class="progress-bar" role="progressbar"
+                                     aria-valuemin="0" aria-valuemax="100"
+                                     style="width:{{risk.probability}}%">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <bold>Earliest Possible Impact:</bold>
+                            <p>{{risk.early_impact_date | date:'MMM-dd-yyyy'}}</p>
+                            <bold>Latest Possible Impact:</bold>
+                            <p>{{risk.late_impact_date | date:'MMM-dd-yyyy'}}</p>
+                            <a href='' ng-click="deleteRisk(risk.id, $index)">Remove</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-if="display == 'mid_term_risks'">
+            <div ng-repeat="risk in portfolio.mid_term_risks">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <!-- <h4>Risk:</h4> -->
+                        <p class="lead">{{risk.name}}</p>
+                        <p class="small">{{risk.description}}</p><br>
+                        <strong>Impact (out of 10): {{risk.impact_rating}}</strong>
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-danger" role="progressbar"
+                                 are-valuenow="{{risk.impact_rating}}"
+                                 aria-valuemin="0" aria-valuemax="10"
+                                 style="width:{{risk.impact_rating}}%">
+                            </div>
+                        </div>
+                        <strong>Probability of Impact: {{risk.probability}} %</strong>
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar" role="progressbar"
+                                 aria-valuemin="0" aria-valuemax="100"
+                                 style="width:{{risk.probability}}%">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <bold>Earliest Possible Impact:</bold>
+                        <p>{{risk.early_impact_date | date:'MMM-dd-yyyy'}}</p>
+                        <bold>Latest Possible Impact:</bold>
+                        <p>{{risk.late_impact_date | date:'MMM-dd-yyyy'}}</p>
+                        <a href='' ng-click="deleteRisk(risk.id, $index)">Remove</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-if="display == 'long_term_risks'">
+            <div ng-repeat="risk in portfolio.long_term_risks">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <!-- <h4>Risk:</h4> -->
+                        <p class="lead">{{risk.name}}</p>
+                        <p class="small">{{risk.description}}</p><br>
+                        <strong>Impact (out of 10): {{risk.impact_rating}}</strong>
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-danger" role="progressbar"
+                                 are-valuenow="{{risk.impact_rating}}"
+                                 aria-valuemin="0" aria-valuemax="10"
+                                 style="width:{{risk.impact_rating}}%">
+                            </div>
+                        </div>
+                        <strong>Probability of Impact: {{risk.probability}} %</strong>
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar" role="progressbar"
+                                 aria-valuemin="0" aria-valuemax="100"
+                                 style="width:{{risk.probability}}%">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <bold>Earliest Possible Impact:</bold>
+                        <p>{{risk.early_impact_date | date:'MMM-dd-yyyy'}}</p>
+                        <bold>Latest Possible Impact:</bold>
+                        <p>{{risk.late_impact_date | date:'MMM-dd-yyyy'}}</p>
+                        <a href='' ng-click="deleteRisk(risk.id, $index)">Remove</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
