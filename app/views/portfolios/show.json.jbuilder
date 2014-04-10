@@ -22,3 +22,8 @@ json.events @portfolio.events do |json, event|
     json.(event, :id, :name, :description)
     end
 
+json.risk_types @portfolio.risk_types do |json, risk_type|
+    json.(risk_type, :id, :name, :description)
+    end
+
+

@@ -5,5 +5,6 @@ class Portfolio < ActiveRecord::Base
   #portfolio attributes
   has_many :risk_control_categories
   has_many :risk_statuses
+  has_many :risk_types
   has_many :events
 end

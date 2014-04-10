@@ -123,6 +123,32 @@
         </div>
         <div ng-if="display == 'portfolio_risk_types'">
             {{display}}
+            <div ng-controller="RiskTypesCtrl">
+                <form class="form-inline" role="form" ng-submit="createRiskType()">
+                    <div class="form-group">
+                        <label class="sr-only">Risk Control Category Name:</label>
+                        <input type="text" ng-model='newRiskType.name'
+                               placeholder="Enter Name of Risk Type"
+                               class="form-control"><br>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only">Risk Control Category Description</label>
+                        <input type="text" ng-model='newRiskType.description'
+                               placeholder="Describe this Risk Type"
+                               class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-default" value="Add Risk Type">
+                    </div>
+                </form>
+                <h3>List of {{portfolio.name}} Risk Types:</h3>
+                <div class="row" ng-repeat="risk_type in portfolio.risk_types">
+                    <div class="col-xs-9 col-xs-offset-3">
+                        {{risk_type.name}} - {{risk_type.description}}
+                        <a href='' ng-click="deleteRiskType(risk_type.id, $index)">Remove</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
