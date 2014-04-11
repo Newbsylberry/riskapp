@@ -13,9 +13,6 @@ app.controller('PortfolioHomeCtrl', ['$scope', '$routeParams', 'Portfolio',
             $scope.chartConfig.title.text = successResponse.name;
             console.log("success response " + successResponse );
             console.log(successResponse);
-            angular.forEach(successResponse.projects, function(project) {
-                angular.forEach(project.risks, addRiskToChart);
-            });
             angular.forEach(successResponse.risks, addRiskToChart);
         }, function(errorResponse) {
             console.log("error response");
