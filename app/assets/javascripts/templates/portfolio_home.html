@@ -7,55 +7,50 @@
                 <a href='#/edit_portfolio/{{portfolio.id}}'>Configure Portfolio</a><br>
                 <div class="ProjectsCtrl">
                     <h5>{{portfolio.name}} Projects:</h5>
-                    <li ng-repeat="project in portfolio.projects">
-                        <a href='#/project_home/{{project.id}}'>Link to {{project.name}} Home</a>
-                    </li>
                 </div>
             </div>
         </div>
         <div class="panel">
-            <div class="panel-body" ng-controller="ProjectsCtrl">
-                <h4>Add New Project</h4>
-                <form ng-submit="createProject()">
-                    <label>Project Name:</label>
-                    <input class="form-control" type="text" ng-model='newProject.name'
-                           placeholder="Enter Name of New Project"><br>
-                    <label>Project Description</label>
-                    <input class="form-control" type="text" ng-model='newProject.description'
-                           placeholder="Describe this Project">
-                    <input type="submit" value="Add Project">
-                </form>
+            <div class="panel-body">
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a ng-model="display" ng-click="display = 'portfolio_dashboard'; side_display = ''">
+                        Portfolio Dashboard</a></li>
+                    <li><a ng-model="display" ng-click="display = 'portfolio_risks'; side_display = 'risk_menu'">
+                        Portfolio Risks</a></li>
+                        <ul class="nav nav-pills nav-stacked" ng-show="side_display == 'risk_menu'">
+                            <li>
+                                <a ng-model="display" ng-click="display = 'short_term_risks'">
+                                    Short Term Risks
+                                </a>
+                            </li>
+                            <li>
+                                <a ng-model="display" ng-click="display = 'mid_term_risks'">
+                                    Mid Term Risks
+                                </a>
+                            </li>
+                            <li>
+                                <a ng-model="display" ng-click="display = 'long_term_risks'">
+                                    Long Term Risks
+                                </a>
+                            </li>
+                        </ul>
+                    <li><a ng-model="display" ng-click="display = 'portfolio_projects';
+                    side_display = 'portfolio_project_menu'">
+                        Portfolio Projects</a></li>
+                        <ul ng-show="side_display == 'portfolio_project_menu'" class="nav nav-pills nav-stacked">
+                            <li ng-repeat="project in portfolio.projects">
+                                <a href='#/project_home/{{project.id}}'>Link to {{project.name}} Home</a>
+                            </li>
+                        </ul>
+                </ul>
             </div>
         </div>
     </div>
     <div class="col-xs-9">
-        <div class="btn-group-lg">
-            <button type="button" class="btn btn-default"
-                    ng-model="display" ng-click="display = 'risk_charts'">
-                Risk Charts
-            </button>
-            <button type="button" class="btn btn-default"
-                    ng-model="display" ng-click="display = 'risk_list'">
-                        List of Risks
-            </button>
-            <button type="button" class="btn btn-default"
-                    ng-model="display" ng-click="display = 'short_term_risks'">
-                Short Term Risks
-            </button>
-            <button type="button" class="btn btn-default"
-                    ng-model="display" ng-click="display = 'mid_term_risks'">
-                Mid Term Risks
-            </button>
-            <button type="button" class="btn btn-default"
-                    ng-model="display" ng-click="display = 'long_term_risks'">
-                Long Term Risks
-            </button>
+        <div ng-if="display == 'portfolio_dashboard'">
+            <highchart id="chart1" config="chartConfig" class="span" ></highchart>
         </div>
-        <div ng-if="display == 'risk_charts'">
-            <p class="lead">Our charts are going to go here</p>
-            <highchart id="chart1" config="chartConfig" class="span9" ></highchart>
-        </div>
-        <div ng-if="display == 'risk_list'">
+        <div ng-if="display == 'portfolio_risks'">
             <div class="RisksCtrl">
             <form class="form-inline center-block">
                 <div class="form-group">
@@ -201,6 +196,20 @@
                         <a href='' ng-click="deleteRisk(risk.id, $index)">Remove</a>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div ng-if="display == 'portfolio_projects'">
+            <div ng-controller="ProjectsCtrl">
+                <h4>Add New Project</h4>
+                <form ng-submit="createProject()">
+                    <label>Project Name:</label>
+                    <input class="form-control" type="text" ng-model='newProject.name'
+                           placeholder="Enter Name of New Project"><br>
+                    <label>Project Description</label>
+                    <input class="form-control" type="text" ng-model='newProject.description'
+                           placeholder="Describe this Project">
+                    <input type="submit" value="Add Project">
+                </form>
             </div>
         </div>
     </div>
