@@ -34,13 +34,13 @@
                                 </a>
                             </li>
                         </ul>
-                    <li><a ng-model="display" ng-click="display = 'portfolio_projects';
-                    side_display = 'portfolio_project_menu'">
+                    <li><a ng-model="display" ng-click="side_display = 'portfolio_project_menu'">
                         Portfolio Projects</a></li>
                         <ul ng-show="side_display == 'portfolio_project_menu'" class="nav nav-pills nav-stacked">
                             <li ng-repeat="project in portfolio.projects">
                                 <a class="text-center" href='#/project_home/{{project.id}}'>Link to {{project.name}} Home</a>
                             </li>
+                            <li><a class="text-center" ng-click="display = 'new_project'">New Project</a></li>
                         </ul>
                 </ul>
             </div>
@@ -198,7 +198,7 @@
                 </div>
             </div>
         </div>
-        <div ng-if="display == 'portfolio_projects'">
+        <div ng-if="display == 'new_project'">
             <div ng-controller="ProjectsCtrl">
                 <h4>Add New Project</h4>
                 <form ng-submit="createProject()">
