@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-xs-3">
-        <div class="panel">
+        <div class="panel panel-default">
             <div class="panel-body">
                 <h1>{{portfolio.name}}</h1>
                 <a href='#/'>Back to Portfolio Home</a><br>
@@ -10,7 +10,7 @@
                 </div>
             </div>
         </div>
-        <div class="panel">
+        <div class="panel panel-default">
             <div class="panel-body">
                 <ul class="nav nav-pills nav-stacked">
                     <li><a ng-model="display" ng-click="display = 'portfolio_dashboard'; side_display = ''">
@@ -19,17 +19,17 @@
                         Portfolio Risks</a></li>
                         <ul class="nav nav-pills nav-stacked" ng-show="side_display == 'risk_menu'">
                             <li>
-                                <a ng-model="display" ng-click="display = 'short_term_risks'">
+                                <a class="text-center" display" ng-click="display = 'short_term_risks'">
                                     Short Term Risks
                                 </a>
                             </li>
                             <li>
-                                <a ng-model="display" ng-click="display = 'mid_term_risks'">
+                                <a class="text-center" ng-model="display" ng-click="display = 'mid_term_risks'">
                                     Mid Term Risks
                                 </a>
                             </li>
                             <li>
-                                <a ng-model="display" ng-click="display = 'long_term_risks'">
+                                <a class="text-center" ng-model="display" ng-click="display = 'long_term_risks'">
                                     Long Term Risks
                                 </a>
                             </li>
@@ -39,7 +39,7 @@
                         Portfolio Projects</a></li>
                         <ul ng-show="side_display == 'portfolio_project_menu'" class="nav nav-pills nav-stacked">
                             <li ng-repeat="project in portfolio.projects">
-                                <a href='#/project_home/{{project.id}}'>Link to {{project.name}} Home</a>
+                                <a class="text-center" href='#/project_home/{{project.id}}'>Link to {{project.name}} Home</a>
                             </li>
                         </ul>
                 </ul>
