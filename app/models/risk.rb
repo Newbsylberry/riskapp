@@ -4,10 +4,17 @@ class Risk < ActiveRecord::Base
   belongs_to :risk_control_category
   belongs_to :project
 
+  validates :name, presence: :true
+  validates :probability, presence: :true
+  validates :impact_rating, presence: :true
+
+  def exposure
+    probability * impact_rating
+  end
+
   def short_term_risk?
-    risk = Risk.find_by_id(id)
-    if risk.early_impact_date and
-    risk.early_impact_date <= Time.now + (30*24*60*60)
+    if early_impact_date and
+    early_impact_date <= Time.now + (30*24*60*60)
       true
     else
       false
@@ -15,10 +22,9 @@ class Risk < ActiveRecord::Base
   end
 
   def mid_term_risk?
-    risk = Risk.find_by_id(id)
-    if risk.early_impact_date and
-      risk.early_impact_date >= Time.now + (30*24*60*60) and
-      risk.early_impact_date <= Time.now + (60*24*60*60)
+    if early_impact_date and
+      early_impact_date >= Time.now + (30*24*60*60) and
+      early_impact_date <= Time.now + (60*24*60*60)
       true
     else
       false
@@ -26,9 +32,8 @@ class Risk < ActiveRecord::Base
   end
 
   def long_term_risk?
-    risk = Risk.find_by_id(id)
-    if risk.early_impact_date and
-    risk.early_impact_date >= Time.now + (60*24*60*60)
+    if early_impact_date and
+    early_impact_date >= Time.now + (60*24*60*60)
       true
     else
       false

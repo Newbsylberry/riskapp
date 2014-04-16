@@ -3,6 +3,13 @@
         <div class="panel panel-default">
             <div class="panel-body">
                 <h1>{{portfolio.name}}</h1>
+                <h5>Total Portfolio Exposure: {{portfolio.total_exposure}}</h5>
+                <h6><a ng-click="display = 'short_term_risks'">
+                    Short Term Exposure: {{portfolio.short_term_exposure}}</a></h6>
+                <h6><a ng-click="display = 'mid_term_risks'">
+                    Mid Term Exposure: {{portfolio.mid_term_exposure}}</a></h6>
+                <h6><a ng-click="display = 'long_term_risks'">
+                    Long Term Exposure: {{portfolio.long_term_exposure}}</a></h6><br>
                 <a href='#/'>Back to Portfolio Home</a><br>
                 <a href='#/edit_portfolio/{{portfolio.id}}'>Configure Portfolio</a><br>
                 <div class="ProjectsCtrl">
