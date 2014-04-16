@@ -6,15 +6,15 @@ app.controller('PortfolioHomeCtrl', ['$scope', '$routeParams', 'Portfolio',
 
         // addRiskToChart pushes the risks from the Portfolio.get into chartConfig.series.data
         //  so that it can be displayed in html
-        var addRiskToChart = function(risk) {
-            $scope.chartConfig.series[0].data.push([risk.name, risk.exposure]);
+        var addProjectToChart = function(project) {
+            $scope.chartConfig.series[0].data.push([project.name, project.total_exposure]);
         };
         Portfolio.get({portfolioId: $routeParams.portfolioId}, function(successResponse) {
             $scope.portfolio = successResponse;
             $scope.chartConfig.title.text = successResponse.name;
             console.log("success response " + successResponse );
             console.log(successResponse);
-            angular.forEach(successResponse.risks, addRiskToChart);
+            angular.forEach(successResponse.projects, addProjectToChart);
         }, function(errorResponse) {
             console.log("error response");
             console.log(errorResponse);
