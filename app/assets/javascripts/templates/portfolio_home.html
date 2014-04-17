@@ -1,61 +1,62 @@
+<div class="container-fluid">
 <div class="row">
-    <div class="col-xs-3">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <h1>{{portfolio.name}}</h1>
-                <h5>Total Portfolio Exposure: {{portfolio.total_exposure}}</h5>
-                <h6><a ng-click="display = 'short_term_risks'">
-                    Short Term Exposure: {{portfolio.short_term_exposure}}</a></h6>
-                <h6><a ng-click="display = 'mid_term_risks'">
-                    Mid Term Exposure: {{portfolio.mid_term_exposure}}</a></h6>
-                <h6><a ng-click="display = 'long_term_risks'">
-                    Long Term Exposure: {{portfolio.long_term_exposure}}</a></h6><br>
-                <a href='#/'>Back to Portfolio Home</a><br>
-                <a href='#/edit_portfolio/{{portfolio.id}}'>Configure Portfolio</a><br>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <ul class="nav nav-pills nav-stacked">
-                    <li><a ng-model="display" ng-click="display = 'portfolio_dashboard'; side_display = ''">
-                        Portfolio Dashboard</a></li>
-                    <li><a ng-model="display" ng-click="display = 'portfolio_risks'; side_display = 'risk_menu'">
-                        Portfolio Risks</a></li>
-                        <ul class="nav nav-pills nav-stacked" ng-show="side_display == 'risk_menu'">
-                            <li>
-                                <a class="text-center" display" ng-click="display = 'short_term_risks'">
-                                    Short Term Risks
-                                </a>
-                            </li>
-                            <li>
-                                <a class="text-center" ng-model="display" ng-click="display = 'mid_term_risks'">
-                                    Mid Term Risks
-                                </a>
-                            </li>
-                            <li>
-                                <a class="text-center" ng-model="display" ng-click="display = 'long_term_risks'">
-                                    Long Term Risks
-                                </a>
-                            </li>
-                        </ul>
-                    <li><a ng-model="display" ng-click="side_display = 'portfolio_project_menu'">
-                        Portfolio Projects</a></li>
-                        <ul ng-show="side_display == 'portfolio_project_menu'" class="nav nav-pills nav-stacked">
-                            <li ng-repeat="project in portfolio.projects">
-                                <a class="text-center" href='#/project_home/{{project.id}}'>Link to {{project.name}} Home</a>
-                            </li>
-                            <li><a class="text-center" ng-click="display = 'new_project'">New Project</a></li>
-                        </ul>
-                </ul>
-            </div>
+<div class="col-xs-3">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h1>{{portfolio.name}}</h1>
+            <h5>Total Portfolio Exposure: {{portfolio.total_exposure}}</h5>
+            <h6><a ng-click="display = 'short_term_risks'">
+                Short Term Exposure: {{portfolio.short_term_exposure}}</a></h6>
+            <h6><a ng-click="display = 'mid_term_risks'">
+                Mid Term Exposure: {{portfolio.mid_term_exposure}}</a></h6>
+            <h6><a ng-click="display = 'long_term_risks'">
+                Long Term Exposure: {{portfolio.long_term_exposure}}</a></h6><br>
+            <a href='#/'>Back to Portfolio Home</a><br>
+            <a href='#/edit_portfolio/{{portfolio.id}}'>Configure Portfolio</a><br>
         </div>
     </div>
-    <div class="col-xs-9">
-        <div ng-if="display == 'portfolio_dashboard'">
-            <highchart id="chart1" config="chartConfig" class="span" ></highchart>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <ul class="nav nav-pills nav-stacked">
+                <li><a ng-model="display" ng-click="display = 'portfolio_dashboard'; side_display = ''">
+                    Portfolio Dashboard</a></li>
+                <li><a ng-model="display" ng-click="display = 'portfolio_risks'; side_display = 'risk_menu'">
+                    Portfolio Risks</a></li>
+                <ul class="nav nav-pills nav-stacked" ng-show="side_display == 'risk_menu'">
+                    <li>
+                        <a class="text-center" display" ng-click="display = 'short_term_risks'">
+                        Short Term Risks
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-center" ng-model="display" ng-click="display = 'mid_term_risks'">
+                            Mid Term Risks
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-center" ng-model="display" ng-click="display = 'long_term_risks'">
+                            Long Term Risks
+                        </a>
+                    </li>
+                </ul>
+                <li><a ng-model="display" ng-click="side_display = 'portfolio_project_menu'">
+                    Portfolio Projects</a></li>
+                <ul ng-show="side_display == 'portfolio_project_menu'" class="nav nav-pills nav-stacked">
+                    <li ng-repeat="project in portfolio.projects">
+                        <a class="text-center" href='#/project_home/{{project.id}}'>Link to {{project.name}} Home</a>
+                    </li>
+                    <li><a class="text-center" ng-click="display = 'new_project'">New Project</a></li>
+                </ul>
+            </ul>
         </div>
-        <div ng-if="display == 'portfolio_risks'">
-            <div class="RisksCtrl">
+    </div>
+</div>
+<div class="col-xs-9">
+    <div ng-if="display == 'portfolio_dashboard'">
+        <highchart id="chart1" config="chartConfig" class="span" ></highchart>
+    </div>
+    <div ng-if="display == 'portfolio_risks'">
+        <div class="RisksCtrl">
             <form class="form-inline center-block">
                 <div class="form-group">
                     <input class= "form-control" ng-model="query" placeholder="Search risks">
@@ -68,7 +69,32 @@
                     </select>
                 </div>
             </form>
-            <div ng-repeat="risk in portfolio.risks | filter:query | orderBy:orderProp ">
+            <ul class="list-group"  ng-repeat="risk in portfolio.risks | filter:query | orderBy:orderProp ">
+                <li class="list-group-item">
+                    <h3 class="pull-right">Exposure: {{risk.exposure}}</h3>
+                    <h2>{{risk.name}}</h2>
+                    <p class="small">Risk Probability:</p>
+                    <div class="progress progress-striped active">
+                        <div class="progress-bar" role="progressbar"
+                             aria-valuemin="0" aria-valuemax="100"
+                             style="width:{{risk.probability * 100}}%">
+                        </div>
+                    </div>
+                    <p class="small">Risk Impact:</p>
+                    <div class="progress progress-striped active">
+                        <div class="progress-bar progress-bar-danger" role="progressbar"
+                             are-valuenow="{{risk.impact_rating}}"
+                             aria-valuemin="0" aria-valuemax="10"
+                             style="width:{{risk.impact_rating}}%">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div ng-if="display == 'short_term_risks'">
+        <div class="RisksCtrl">
+            <div ng-repeat="risk in portfolio.short_term_risks">
                 <div class="row">
                     <div class="col-xs-8">
                         <!-- <h4>Risk:</h4> -->
@@ -98,126 +124,93 @@
                         <a href='' ng-click="deleteRisk(risk.id, $index)">Remove</a>
                     </div>
                 </div>
-            </div>
-            </div>
-        </div>
-        <div ng-if="display == 'short_term_risks'">
-            <div class="RisksCtrl">
-                <div ng-repeat="risk in portfolio.short_term_risks">
-                    <div class="row">
-                        <div class="col-xs-8">
-                            <!-- <h4>Risk:</h4> -->
-                            <p class="lead">{{risk.name}}</p>
-                            <p class="small">{{risk.description}}</p><br>
-                            <strong>Impact (out of 10): {{risk.impact_rating}}</strong>
-                            <div class="progress progress-striped active">
-                                <div class="progress-bar progress-bar-danger" role="progressbar"
-                                     are-valuenow="{{risk.impact_rating}}"
-                                     aria-valuemin="0" aria-valuemax="10"
-                                     style="width:{{risk.impact_rating}}%">
-                                </div>
-                            </div>
-                            <strong>Probability of Impact: {{risk.probability}} %</strong>
-                            <div class="progress progress-striped active">
-                                <div class="progress-bar" role="progressbar"
-                                     aria-valuemin="0" aria-valuemax="100"
-                                     style="width:{{risk.probability}}%">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <bold>Earliest Possible Impact:</bold>
-                            <p>{{risk.early_impact_date | date:'MMM-dd-yyyy'}}</p>
-                            <bold>Latest Possible Impact:</bold>
-                            <p>{{risk.late_impact_date | date:'MMM-dd-yyyy'}}</p>
-                            <a href='' ng-click="deleteRisk(risk.id, $index)">Remove</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div ng-if="display == 'mid_term_risks'">
-            <div ng-repeat="risk in portfolio.mid_term_risks">
-                <div class="row">
-                    <div class="col-xs-8">
-                        <!-- <h4>Risk:</h4> -->
-                        <p class="lead">{{risk.name}}</p>
-                        <p class="small">{{risk.description}}</p><br>
-                        <strong>Impact (out of 10): {{risk.impact_rating}}</strong>
-                        <div class="progress progress-striped active">
-                            <div class="progress-bar progress-bar-danger" role="progressbar"
-                                 are-valuenow="{{risk.impact_rating}}"
-                                 aria-valuemin="0" aria-valuemax="10"
-                                 style="width:{{risk.impact_rating}}%">
-                            </div>
-                        </div>
-                        <strong>Probability of Impact: {{risk.probability}} %</strong>
-                        <div class="progress progress-striped active">
-                            <div class="progress-bar" role="progressbar"
-                                 aria-valuemin="0" aria-valuemax="100"
-                                 style="width:{{risk.probability}}%">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-4">
-                        <bold>Earliest Possible Impact:</bold>
-                        <p>{{risk.early_impact_date | date:'MMM-dd-yyyy'}}</p>
-                        <bold>Latest Possible Impact:</bold>
-                        <p>{{risk.late_impact_date | date:'MMM-dd-yyyy'}}</p>
-                        <a href='' ng-click="deleteRisk(risk.id, $index)">Remove</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div ng-if="display == 'long_term_risks'">
-            <div ng-repeat="risk in portfolio.long_term_risks">
-                <div class="row">
-                    <div class="col-xs-8">
-                        <!-- <h4>Risk:</h4> -->
-                        <p class="lead">{{risk.name}}</p>
-                        <p class="small">{{risk.description}}</p><br>
-                        <strong>Impact (out of 10): {{risk.impact_rating}}</strong>
-                        <div class="progress progress-striped active">
-                            <div class="progress-bar progress-bar-danger" role="progressbar"
-                                 are-valuenow="{{risk.impact_rating}}"
-                                 aria-valuemin="0" aria-valuemax="10"
-                                 style="width:{{risk.impact_rating}}%">
-                            </div>
-                        </div>
-                        <strong>Probability of Impact: {{risk.probability}} %</strong>
-                        <div class="progress progress-striped active">
-                            <div class="progress-bar" role="progressbar"
-                                 aria-valuemin="0" aria-valuemax="100"
-                                 style="width:{{risk.probability}}%">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-4">
-                        <bold>Earliest Possible Impact:</bold>
-                        <p>{{risk.early_impact_date | date:'MMM-dd-yyyy'}}</p>
-                        <bold>Latest Possible Impact:</bold>
-                        <p>{{risk.late_impact_date | date:'MMM-dd-yyyy'}}</p>
-                        <a href='' ng-click="deleteRisk(risk.id, $index)">Remove</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div ng-if="display == 'new_project'">
-            <div ng-controller="ProjectsCtrl">
-                <h4>Add New Project</h4>
-                <form ng-submit="createProject()">
-                    <label>Project Name:</label>
-                    <input class="form-control" type="text" ng-model='newProject.name'
-                           placeholder="Enter Name of New Project"><br>
-                    <label>Project Description</label>
-                    <input class="form-control" type="text" ng-model='newProject.description'
-                           placeholder="Describe this Project">
-                    <input type="submit" value="Add Project">
-                </form>
             </div>
         </div>
     </div>
+    <div ng-if="display == 'mid_term_risks'">
+        <div ng-repeat="risk in portfolio.mid_term_risks">
+            <div class="row">
+                <div class="col-xs-8">
+                    <!-- <h4>Risk:</h4> -->
+                    <p class="lead">{{risk.name}}</p>
+                    <p class="small">{{risk.description}}</p><br>
+                    <strong>Impact (out of 10): {{risk.impact_rating}}</strong>
+                    <div class="progress progress-striped active">
+                        <div class="progress-bar progress-bar-danger" role="progressbar"
+                             are-valuenow="{{risk.impact_rating}}"
+                             aria-valuemin="0" aria-valuemax="10"
+                             style="width:{{risk.impact_rating}}%">
+                        </div>
+                    </div>
+                    <strong>Probability of Impact: {{risk.probability}} %</strong>
+                    <div class="progress progress-striped active">
+                        <div class="progress-bar" role="progressbar"
+                             aria-valuemin="0" aria-valuemax="100"
+                             style="width:{{risk.probability}}%">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <bold>Earliest Possible Impact:</bold>
+                    <p>{{risk.early_impact_date | date:'MMM-dd-yyyy'}}</p>
+                    <bold>Latest Possible Impact:</bold>
+                    <p>{{risk.late_impact_date | date:'MMM-dd-yyyy'}}</p>
+                    <a href='' ng-click="deleteRisk(risk.id, $index)">Remove</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-if="display == 'long_term_risks'">
+        <div ng-repeat="risk in portfolio.long_term_risks">
+            <div class="row">
+                <div class="col-xs-8">
+                    <!-- <h4>Risk:</h4> -->
+                    <p class="lead">{{risk.name}}</p>
+                    <p class="small">{{risk.description}}</p><br>
+                    <strong>Impact (out of 10): {{risk.impact_rating}}</strong>
+                    <div class="progress progress-striped active">
+                        <div class="progress-bar progress-bar-danger" role="progressbar"
+                             are-valuenow="{{risk.impact_rating}}"
+                             aria-valuemin="0" aria-valuemax="10"
+                             style="width:{{risk.impact_rating}}%">
+                        </div>
+                    </div>
+                    <strong>Probability of Impact: {{risk.probability}} %</strong>
+                    <div class="progress progress-striped active">
+                        <div class="progress-bar" role="progressbar"
+                             aria-valuemin="0" aria-valuemax="100"
+                             style="width:{{risk.probability}}%">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <bold>Earliest Possible Impact:</bold>
+                    <p>{{risk.early_impact_date | date:'MMM-dd-yyyy'}}</p>
+                    <bold>Latest Possible Impact:</bold>
+                    <p>{{risk.late_impact_date | date:'MMM-dd-yyyy'}}</p>
+                    <a href='' ng-click="deleteRisk(risk.id, $index)">Remove</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-if="display == 'new_project'">
+        <div ng-controller="ProjectsCtrl">
+            <h4>Add New Project</h4>
+            <form ng-submit="createProject()">
+                <label>Project Name:</label>
+                <input class="form-control" type="text" ng-model='newProject.name'
+                       placeholder="Enter Name of New Project"><br>
+                <label>Project Description</label>
+                <input class="form-control" type="text" ng-model='newProject.description'
+                       placeholder="Describe this Project">
+                <input type="submit" value="Add Project">
+            </form>
+        </div>
+    </div>
 </div>
+</div>
+</div>
+
 
 
 
