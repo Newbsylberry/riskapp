@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140409234850) do
+ActiveRecord::Schema.define(version: 20140417181855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,11 +77,11 @@ ActiveRecord::Schema.define(version: 20140409234850) do
     t.datetime "early_impact_date"
     t.datetime "late_impact_date"
     t.boolean  "critical"
-    t.integer  "probability"
     t.integer  "schedule_impact"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "project_id"
+    t.decimal  "probability"
   end
 
 end

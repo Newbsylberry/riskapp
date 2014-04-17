@@ -8,7 +8,7 @@ app.controller('RisksCtrl', ['$scope', 'Risk', function($scope, Risk) {
         attr.early_impact_date = ($scope.newRisk.early_impact_date);
         attr.late_impact_date = ($scope.newRisk.late_impact_date);
         attr.impact_rating = ($scope.newRisk.impact_rating);
-        attr.probability = ($scope.newRisk.probability);
+        attr.probability = ($scope.newRisk.probability / 100 );
         attr.schedule_impact = ($scope.newRisk.schedule_impact);
         attr.project_id = ($scope.project.id);
         attr.critical = ($scope.newRisk.critical);

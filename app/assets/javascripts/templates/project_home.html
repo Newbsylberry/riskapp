@@ -93,11 +93,11 @@
                              style="width:{{risk.impact_rating}}%">
                         </div>
                     </div>
-                    <strong>Probability of Impact: {{risk.probability}} %</strong>
+                    <strong>Probability of Impact: {{risk.probability * 100}} %</strong>
                     <div class="progress progress-striped active">
                         <div class="progress-bar" role="progressbar"
                              aria-valuemin="0" aria-valuemax="100"
-                             style="width:{{risk.probability}}%">
+                             style="width:{{risk.probability * 100}}%">
                         </div>
                     </div>
                 </div>
