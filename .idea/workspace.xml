@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/angular/controllers/portfolio_home_ctrl.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/angular/controllers/portfolio_home_ctrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="riskPortfolio.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,7 +41,7 @@
     <file path="/portfolio_list.html" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394839957813" ignored="false" />
     <file path="/portolio_home.html" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394802505210" ignored="false" />
     <file path="/portfolio_home.html" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1397778649466" ignored="false" />
-    <file path="/portfolio_home_ctrl.js" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1397673233160" ignored="false" />
+    <file path="/portfolio_home_ctrl.js" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1397780438448" ignored="false" />
     <file path="/20140314233426_add_columns_to_project.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394840223537" ignored="false" />
     <file path="/risk_status.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1397083638519" ignored="false" />
     <file path="/risk_control_category.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1397083645638" ignored="false" />
@@ -111,10 +112,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="portfolio_home.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="portfolio_home.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="182" column="69" selection-start="9225" selection-end="9225" vertical-scroll-proportion="0.54464287">
+            <state line="182" column="69" selection-start="9225" selection-end="9225" vertical-scroll-proportion="-12.708333">
               <folding>
                 <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#0" expanded="false" />
                 <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#div#0" expanded="false" />
@@ -198,10 +199,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="portfolio_home_ctrl.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="portfolio_home_ctrl.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/controllers/portfolio_home_ctrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="44" selection-start="689" selection-end="689" vertical-scroll-proportion="0.0">
+            <state line="20" column="68" selection-start="1035" selection-end="1035" vertical-scroll-proportion="0.51369864">
               <folding />
             </state>
           </provider>
@@ -245,11 +246,11 @@
         <option value="$PROJECT_DIR$/app/views/projects/index.json.jbuilder" />
         <option value="$PROJECT_DIR$/app/models/portfolio.rb" />
         <option value="$PROJECT_DIR$/app/views/portfolios/show.json.jbuilder" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/angular/controllers/portfolio_home_ctrl.js" />
         <option value="$PROJECT_DIR$/db/migrate/20140417181554_drop_probability_column_from_risks.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/angular/controllers/risks_ctrl.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/templates/project_home.html" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/angular/controllers/portfolio_home_ctrl.js" />
       </list>
     </option>
   </component>
@@ -822,13 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/controllers/portfolio_home_ctrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="44" selection-start="689" selection-end="689" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140417181554_drop_probability_column_from_risks.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="19" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0">
@@ -862,7 +856,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="182" column="69" selection-start="9225" selection-end="9225" vertical-scroll-proportion="0.54464287">
+        <state line="182" column="69" selection-start="9225" selection-end="9225" vertical-scroll-proportion="-12.708333">
           <folding>
             <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#0" expanded="false" />
             <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#div#0" expanded="false" />
@@ -894,6 +888,13 @@
             <element signature="tag#div#5;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
             <element signature="tag#div#0;tag#div#5;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/controllers/portfolio_home_ctrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="68" selection-start="1035" selection-end="1035" vertical-scroll-proportion="0.51369864">
+          <folding />
         </state>
       </provider>
     </entry>

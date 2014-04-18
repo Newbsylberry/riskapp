@@ -7,7 +7,7 @@ app.controller('PortfolioHomeCtrl', ['$scope', '$routeParams', 'Portfolio',
         // addRiskToChart pushes the risks from the Portfolio.get into chartConfig.series.data
         //  so that it can be displayed in html
         var addProjectToChart = function(project) {
-            $scope.chartConfig.series[0].data.push([project.name, project.total_exposure]);
+            $scope.chartConfig.series[0].data.push([project.name, parseFloat(project.total_exposure)]);
         };
         Portfolio.get({portfolioId: $routeParams.portfolioId}, function(successResponse) {
             $scope.portfolio = successResponse;
@@ -31,10 +31,8 @@ app.controller('PortfolioHomeCtrl', ['$scope', '$routeParams', 'Portfolio',
             title: {
                 text: 'Loading...'
             },
-
             loading: false
         }
 
 
-}]);
-
+    }]);
