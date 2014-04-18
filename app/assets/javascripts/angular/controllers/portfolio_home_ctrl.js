@@ -10,16 +10,34 @@ app.controller('PortfolioHomeCtrl', ['$scope', '$routeParams', 'Portfolio',
             $scope.pieChartConfig.series[0].data.push([project.name, parseFloat(project.total_exposure)]);
         };
 
+        var addShortRiskToScatter = function(risk) {
+            $scope.scatterPlotConfig.series[0].data.push([risk.impact_rating, parseFloat(risk.probability)]);
+        };
+        var addMidRiskToScatter = function(risk) {
+
+            $scope.scatterPlotConfig.series[1].data.push([risk.impact_rating, parseFloat(risk.probability)]);
+        };
+        var addLongRiskToScatter = function(risk) {
+            $scope.scatterPlotConfig.series[2].data.push([risk.impact_rating, parseFloat(risk.probability)]);
+        };
+
 
         Portfolio.get({portfolioId: $routeParams.portfolioId}, function(successResponse) {
             $scope.portfolio = successResponse;
             $scope.pieChartConfig.title.text = successResponse.name;
+            // Push short, mid, and long term risks to chart
             $scope.barChartConfig.series[0].data.push(['Short Term Exposure',
                 parseFloat(successResponse.short_term_exposure)]);
             $scope.barChartConfig.series[0].data.push(['Mid Term Exposure',
                 parseFloat(successResponse.mid_term_exposure)]);
             $scope.barChartConfig.series[0].data.push(['Long Term Exposure',
                 parseFloat(successResponse.long_term_exposure)]);
+            // Display each short term risk on scatter plot
+            angular.forEach(successResponse.short_term_risks, addShortRiskToScatter )
+            // Display each medium term risk on scatter plot
+            angular.forEach(successResponse.mid_term_risks, addMidRiskToScatter )
+            // Display each long term risk on scatter plot
+            angular.forEach(successResponse.long_term_risks, addLongRiskToScatter )
             console.log("success response " + successResponse );
             console.log(successResponse);
             angular.forEach(successResponse.projects, addProjectToChart);
@@ -52,6 +70,27 @@ app.controller('PortfolioHomeCtrl', ['$scope', '$routeParams', 'Portfolio',
             }],
             title: {
                 text: 'Portfolio Exposure by Timeline'
+            },
+            loading: false
+        }
+        $scope.scatterPlotConfig = {
+            options: {
+                chart: {
+                    type: 'scatter'
+                }
+            },
+            series: [{
+                name: 'Short Term Risks',
+                data: []
+            }, {
+                name: 'Medium Term Risks',
+                data: []
+            }, {
+                name: 'Long Term Risks',
+                data: []
+            }],
+            title: {
+                text: 'Portfolio Risk Distribution'
             },
             loading: false
         }
