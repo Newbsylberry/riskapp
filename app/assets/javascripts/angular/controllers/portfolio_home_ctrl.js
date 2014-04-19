@@ -26,11 +26,11 @@ app.controller('PortfolioHomeCtrl', ['$scope', '$routeParams', 'Portfolio',
             $scope.portfolio = successResponse;
             $scope.pieChartConfig.title.text = successResponse.name;
             // Push short, mid, and long term risks to chart
-            $scope.barChartConfig.series[0].data.push(['Short Term Exposure',
+            $scope.barChartConfig.series[0].data.push([
                 parseFloat(successResponse.short_term_exposure)]);
-            $scope.barChartConfig.series[0].data.push(['Mid Term Exposure',
+            $scope.barChartConfig.series[1].data.push([
                 parseFloat(successResponse.mid_term_exposure)]);
-            $scope.barChartConfig.series[0].data.push(['Long Term Exposure',
+            $scope.barChartConfig.series[2].data.push([
                 parseFloat(successResponse.long_term_exposure)]);
             // Display each short term risk on scatter plot
             angular.forEach(successResponse.short_term_risks, addShortRiskToScatter )
@@ -62,10 +62,17 @@ app.controller('PortfolioHomeCtrl', ['$scope', '$routeParams', 'Portfolio',
         $scope.barChartConfig = {
             options: {
                 chart: {
-                    type: 'pie'
+                    type: 'bar'
                 }
             },
             series: [{
+                name: 'Short Term Risks',
+                data: []
+            }, {
+                name: 'Mid Term Risks',
+                data: []
+            }, {
+                name: 'Long Term Risks',
                 data: []
             }],
             title: {
@@ -77,7 +84,8 @@ app.controller('PortfolioHomeCtrl', ['$scope', '$routeParams', 'Portfolio',
             options: {
                 chart: {
                     type: 'scatter'
-                }
+                },
+                zoomType: 'xy'
             },
             series: [{
                 name: 'Short Term Risks',

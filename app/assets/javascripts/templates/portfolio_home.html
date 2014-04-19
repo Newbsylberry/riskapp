@@ -53,13 +53,17 @@
 </div>
 <div class="col-xs-9">
     <div ng-if="display == 'portfolio_dashboard'">
-        <div class="col-xs-6">
-            <highchart id="chart1" config="pieChartConfig" class="span" ></highchart>
+        <div class="row">
+            <div class="col-xs-6">
+                <highchart config="pieChartConfig"></highchart>
+            </div>
+            <div class="col-xs-6">
+                <highchart config="barChartConfig"></highchart>
+            </div>
         </div>
-        <div class="col-xs-6">
-            <highchart id="chart1" config="barChartConfig" class="span"></highchart>
+        <div class="row">
+            <highchart config="scatterPlotConfig"></highchart>
         </div>
-        <highchart id="chart1" config="scatterPlotConfig" class="span"></highchart>
     </div>
     <div ng-if="display == 'portfolio_risks'">
         <div class="RisksCtrl">
