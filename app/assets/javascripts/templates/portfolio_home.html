@@ -23,8 +23,20 @@
                 <li><a ng-model="display" ng-click="display = 'portfolio_risks'; side_display = 'risk_menu'">
                     Portfolio Risks</a></li>
                 <ul class="nav nav-pills nav-stacked" ng-show="side_display == 'risk_menu'">
+                    <form class="form-inline center-block">
+                        <div class="form-group">
+                            <input class= "form-control" ng-model="query" placeholder="Search risks">
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" ng-model="orderProp">
+                                <small>Sort Risks:</small>
+                                <option value="name">Alphabetical</option>
+                                <option value="impact_rating">Impact Rating</option>
+                            </select>
+                        </div>
+                    </form>
                     <li>
-                        <a class="text-center" display" ng-click="display = 'short_term_risks'">
+                        <a class="text-center" ng-click="display = 'short_term_risks'">
                         Short Term Risks
                         </a>
                     </li>
@@ -53,32 +65,20 @@
 </div>
 <div class="col-xs-9">
     <div ng-if="display == 'portfolio_dashboard'">
-        <div class="row">
-            <div class="col-xs-6">
-                <highchart config="pieChartConfig"></highchart>
+            <div class="row">
+                <div class="col-xs-6">
+                    <highchart config="pieChartConfig"></highchart>
+                </div>
+                <div class="col-xs-6">
+                    <highchart config="barChartConfig"></highchart>
+                </div>
             </div>
-            <div class="col-xs-6">
-                <highchart config="barChartConfig"></highchart>
+            <div class="row">
+                <highchart config="scatterPlotConfig"></highchart>
             </div>
-        </div>
-        <div class="row">
-            <highchart config="scatterPlotConfig"></highchart>
-        </div>
     </div>
     <div ng-if="display == 'portfolio_risks'">
         <div class="RisksCtrl">
-            <form class="form-inline center-block">
-                <div class="form-group">
-                    <input class= "form-control" ng-model="query" placeholder="Search risks">
-                </div>
-                <div class="form-group">
-                    <select class="form-control" ng-model="orderProp">
-                        <small>Sort Risks:</small>
-                        <option value="name">Alphabetical</option>
-                        <option value="impact_rating">Impact Rating</option>
-                    </select>
-                </div>
-            </form>
             <ul class="list-group"  ng-repeat="risk in portfolio.risks | filter:query | orderBy:orderProp ">
                 <li class="list-group-item">
                     <h3 class="pull-right">Exposure: {{risk.exposure}}</h3>
@@ -104,18 +104,6 @@
     </div>
     <div ng-if="display == 'short_term_risks'">
         <div class="RisksCtrl">
-            <form class="form-inline center-block">
-                <div class="form-group">
-                    <input class= "form-control" ng-model="query" placeholder="Search risks">
-                </div>
-                <div class="form-group">
-                    <select class="form-control" ng-model="orderProp">
-                        <small>Sort Risks:</small>
-                        <option value="name">Alphabetical</option>
-                        <option value="impact_rating">Impact Rating</option>
-                    </select>
-                </div>
-            </form>
             <ul class="list-group"  ng-repeat="risk in portfolio.short_term_risks | filter:query | orderBy:orderProp ">
                 <li class="list-group-item">
                     <h3 class="pull-right">Exposure: {{risk.exposure}}</h3>
@@ -141,18 +129,6 @@
     </div>
     <div ng-if="display == 'mid_term_risks'">
         <div class="RisksCtrl">
-            <form class="form-inline center-block">
-                <div class="form-group">
-                    <input class= "form-control" ng-model="query" placeholder="Search risks">
-                </div>
-                <div class="form-group">
-                    <select class="form-control" ng-model="orderProp">
-                        <small>Sort Risks:</small>
-                        <option value="name">Alphabetical</option>
-                        <option value="impact_rating">Impact Rating</option>
-                    </select>
-                </div>
-            </form>
             <ul class="list-group"  ng-repeat="risk in portfolio.mid_term_risks | filter:query | orderBy:orderProp ">
                 <li class="list-group-item">
                     <h3 class="pull-right">Exposure: {{risk.exposure}}</h3>
@@ -178,18 +154,6 @@
     </div>
     <div ng-if="display == 'long_term_risks'">
         <div class="RisksCtrl">
-            <form class="form-inline center-block">
-                <div class="form-group">
-                    <input class= "form-control" ng-model="query" placeholder="Search risks">
-                </div>
-                <div class="form-group">
-                    <select class="form-control" ng-model="orderProp">
-                        <small>Sort Risks:</small>
-                        <option value="name">Alphabetical</option>
-                        <option value="impact_rating">Impact Rating</option>
-                    </select>
-                </div>
-            </form>
             <ul class="list-group"  ng-repeat="risk in portfolio.long_term_risks | filter:query | orderBy:orderProp ">
                 <li class="list-group-item">
                     <h3 class="pull-right">Exposure: {{risk.exposure}}</h3>
