@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" name="Default" comment="" />
+    <list default="true" id="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html" />
+    </list>
     <ignored path="riskPortfolio.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1398051095438" ignored="false" />
@@ -117,7 +119,7 @@
       <file leaf-file-name="portfolio_home.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="212" column="22" selection-start="10211" selection-end="10211" vertical-scroll-proportion="0.5517857">
+            <state line="198" column="39" selection-start="9462" selection-end="9462" vertical-scroll-proportion="0.25714287">
               <folding>
                 <element signature="tag#div#0;tag#div#0;tag#div#0" expanded="false" />
                 <element signature="tag#div#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
@@ -930,7 +932,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="212" column="22" selection-start="10211" selection-end="10211" vertical-scroll-proportion="0.5517857">
+        <state line="198" column="39" selection-start="9462" selection-end="9462" vertical-scroll-proportion="0.25714287">
           <folding>
             <element signature="tag#div#0;tag#div#0;tag#div#0" expanded="false" />
             <element signature="tag#div#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
