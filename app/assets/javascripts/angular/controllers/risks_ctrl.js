@@ -10,7 +10,11 @@ app.controller('RisksCtrl', ['$scope', 'Risk', function($scope, Risk) {
         attr.impact_rating = ($scope.newRisk.impact_rating);
         attr.probability = ($scope.newRisk.probability / 100 );
         attr.schedule_impact = ($scope.newRisk.schedule_impact);
-        attr.project_id = ($scope.project.id);
+        attr.event_id = ($scope.newRisk.event_id)
+        attr.risk_type_id = ($scope.newRisk.risk_type_id)
+        attr.risk_status_id = ($scope.newRisk.risk_status_id)
+        attr.risk_control_category_id = ($scope.newRisk.risk_control_category_id)
+        attr.project_id = ($scope.newRisk.project_id);
         attr.critical = ($scope.newRisk.critical);
         var newRisk = Risk.create(attr);
         $scope.risks.push(newRisk);
@@ -26,6 +30,10 @@ app.controller('RisksCtrl', ['$scope', 'Risk', function($scope, Risk) {
             $scope.project.risks = [];
         }
         $scope.project.risks.push(newRisk);
+        if($scope.portfolio.risks == null) {
+            $scope.portfolio.risks = [];
+        }
+        $scope.portfolio.risks.push(newRisk)
     };
 
     $scope.orderProp = 'impact_rating';
@@ -34,6 +42,7 @@ app.controller('RisksCtrl', ['$scope', 'Risk', function($scope, Risk) {
         $scope.risks.splice(idx, 1);
         var risks = $scope.project.risks;
         risks.splice(idx, 1);
+
 
         return Risk.delete(id);
     };
