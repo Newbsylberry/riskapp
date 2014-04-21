@@ -197,19 +197,20 @@
         <form class="form-horizontal" ng-submit="createRisk()">
             <div class="col-xs-2">
                 <div class="form-group">
-                        <select class="form-control"
-                                ng-model="newRisk.project_id"
-                                ng-options="project.id as project.name for
-                                project in portfolio.projects">
-                            <option value="">-- Choose Project --</option>
-                        </select>
+                    <label>Choose Project (Required):</label>
+                    <select class="form-control"
+                            ng-model="newRisk.project_id"
+                            ng-options="project.id as project.name for
+                                project in portfolio.projects" required>
+                        <option value="">-- Choose Project --</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label>Risk Name:</label><br>
+                    <label>Risk Name (required):</label><br>
                     <input  class="form-control"
                             type="text"
-                           ng-model='newRisk.name'
-                           placeholder="Enter Name of Risk to Be Tracked"><br>
+                            ng-model='newRisk.name'
+                            placeholder="Enter Name of Risk to Be Tracked" required><br>
                 </div>
                 <div class="form-group">
                     <label>Risk Description:</label><br>
@@ -240,12 +241,12 @@
                     <input ng-model="newRisk.schedule_impact" type="number">
                 </div>
                 <div class="form-group">
-                    <label>Risk Potential Impact on Project:</label>
+                    <label>Risk Potential Impact on Project (required):</label>
                     <input ng-model="newRisk.impact_rating" type="range"
                            name="impact_rating" min="1" max="100">
                 </div>
                 <div class="form-group">
-                    <label>Probability of Risk Occurring</label>
+                    <label>Probability of Risk Occurring (required):</label>
                     <input ng-model="newRisk.probability" type="range"
                            name="probability" min="1" max="100">
                 </div>
@@ -253,14 +254,14 @@
             </div>
             <div class="col-xs-5">
                 <div class="form-group">
-                    <label>The earliest possible date a risk will occur:</label>
+                    <label>The earliest possible date a risk will occur (required):</label>
                     <details>This the first possible date that the risk will come to fruition if
                         it is not managed.</details>
-                    <input type="date" ng-model='newRisk.early_impact_date' name="early_impact_date">
+                    <input type="date" ng-model='newRisk.early_impact_date' name="early_impact_date" required>
                 </div>
                 <div class="form-group">
-                    <label>The date when the risk will not occur:</label>
-                    <input type="date" ng-model='newRisk.late_impact_date' name="early_impact_date">
+                    <label>The date when the risk will not occur (required):</label>
+                    <input type="date" ng-model='newRisk.late_impact_date' name="early_impact_date" required>
                 </div>
                 <div class="form-group" ng-controller="RiskStatusesCtrl">
                     <select class="form-control"
@@ -285,13 +286,33 @@
                         <option value="">--Chose Risk Control Category Type --</option>
                     </select>
                 </div>
-
                 <div class="form-group">
-                    <input type="submit" value="Add Risk to Project"><br>
+                    <button class="btn btn-primary" ng-if="newRisk.name != null &&
+                                  newRisk.project_id != null &&
+                                  newRisk.impact_rating != null &&
+                                  newRisk.early_impact_date != null &&
+                                  newRisk.late_impact_date != null &&
+                                  newRisk.probability != null"
+                           type="submit" value="Add Risk to Project">Add Risk To Portfolio</button><br>
+                            <h5 class="text-danger">Fields Still Required:</h5>
+                            <ul ng-if="newRisk.name == null ||
+                                  newRisk.project_id == null ||
+                                  newRisk.impact_rating == null ||
+                                  newRisk.probability == null ||
+                                  newRisk.early_impact_date == null ||
+                                  newRisk.late_impact_date == null">
+                                <li ng-show="newRisk.project_id == null">Project</li>
+                                <li ng-show="newRisk.name == null">Risk Name</li>
+                                <li ng-show="newRisk.impact_rating == null">Risk Impact Rating</li>
+                                <li ng-show="newRisk.probability == null">Risk Probability</li>
+                                <li ng-show="newRisk.early_impact_date == null">Early Impact Date</li>
+                                <li ng-show="newRisk.late_impact_date == null">Late Impact Date</li>
+                            </ul>
                 </div>
             </div>
         </form>
     </div>
+
 </div>
 </div>
 </div>

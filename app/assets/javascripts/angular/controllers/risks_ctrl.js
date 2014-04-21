@@ -26,10 +26,10 @@ app.controller('RisksCtrl', ['$scope', 'Risk', function($scope, Risk) {
         $scope.newRisk.probability = "";
         $scope.newRisk.schedule_impact = "";
         $scope.newRisk.critical ="";
-        if($scope.project.risks == null) {
-            $scope.project.risks = [];
-        }
-        $scope.project.risks.push(newRisk);
+        $scope.newRisk.project_id = "";
+        $scope.newRisk.risk_type_id = "";
+        $scope.newRisk.risk_status_id = "";
+        $scope.newRisk.risk_control_category_id = "";
         if($scope.portfolio.risks == null) {
             $scope.portfolio.risks = [];
         }
