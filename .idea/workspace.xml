@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/angular/controllers/risks_ctrl.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/angular/controllers/risks_ctrl.js" />
-    </list>
+    <list default="true" id="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" name="Default" comment="" />
     <ignored path="riskPortfolio.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1398051095438" ignored="false" />
@@ -40,7 +37,7 @@
     <file path="/portfolio.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1397672049672" ignored="false" />
     <file path="/portfolio_list.html" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394839957813" ignored="false" />
     <file path="/portolio_home.html" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394802505210" ignored="false" />
-    <file path="/portfolio_home.html" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1398060245243" ignored="false" />
+    <file path="/portfolio_home.html" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1398060875248" ignored="false" />
     <file path="/portfolio_home_ctrl.js" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1397919289867" ignored="false" />
     <file path="/20140314233426_add_columns_to_project.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394840223537" ignored="false" />
     <file path="/risk_status.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1397083638519" ignored="false" />
@@ -117,10 +114,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="portfolio_home.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="portfolio_home.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="204" column="33" selection-start="9855" selection-end="9855" vertical-scroll-proportion="-12.166667">
+            <state line="212" column="22" selection-start="10211" selection-end="10211" vertical-scroll-proportion="0.5517857">
               <folding>
                 <element signature="tag#div#0;tag#div#0;tag#div#0" expanded="false" />
                 <element signature="tag#div#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
@@ -138,7 +135,11 @@
                 <element signature="n#style#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="tag#div#5;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
+                <element signature="tag#input#0;tag#div#1;tag#div#0;tag#form#0;tag#div#0;tag#div#6;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
+                <element signature="tag#div#2;tag#div#0;tag#form#0;tag#div#0;tag#div#6;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
+                <element signature="tag#div#1;tag#form#0;tag#div#0;tag#div#6;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
                 <element signature="tag#label#0;tag#div#0;tag#div#0;tag#div#1;tag#form#0;tag#div#0;tag#div#6;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
+                <element signature="tag#div#0;tag#div#2;tag#form#0;tag#div#0;tag#div#6;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
                 <element signature="tag#details#0;tag#div#0;tag#div#2;tag#form#0;tag#div#0;tag#div#6;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
                 <element signature="tag#div#1;tag#div#2;tag#form#0;tag#div#0;tag#div#6;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
                 <element signature="tag#div#3;tag#div#2;tag#form#0;tag#div#0;tag#div#6;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
@@ -148,10 +149,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="risks_ctrl.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="risks_ctrl.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/controllers/risks_ctrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="82" selection-start="900" selection-end="900" vertical-scroll-proportion="0.30821916">
+            <state line="16" column="82" selection-start="900" selection-end="900" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -259,8 +260,8 @@
         <option value="$PROJECT_DIR$/app/controllers/projects_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/risks_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/templates/edit_portfolio.html" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/angular/controllers/risks_ctrl.js" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html" />
       </list>
     </option>
   </component>
@@ -392,7 +393,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
+              <option name="myItemId" value="angular" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -419,6 +420,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="angular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -916,9 +921,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/controllers/risks_ctrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="82" selection-start="900" selection-end="900" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="204" column="33" selection-start="9855" selection-end="9855" vertical-scroll-proportion="-12.166667">
+        <state line="212" column="22" selection-start="10211" selection-end="10211" vertical-scroll-proportion="0.5517857">
           <folding>
             <element signature="tag#div#0;tag#div#0;tag#div#0" expanded="false" />
             <element signature="tag#div#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
@@ -936,19 +948,16 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#div#4;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="tag#div#5;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
+            <element signature="tag#input#0;tag#div#1;tag#div#0;tag#form#0;tag#div#0;tag#div#6;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
+            <element signature="tag#div#2;tag#div#0;tag#form#0;tag#div#0;tag#div#6;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
+            <element signature="tag#div#1;tag#form#0;tag#div#0;tag#div#6;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
             <element signature="tag#label#0;tag#div#0;tag#div#0;tag#div#1;tag#form#0;tag#div#0;tag#div#6;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
+            <element signature="tag#div#0;tag#div#2;tag#form#0;tag#div#0;tag#div#6;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
             <element signature="tag#details#0;tag#div#0;tag#div#2;tag#form#0;tag#div#0;tag#div#6;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
             <element signature="tag#div#1;tag#div#2;tag#form#0;tag#div#0;tag#div#6;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
             <element signature="tag#div#3;tag#div#2;tag#form#0;tag#div#0;tag#div#6;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
             <element signature="tag#select#0;tag#div#3;tag#div#2;tag#form#0;tag#div#0;tag#div#6;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/controllers/risks_ctrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="82" selection-start="900" selection-end="900" vertical-scroll-proportion="0.30821916">
-          <folding />
         </state>
       </provider>
     </entry>
