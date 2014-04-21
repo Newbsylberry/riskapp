@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/risks_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/risks_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/angular/controllers/risks_ctrl.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/angular/controllers/risks_ctrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" name="Default" comment="" />
     <ignored path="riskPortfolio.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1398051095438" ignored="false" />
@@ -120,10 +114,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="portfolio_home.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="portfolio_home.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="228" column="35" selection-start="11016" selection-end="11016" vertical-scroll-proportion="0.64285713">
+            <state line="228" column="35" selection-start="11016" selection-end="11016" vertical-scroll-proportion="-15.0">
               <folding>
                 <element signature="tag#div#0;tag#div#0;tag#div#0" expanded="false" />
                 <element signature="tag#div#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
@@ -169,10 +163,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="risks_controller.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="risks_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/risks_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="61" selection-start="556" selection-end="556" vertical-scroll-proportion="0.0">
+            <state line="26" column="61" selection-start="556" selection-end="556" vertical-scroll-proportion="0.66780823">
               <folding />
             </state>
           </provider>
@@ -921,13 +915,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/risks_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="61" selection-start="556" selection-end="556" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/controllers/risks_ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="41" selection-start="1807" selection-end="1807" vertical-scroll-proportion="0.0">
@@ -937,7 +924,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="228" column="35" selection-start="11016" selection-end="11016" vertical-scroll-proportion="0.64285713">
+        <state line="228" column="35" selection-start="11016" selection-end="11016" vertical-scroll-proportion="-15.0">
           <folding>
             <element signature="tag#div#0;tag#div#0;tag#div#0" expanded="false" />
             <element signature="tag#div#0;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
@@ -970,6 +957,13 @@
             <element signature="tag#select#0;tag#div#3;tag#div#2;tag#form#0;tag#div#0;tag#div#6;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
             <element signature="tag#div#5;tag#div#2;tag#form#0;tag#div#0;tag#div#6;tag#div#1;tag#div#0;tag#div#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/risks_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="61" selection-start="556" selection-end="556" vertical-scroll-proportion="0.66780823">
+          <folding />
         </state>
       </provider>
     </entry>
