@@ -10,6 +10,15 @@ app.controller('PortfolioHomeCtrl', ['$scope', '$routeParams', 'Portfolio',
             $scope.pieChartConfig.series[0].data.push([project.name, parseFloat(project.total_exposure)]);
         };
 
+        var addProjectToBarChart = function(project) {
+            var dataSeries = {};
+            dataSeries.name = project.name;
+            dataSeries.data = [parseFloat(project.short_term_exposure),
+                parseFloat(project.mid_term_exposure), parseFloat(project.long_term_exposure)]
+            $scope.barChartConfig.series.push(dataSeries)
+
+            }
+
         var addShortRiskToScatter = function(risk) {
             $scope.scatterPlotConfig.series[0].data.push([risk.impact_rating, parseFloat(risk.probability)]);
         };
@@ -26,18 +35,19 @@ app.controller('PortfolioHomeCtrl', ['$scope', '$routeParams', 'Portfolio',
             $scope.portfolio = successResponse;
             $scope.pieChartConfig.title.text = successResponse.name;
             // Push short, mid, and long term risks to chart
-            $scope.barChartConfig.series[0].data.push([
-                parseFloat(successResponse.short_term_exposure)]);
-            $scope.barChartConfig.series[1].data.push([
-                parseFloat(successResponse.mid_term_exposure)]);
-            $scope.barChartConfig.series[2].data.push([
-                parseFloat(successResponse.long_term_exposure)]);
+            angular.forEach(successResponse.projects, addProjectToBarChart);
+//            $scope.barChartConfig.series[0].data.push([
+//                parseFloat(successResponse.short_term_exposure)]);
+//            $scope.barChartConfig.series[1].data.push([
+//                parseFloat(successResponse.mid_term_exposure)]);
+//            $scope.barChartConfig.series[2].data.push([
+//                parseFloat(successResponse.long_term_exposure)]);
             // Display each short term risk on scatter plot
-            angular.forEach(successResponse.short_term_risks, addShortRiskToScatter )
+             angular.forEach(successResponse.short_term_risks, addShortRiskToScatter )
             // Display each medium term risk on scatter plot
-            angular.forEach(successResponse.mid_term_risks, addMidRiskToScatter )
+             angular.forEach(successResponse.mid_term_risks, addMidRiskToScatter )
             // Display each long term risk on scatter plot
-            angular.forEach(successResponse.long_term_risks, addLongRiskToScatter )
+             angular.forEach(successResponse.long_term_risks, addLongRiskToScatter )
             console.log("success response " + successResponse );
             console.log(successResponse);
             angular.forEach(successResponse.projects, addProjectToChart);
@@ -65,16 +75,7 @@ app.controller('PortfolioHomeCtrl', ['$scope', '$routeParams', 'Portfolio',
                     type: 'bar'
                 }
             },
-            series: [{
-                name: 'Short Term Risks',
-                data: []
-            }, {
-                name: 'Mid Term Risks',
-                data: []
-            }, {
-                name: 'Long Term Risks',
-                data: []
-            }],
+            series: [],
             title: {
                 text: 'Portfolio Exposure by Timeline'
             },
