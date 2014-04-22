@@ -11,23 +11,32 @@ app.controller('PortfolioHomeCtrl', ['$scope', '$routeParams', 'Portfolio',
         };
 
         var addProjectToBarChart = function(project) {
-            var dataSeries = {};
-            dataSeries.name = project.name;
-            dataSeries.data = [parseFloat(project.short_term_exposure),
-                parseFloat(project.mid_term_exposure), parseFloat(project.long_term_exposure)]
-            $scope.barChartConfig.series.push(dataSeries)
-
+            var shortDataSeries = {};
+            shortDataSeries.name = project.name + ' Short Term Exposure';
+            shortDataSeries.data = [parseFloat(project.short_term_exposure)]
+            $scope.barChartConfig.series.push(shortDataSeries)
+            var midDataSeries = {};
+            midDataSeries.name = project.name + ' Mid Term Exposure';
+            midDataSeries.data = [parseFloat(project.mid_term_exposure)]
+            $scope.barChartConfig.series.push(midDataSeries)
+            var longDataSeries = {};
+            longDataSeries.name = project.name + ' Long Term Exposure';
+            longDataSeries.data = [parseFloat(project.long_term_exposure)]
+            $scope.barChartConfig.series.push(longDataSeries)
             }
 
         var addShortRiskToScatter = function(risk) {
-            $scope.scatterPlotConfig.series[0].data.push([risk.impact_rating, parseFloat(risk.probability)]);
+            $scope.scatterPlotConfig.series[0].data.push([risk.impact_rating, parseFloat(risk.probability),
+            parseFloat(risk.exposure)]);
         };
         var addMidRiskToScatter = function(risk) {
 
-            $scope.scatterPlotConfig.series[1].data.push([risk.impact_rating, parseFloat(risk.probability)]);
+            $scope.scatterPlotConfig.series[1].data.push([risk.impact_rating, parseFloat(risk.probability),
+                parseFloat(risk.exposure)]);
         };
         var addLongRiskToScatter = function(risk) {
-            $scope.scatterPlotConfig.series[2].data.push([risk.impact_rating, parseFloat(risk.probability)]);
+            $scope.scatterPlotConfig.series[2].data.push([risk.impact_rating, parseFloat(risk.probability),
+            parseFloat(risk.exposure)]);
         };
 
 

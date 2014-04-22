@@ -7,6 +7,8 @@ class Risk < ActiveRecord::Base
   validates :name, presence: :true
   validates :probability, presence: :true
   validates :impact_rating, presence: :true
+  validates :early_impact_date, presence: :true
+  validates :late_impact_date, presence: :true
 
   def exposure
     probability * impact_rating
