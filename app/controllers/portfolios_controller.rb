@@ -6,7 +6,28 @@ class PortfoliosController < ApplicationController
   end
 
   def create
-    respond_with Portfolio.create(portfolio_params)
+    @portfolio = Portfolio.new(portfolio_params)
+    if @portfolio.save
+      RiskType.create(name: 'Scope', description: 'A risk that is related to the scope of the project.',
+                      portfolio_id: @portfolio.id)
+      RiskType.create(name: 'Cost', description: 'A risk that will is directly related to the budget of the project',
+                      portfolio_id: @portfolio.id)
+      RiskType.create(name: 'Schedule', description: 'A risk that affects the project schedule',
+                      portfolio_id: @portfolio.id)
+      RiskControlCategory.create(name: 'Internal', description: 'The risk is able to be controlled by the project team',
+                                 portfolio_id: @portfolio.id)
+      RiskControlCategory.create(name: 'External', description: 'The risk is outside of the project teams control',
+                                 portfolio_id: @portfolio.id)
+      RiskStatus.create(name: 'Transfer', description: 'The risk has been identified.',
+                        portfolio_id: @portfolio.id)
+      RiskStatus.create(name: 'Mitigate', description: 'Steps are being taken to mitigate the risk.',
+                        portfolio_id: @portfolio.id)
+      RiskStatus.create(name: 'Contingency', description: 'The risk has been realized, and a contingency
+                        in is place.', portfolio_id: @portfolio.id)
+      RiskStatus.create(name: 'Expired', description: 'The risk has expired and is no longer a threat.',
+                        portfolio_id: @portfolio.id)
+    end
+
   end
 
   def destroy
