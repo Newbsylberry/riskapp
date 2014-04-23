@@ -12,18 +12,29 @@ app.controller('PortfolioHomeCtrl', ['$scope', '$routeParams', 'Portfolio',
         };
 
         var addProjectToBarChart = function(project) {
+            if (
+                project.short_term_exposure > 0) {
             var shortDataSeries = {};
             shortDataSeries.name = project.name + ' Short Term Exposure';
             shortDataSeries.data = [parseFloat(project.short_term_exposure)]
             $scope.barChartConfig.series.push(shortDataSeries)
+            }
+            if (
+            project.mid_term_exposure > 0
+                ) {
             var midDataSeries = {};
             midDataSeries.name = project.name + ' Mid Term Exposure';
             midDataSeries.data = [parseFloat(project.mid_term_exposure)]
             $scope.barChartConfig.series.push(midDataSeries)
+            }
+            if (
+            project.long_term_exposure > 0
+                ) {
             var longDataSeries = {};
             longDataSeries.name = project.name + ' Long Term Exposure';
             longDataSeries.data = [parseFloat(project.long_term_exposure)]
             $scope.barChartConfig.series.push(longDataSeries)
+            }
             }
 
         var addShortRiskToScatter = function(risk) {
