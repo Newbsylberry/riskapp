@@ -8,7 +8,9 @@ app.controller('PortfolioHomeCtrl', ['$scope', '$routeParams', 'Portfolio',
         // addRiskToChart pushes the risks from the Portfolio.get into chartConfig.series.data
         //  so that it can be displayed in html
         var addProjectToChart = function(project) {
+            if ( project.total_exposure > 0) {
             $scope.pieChartConfig.series[0].data.push([project.name, parseFloat(project.total_exposure)]);
+            }
         };
 
         var addProjectToBarChart = function(project) {

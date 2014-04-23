@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/templates/portfolio_home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/angular/controllers/portfolio_home_ctrl.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/angular/controllers/portfolio_home_ctrl.js" />
     </list>
     <ignored path="riskPortfolio.iws" />
@@ -41,7 +40,7 @@
     <file path="/portfolio_list.html" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394839957813" ignored="false" />
     <file path="/portolio_home.html" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394802505210" ignored="false" />
     <file path="/portfolio_home.html" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1398231258148" ignored="false" />
-    <file path="/portfolio_home_ctrl.js" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1398232204121" ignored="false" />
+    <file path="/portfolio_home_ctrl.js" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1398232396867" ignored="false" />
     <file path="/20140314233426_add_columns_to_project.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1394840223537" ignored="false" />
     <file path="/risk_status.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1397083638519" ignored="false" />
     <file path="/risk_control_category.rb" changelist="f41e75af-1b71-49df-ac2f-c6d4e660a4b0" time="1397083645638" ignored="false" />
@@ -172,15 +171,15 @@
       <file leaf-file-name="portfolio_home_ctrl.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/controllers/portfolio_home_ctrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="13" selection-start="1616" selection-end="1616" vertical-scroll-proportion="0.86986303">
+            <state line="12" column="13" selection-start="603" selection-end="603" vertical-scroll-proportion="0.30821916">
               <folding>
-                <element signature="e#434#552#0" expanded="false" />
-                <element signature="e#1683#1843#0" expanded="false" />
-                <element signature="e#1894#2059#0" expanded="false" />
-                <element signature="e#2111#2271#0" expanded="false" />
-                <element signature="e#3779#4065#0" expanded="false" />
-                <element signature="e#4098#4364#0" expanded="false" />
-                <element signature="e#4400#4949#0" expanded="false" />
+                <element signature="e#669#1691#0" expanded="false" />
+                <element signature="e#1744#1904#0" expanded="false" />
+                <element signature="e#1955#2120#0" expanded="false" />
+                <element signature="e#2172#2332#0" expanded="false" />
+                <element signature="e#3840#4126#0" expanded="false" />
+                <element signature="e#4159#4425#0" expanded="false" />
+                <element signature="e#4461#5010#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -770,13 +769,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="30" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#434#552#0" expanded="false" />
-            <element signature="e#1683#1843#0" expanded="false" />
-            <element signature="e#1894#2059#0" expanded="false" />
-            <element signature="e#2111#2271#0" expanded="false" />
-            <element signature="e#3779#4065#0" expanded="false" />
-            <element signature="e#4098#4364#0" expanded="false" />
-            <element signature="e#4400#4949#0" expanded="false" />
+            <element signature="e#669#1691#0" expanded="false" />
+            <element signature="e#1744#1904#0" expanded="false" />
+            <element signature="e#1955#2120#0" expanded="false" />
+            <element signature="e#2172#2332#0" expanded="false" />
+            <element signature="e#3840#4126#0" expanded="false" />
+            <element signature="e#4159#4425#0" expanded="false" />
+            <element signature="e#4461#5010#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -832,15 +831,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/angular/controllers/portfolio_home_ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="13" selection-start="1616" selection-end="1616" vertical-scroll-proportion="0.86986303">
+        <state line="12" column="13" selection-start="603" selection-end="603" vertical-scroll-proportion="0.30821916">
           <folding>
-            <element signature="e#434#552#0" expanded="false" />
-            <element signature="e#1683#1843#0" expanded="false" />
-            <element signature="e#1894#2059#0" expanded="false" />
-            <element signature="e#2111#2271#0" expanded="false" />
-            <element signature="e#3779#4065#0" expanded="false" />
-            <element signature="e#4098#4364#0" expanded="false" />
-            <element signature="e#4400#4949#0" expanded="false" />
+            <element signature="e#669#1691#0" expanded="false" />
+            <element signature="e#1744#1904#0" expanded="false" />
+            <element signature="e#1955#2120#0" expanded="false" />
+            <element signature="e#2172#2332#0" expanded="false" />
+            <element signature="e#3840#4126#0" expanded="false" />
+            <element signature="e#4159#4425#0" expanded="false" />
+            <element signature="e#4461#5010#0" expanded="false" />
           </folding>
         </state>
       </provider>
