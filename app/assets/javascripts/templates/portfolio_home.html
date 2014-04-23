@@ -4,13 +4,13 @@
     <div class="panel panel-default">
         <div class="panel-body">
             <h1>{{portfolio.name}}</h1>
-            <h5>Total Portfolio Exposure: {{portfolio.total_exposure}}</h5>
+            <h5>Total Portfolio Exposure: {{portfolio.total_exposure | number:0 }}</h5>
             <h6><a ng-click="display = 'short_term_risks'">
-                Short Term Exposure: {{portfolio.short_term_exposure}}</a></h6>
+                Short Term Exposure: {{portfolio.short_term_exposure | number:0}}</a></h6>
             <h6><a ng-click="display = 'mid_term_risks'">
-                Mid Term Exposure: {{portfolio.mid_term_exposure}}</a></h6>
+                Mid Term Exposure: {{portfolio.mid_term_exposure | number:0}}</a></h6>
             <h6><a ng-click="display = 'long_term_risks'">
-                Long Term Exposure: {{portfolio.long_term_exposure}}</a></h6><br>
+                Long Term Exposure: {{portfolio.long_term_exposure | number:0}}</a></h6><br>
             <a href='#/'>Back to Portfolio Home</a><br>
             <a href='#/edit_portfolio/{{portfolio.id}}'>Configure Portfolio</a><br>
         </div>
@@ -94,7 +94,7 @@
 <div ng-show="display == 'portfolio_risks'">
     <div class="RisksCtrl">
         <ul class="list-group"  ng-repeat="risk in portfolio.risks |
-        filter:projectName.name:query | orderBy:orderProp:true">
+        filter:projectName.name | filter:query | orderBy:orderProp:true">
             <li class="list-group-item">
                 <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
                 <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
@@ -121,7 +121,7 @@
 <div ng-show="display == 'short_term_risks'">
     <div class="RisksCtrl">
         <ul class="list-group"  ng-repeat="risk in portfolio.short_term_risks |
-        filter:projectName.name:query | orderBy:orderProp:true ">
+        filter:projectName.name | filter:query | orderBy:orderProp:true ">
             <li class="list-group-item">
                 <h3 class="text-danger pull-right">Exposure: {{risk.exposure | number:0}}</h3>
                 <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
@@ -148,7 +148,7 @@
 <div ng-if="display == 'mid_term_risks'">
     <div class="RisksCtrl">
         <ul class="list-group"  ng-repeat="risk in portfolio.mid_term_risks |
-        filter:projectName.name:query | orderBy:orderProp:true ">
+        filter:projectName.name | filter:query | orderBy:orderProp:true ">
             <li class="list-group-item">
                 <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
                 <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
@@ -175,7 +175,7 @@
 <div ng-if="display == 'long_term_risks'">
     <div class="RisksCtrl">
         <ul class="list-group"  ng-repeat="risk in portfolio.long_term_risks |
-        filter:projectName.name:query | orderBy:orderProp:true ">
+        filter:projectName.name | filter:query | orderBy:orderProp:true ">
             <li class="list-group-item">
                 <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
                 <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
