@@ -8,6 +8,9 @@ app.factory('Risk', ['$resource', function($resource) {
     Risk.prototype.delete = function(rsId) {
         this.service.remove({riskId: rsId});
     };
+    Risk.prototype.get = function(id, successCallback, errorCallback) {
+        this.service.get(id, successCallback, errorCallback);
+    };
     Risk.prototype.create = function(attr) {
         return this.service.save(attr);
     }

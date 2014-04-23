@@ -32,6 +32,10 @@ app.config(['$routeProvider',
                 templateUrl: 'edit_project.html',
                 controller: 'EditProjectCtrl'
             }).
+            when('/risk_home/:riskId', {
+                templateUrl: 'risk_home.html',
+                controller: 'RiskHomeCtrl'
+            }).
             otherwise({
                 redirectTo: '/'
             });

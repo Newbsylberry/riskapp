@@ -4,6 +4,7 @@ class Risk < ActiveRecord::Base
   belongs_to :risk_control_category
   belongs_to :project
 
+
   validates :name, presence: :true
   validates :probability, presence: :true
   validates :impact_rating, presence: :true

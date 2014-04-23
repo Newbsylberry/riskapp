@@ -16,6 +16,7 @@ class RisksController < ApplicationController
 
   def show
     @risk = Risk.find(params[:id])
+    @portfolio = Portfolio.find(@risk.project.portfolio)
   end
 
 

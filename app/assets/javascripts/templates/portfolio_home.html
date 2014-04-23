@@ -63,9 +63,12 @@
                 </ul>
                 <li><a ng-model="display" ng-click="side_display = 'portfolio_project_menu'">
                     Portfolio Projects</a></li>
-                <ul ng-show="side_display == 'portfolio_project_menu'" class="nav nav-pills nav-stacked">
+                <ul ng-show="side_display == 'portfolio_project_menu'"
+                    class="nav nav-pills nav-stacked"
+                        ng-controller="ProjectsCtrl">
                     <li ng-repeat="project in portfolio.projects">
-                        <a class="text-center" href='#/project_home/{{project.id}}'>Link to {{project.name}} Home</a>
+                        <p>{{project.name}} - <a href='' ng-click="deleteProject(project.id, $index)">Remove</a></p>
+
                     </li>
                     <li><a class="text-center" ng-click="display = 'new_project'">New Project</a></li>
                 </ul>
@@ -95,6 +98,7 @@
             <li class="list-group-item">
                 <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
                 <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
+                <a href='#/risk_home/{{risk.id}}'>More Information About {{risk.name}}</a>
                 <p class="small">Risk Probability:</p>
                 <div class="progress progress-striped active">
                     <div class="progress-bar" role="progressbar"
@@ -121,6 +125,7 @@
             <li class="list-group-item">
                 <h3 class="text-danger pull-right">Exposure: {{risk.exposure | number:0}}</h3>
                 <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
+                <a href='#/risk_home/{{risk.id}}'>More Information About {{risk.name}}</a>
                 <p class="small">Risk Probability:</p>
                 <div class="progress progress-striped active">
                     <div class="progress-bar" role="progressbar"
@@ -147,6 +152,7 @@
             <li class="list-group-item">
                 <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
                 <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
+                <a href='#/risk_home/{{risk.id}}'>More Information About {{risk.name}}</a>
                 <p class="small">Risk Probability:</p>
                 <div class="progress progress-striped active">
                     <div class="progress-bar" role="progressbar"
@@ -173,6 +179,7 @@
             <li class="list-group-item">
                 <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
                 <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
+                <a href='#/risk_home/{{risk.id}}'>More Information About {{risk.name}}</a>
                 <p class="small">Risk Probability:</p>
                 <div class="progress progress-striped active">
                     <div class="progress-bar" role="progressbar"

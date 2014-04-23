@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h1>{{risk.name}}</h1>
+                    <h5>Probability: {{risk.probability * 100}}</h5>
+                    <h5>Impact: {{risk.impact_rating}}</h5>
+                    <h5>Exposure: {{risk.exposure}}</h5>
+                    <h5>Early Impact Date: {{risk.early_impact_date | date:'MMM-dd-yyyy'}}</h5>
+                    <h5>Late Impact Date: {{risk.late_impact_date | date:'MMM-dd-yyyy' }}</h5><br>
+                    <a href='#/portfolio_home/{{risk.portfolio_id}}'>Back to Risk Portfolio</a>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a ng-click="display = name">Risks Related by Name</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-9">
+            <div ng-if="display == name">
+                <ul ng-repeat="risk in risk.related_risks | filter:risk.name">
+                    <li>{{risk.name}} - {{risk.exposure}} - {{risk.project}}</li>
+                </ul>
+            </div>
+        </div>
+</div>
+</div>
