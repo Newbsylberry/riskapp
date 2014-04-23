@@ -97,7 +97,7 @@
         <ul class="list-group"  ng-repeat="risk in portfolio.risks |
         filter:projectName.name:query | orderBy:orderProp:true">
             <li class="list-group-item">
-                <h3 class="text-danger pull-right">Exposure: {{risk.exposure | number:0}}</h3>
+                <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
                 <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
                 <p class="small">Risk Probability:</p>
                 <div class="progress progress-striped active">
@@ -149,7 +149,7 @@
         <ul class="list-group"  ng-repeat="risk in portfolio.mid_term_risks |
         filter:projectName.name:query | orderBy:orderProp:true ">
             <li class="list-group-item">
-                <h3 class="text-danger pull-right">Exposure: {{risk.exposure | number:0}}</h3>
+                <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
                 <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
                 <p class="small">Risk Probability:</p>
                 <div class="progress progress-striped active">
@@ -175,7 +175,7 @@
         <ul class="list-group"  ng-repeat="risk in portfolio.long_term_risks |
         filter:projectName.name:query | orderBy:orderProp:true ">
             <li class="list-group-item">
-                <h3 class="text-danger pull-right">Exposure: {{risk.exposure | number:0}}</h3>
+                <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
                 <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
                 <p class="small">Risk Probability:</p>
                 <div class="progress progress-striped active">

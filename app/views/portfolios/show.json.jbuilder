@@ -9,7 +9,8 @@ json.projects @portfolio.projects do |json, project|
 json.risks @portfolio.risks do |json, risk|
     json.(risk, :id, :name, :description, :early_impact_date,
          :late_impact_date, :critical, :impact_rating,
-         :schedule_impact, :probability, :exposure)
+         :schedule_impact, :probability)
+    json.exposure   risk.exposure.to_i
     json.project    risk.project.name
     end
 
@@ -33,7 +34,8 @@ json.short_term_risks @short_term_risks do |json, short_term_risk|
     json.(short_term_risk, :id,
           :name, :description, :early_impact_date,
           :late_impact_date, :critical, :impact_rating,
-          :schedule_impact, :probability, :exposure)
+          :schedule_impact, :probability)
+    json.exposure   short_term_risk.exposure.to_i
     json.project    short_term_risk.project.name
     end
 
@@ -42,6 +44,7 @@ json.mid_term_risks @mid_term_risks do |json, mid_term_risk|
           :name, :description, :early_impact_date,
           :late_impact_date, :critical, :impact_rating,
           :schedule_impact, :probability, :exposure)
+    json.exposure   mid_term_risk.exposure.to_i
     json.project    mid_term_risk.project.name
     end
 
@@ -49,7 +52,8 @@ json.long_term_risks @long_term_risks do |json, long_term_risk|
     json.(long_term_risk, :id,
           :name, :description, :early_impact_date,
           :late_impact_date, :critical, :impact_rating,
-          :schedule_impact, :probability, :exposure)
+          :schedule_impact, :probability)
+    json.exposure   long_term_risk.exposure.to_i
     json.project    long_term_risk.project.name
     end
 
