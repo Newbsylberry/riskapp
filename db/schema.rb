@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140421041243) do
+ActiveRecord::Schema.define(version: 20140423183315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 20140421041243) do
     t.datetime "short_term_impact_time_date"
     t.datetime "middle_impact_time_frame_date"
     t.datetime "expected_end_date"
+    t.integer  "short_term_limit"
+    t.integer  "mid_term_limit"
   end
 
   create_table "risk_control_categories", force: true do |t|

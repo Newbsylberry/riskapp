@@ -4,5 +4,6 @@ json.array!(@risks) do |risk|
                         :probability, :early_impact_date,
                         :exposure
   json.project risk.project.name
+  json.risk_type risk.risk_type.name
   json.url risk_path(risk, format: :json)
 end

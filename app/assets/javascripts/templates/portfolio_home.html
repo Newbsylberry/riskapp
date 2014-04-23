@@ -13,6 +13,12 @@
                 Long Term Exposure: {{portfolio.long_term_exposure | number:0}}</a></h6><br>
             <a href='#/'>Back to Portfolio Home</a><br>
             <a href='#/edit_portfolio/{{portfolio.id}}'>Configure Portfolio</a><br>
+            <button class="btn btn-default btn-lg pull-right"
+                    ng-click="display = 'new_risk'; side_display = ''">
+                Add Risk</button>
+            <button class="btn btn-default btn-lg pull-right"
+                    ng-click="display = 'new_project'; side_display = ''">
+                Add Project</button>
         </div>
     </div>
     <div class="panel panel-default">
@@ -30,6 +36,7 @@
                         <div class="form-group">
                             <small>Sort Risks:</small>
                             <select class="form-control" ng-model="orderProp">
+                                <option ng-click="orderProp = 'early_impact_date'; reverse=false">Date</option>
                                 <option value="probability">Probability</option>
                                 <option value="impact_rating">Impact Rating</option>
                                 <option value="exposure">Exposure</option>
@@ -42,8 +49,35 @@
                                     ng-options="project.name for
                              project in portfolio.projects">
                                 <option value="">--Choose Project Filter --</option>
+                            </select><br ng-show="projectFilter == true">
+                           <!-- <small>Filter by Risk Type:</small>
+                            <input type="checkbox" ng-model="typeFilter" ng-click="typeName = ''"><br>
+                            <select ng-show="typeFilter == true"
+                                    class="form-control"
+                                    ng-model="typeName"
+                                    ng-options="risk_type.name for
+                             risk_type in portfolio.risk_types">
+                                <option value="">--Choose Risk Type --</option>
+                            </select><br ng-show="typeFilter == true">
+                            <small>Filter by Risk Control Category</small>
+                            <input type="checkbox" ng-model="riskControlFilter" ng-click="riskControlName = ''"><br>
+                            <select ng-show="riskControlFilter == true"
+                                    class="form-control"
+                                    ng-model="riskControlName"
+                                    ng-options="risk_control_category.name for
+                             risk_control_category in portfolio.risk_control_categories">
+                                <option value="">--Choose Risk Control Category --</option>
+                            </select><br ng-show="riskControlFilter == true">
+                            <small>Filter by Risk Status</small>
+                            <input type="checkbox" ng-model="riskStatusFilter" ng-click="riskStatusName = ''"><br>
+                            <select ng-show="riskStatusFilter == true"
+                                    class="form-control"
+                                    ng-model="riskStatusName"
+                                    ng-options="risk_status.name for
+                             risk_status in portfolio.risk_statuses">
+                                <option value="">--Choose Risk Status --</option>
                             </select>
-                        </div>
+                        </div>  -->
                     </form>
                     <li>
                         <a class="text-center" ng-click="display = 'short_term_risks'">
@@ -63,14 +97,12 @@
                 </ul>
                 <li><a ng-model="display" ng-click="side_display = 'portfolio_project_menu'">
                     Portfolio Projects</a></li>
-                <ul ng-show="side_display == 'portfolio_project_menu'"
+                <ul ng-if="side_display == 'portfolio_project_menu'"
                     class="nav nav-pills nav-stacked"
                         ng-controller="ProjectsCtrl">
                     <li ng-repeat="project in portfolio.projects">
                         <p>{{project.name}} - <a href='' ng-click="deleteProject(project.id, $index)">Remove</a></p>
-
                     </li>
-                    <li><a class="text-center" ng-click="display = 'new_project'">New Project</a></li>
                 </ul>
             </ul>
         </div>
@@ -94,11 +126,17 @@
 <div ng-show="display == 'portfolio_risks'">
     <div class="RisksCtrl">
         <ul class="list-group"  ng-repeat="risk in portfolio.risks |
-        filter:projectName.name | filter:query | orderBy:orderProp:true">
+        filter:projectName.name |
+        filter:query |
+        filter:typeName.name |
+        filter:riskControlName.name |
+        filter:riskStatusName.name |
+        orderBy:orderProp:true">
             <li class="list-group-item">
                 <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
                 <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
-                <a href='#/risk_home/{{risk.id}}'>More Information About {{risk.name}}</a>
+                <a href='#/risk_home/{{risk.id}}'>More Information About {{risk.name}}</a><br>
+                <p class="small">Risk Earliest Impact Date: {{risk.early_impact_date | date:midDate }}</p>
                 <p class="small">Risk Probability:</p>
                 <div class="progress progress-striped active">
                     <div class="progress-bar" role="progressbar"
@@ -125,7 +163,8 @@
             <li class="list-group-item">
                 <h3 class="text-danger pull-right">Exposure: {{risk.exposure | number:0}}</h3>
                 <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
-                <a href='#/risk_home/{{risk.id}}'>More Information About {{risk.name}}</a>
+                <a href='#/risk_home/{{risk.id}}'>More Information About {{risk.name}}</a><br>
+                <p class="small">Risk Earliest Impact Date: {{risk.early_impact_date | date:midDate }}</p>
                 <p class="small">Risk Probability:</p>
                 <div class="progress progress-striped active">
                     <div class="progress-bar" role="progressbar"
@@ -152,7 +191,8 @@
             <li class="list-group-item">
                 <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
                 <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
-                <a href='#/risk_home/{{risk.id}}'>More Information About {{risk.name}}</a>
+                <a href='#/risk_home/{{risk.id}}'>More Information About {{risk.name}}</a><br>
+                <p class="small">Risk Earliest Impact Date: {{risk.early_impact_date | date:midDate }}</p>
                 <p class="small">Risk Probability:</p>
                 <div class="progress progress-striped active">
                     <div class="progress-bar" role="progressbar"
@@ -179,7 +219,8 @@
             <li class="list-group-item">
                 <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
                 <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
-                <a href='#/risk_home/{{risk.id}}'>More Information About {{risk.name}}</a>
+                <a href='#/risk_home/{{risk.id}}'>More Information About {{risk.name}}</a><br>
+                <p class="small">Risk Earliest Impact Date: {{risk.early_impact_date | date:midDate }}</p>
                 <p class="small">Risk Probability:</p>
                 <div class="progress progress-striped active">
                     <div class="progress-bar" role="progressbar"
@@ -209,6 +250,19 @@
             <label>Project Description</label>
             <input class="form-control" type="text" ng-model='newProject.description'
                    placeholder="Describe this Project">
+            <label>Project Short Term Limits:</label>
+            <p ng-show="newProject.short_term_limit != null">Short Term Impact is {{newProject.short_term_limit}} days</p>
+            <input type="range"
+                   min=1
+                   max=60
+                   ng-model='newProject.short_term_limit'>
+            <label>Project Mid Term Limits:</label>
+            <p ng-show="newProject.mid_term_limit != null">Mid Term Impact is {{newProject.mid_term_limit}} days</p>
+            <input type="range"
+                   min={{newProject.short_term_limit}}
+                   max=100
+                   ng-model='newProject.mid_term_limit'>
+            <label>Project Long Term Limits = {{newProject.mid_term_limit}} and beyond</label>
             <input type="submit" value="Add Project">
         </form>
     </div>

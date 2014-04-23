@@ -5,11 +5,15 @@ app.controller('ProjectsCtrl', ['$scope', 'Project', function($scope, Project) {
         var attr = {};
         attr.name = ($scope.newProject.name);
         attr.description = ($scope.newProject.description);
+        attr.short_term_limit = ($scope.newProject.short_term_limit);
+        attr.mid_term_limit = ($scope.newProject.mid_term_limit);
         attr.portfolio_id = ($scope.portfolio.id);
         var newProject = Project.create(attr);
         $scope.projects.push(newProject);
         $scope.newProject.name = "";
         $scope.newProject.description = "";
+        $scope.newProject.short_term_limit = "";
+        $scope.newProject.mid_term_limit = "";
         // Within the create project function look to see if a portfolio.projects array exists
         // If it doesn't create it, if it does put the newProject
         if($scope.portfolio.projects == null) {
