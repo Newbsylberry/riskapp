@@ -25,7 +25,7 @@ private
   def risk_params
     params.require(:risk).permit(:name, :description, :impact_rating, :early_impact_date,
     :late_impact_date, :critical, :probability, :schedule_impact, :project_id, :event_id,
-    :risk_type_id, :risk_status_id, :risk_control_category_id)
+    :risk_type_id, :risk_status_id, :risk_control_category_id, :owner)
   end
 end
 

@@ -134,6 +134,7 @@
                 <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
                 <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
                 <a href='#/risk_home/{{risk.id}}'>More Information About {{risk.name}}</a><br>
+                <p class="small">{{risk.owner}}</p>
                 <p class="small">Risk Earliest Impact Date: {{risk.early_impact_date | date:midDate }}</p>
                 <p class="small">Risk Probability:</p>
                 <div class="progress progress-striped active">
@@ -162,6 +163,7 @@
                 <h3 class="text-danger pull-right">Exposure: {{risk.exposure | number:0}}</h3>
                 <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
                 <a href='#/risk_home/{{risk.id}}'>More Information About {{risk.name}}</a><br>
+                <p class="small">{{risk.owner}}</p>
                 <p class="small">Risk Earliest Impact Date: {{risk.early_impact_date | date:midDate }}</p>
                 <p class="small">Risk Probability:</p>
                 <div class="progress progress-striped active">
@@ -190,6 +192,7 @@
                 <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
                 <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
                 <a href='#/risk_home/{{risk.id}}'>More Information About {{risk.name}}</a><br>
+                <p class="small">{{risk.owner}}</p>
                 <p class="small">Risk Earliest Impact Date: {{risk.early_impact_date | date:midDate }}</p>
                 <p class="small">Risk Probability:</p>
                 <div class="progress progress-striped active">
@@ -218,6 +221,7 @@
                 <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
                 <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
                 <a href='#/risk_home/{{risk.id}}'>More Information About {{risk.name}}</a><br>
+                <p class="small">{{risk.owner}}</p>
                 <p class="small">Risk Earliest Impact Date: {{risk.early_impact_date | date:midDate }}</p>
                 <p class="small">Risk Probability:</p>
                 <div class="progress progress-striped active">
@@ -260,9 +264,30 @@
                    min={{newProject.short_term_limit}}
                    max=100
                    ng-model='newProject.mid_term_limit'>
-            <label>Project Long Term Limits = {{newProject.mid_term_limit}} and beyond</label>
-            <input type="submit" value="Add Project">
+            <input type="submit"
+                   value="Add Project"
+                    ng-if="newProject.short_term_limit != null &&
+                           newProject.mid_term_limit != null &&
+                           newProject.name != null &&
+                           newProject.description != null">
+            <div ng-if="newProject.short_term_limit == null ||
+                        newProject.mid_term_limit == null ||
+                        newProject.name == null ||
+                        newProject.description == null">
+                <ul>
+                    <li ng-if="newProject.name == null">Name</li>
+                    <li ng-if="newProject.description == null">Description</li>
+                    <li ng-if="newProject.short_term_limit == null">Short Term Limit</li>
+                    <li ng-if="newProject.mid_term_limit == null">Mid Term Limit</li>
+                </ul>
+            </div>
         </form>
+        <h4 ng-if="newProject.short_term_limit != null">
+            Project Short Term Limit - {{newProject.short_term_limit}} Days</h4>
+        <h4 ng-if="newProject.mid_term_limit != null">
+            Project Mid Term Limit - {{newProject.mid_term_limit}} Days</h4>
+        <h4 ng-if="newProject.mid_term_limit != null">
+            Project Long Term Limit - More Than {{newProject.mid_term_limit}} Days</h4>
     </div>
 </div>
 <div ng-if="display == 'new_risk'">
@@ -283,7 +308,14 @@
                     <input  class="form-control"
                             type="text"
                             ng-model='newRisk.name'
-                            placeholder="Enter Name of Risk to Be Tracked" required><br>
+                            placeholder="Enter Name of Risk to Be Tracked" required>
+                </div>
+                <div class="form-group">
+                    <label>Risk Owner:</label><br>
+                    <input  class="form-control"
+                            type="text"
+                            ng-model='newRisk.owner'
+                            placeholder="Who is responsible for risk?" required><br>
                 </div>
                 <div class="form-group">
                     <label>Risk Description:</label><br>
@@ -360,8 +392,10 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-primary" ng-if="newRisk.name != null &&
+                    <button class="btn btn-primary" ng-if="
                                   newRisk.project_id != null &&
+                                  newRisk.name != null &&
+                                  newRisk.owner != null &&
                                   newRisk.impact_rating != null &&
                                   newRisk.early_impact_date != null &&
                                   newRisk.late_impact_date != null &&
@@ -369,6 +403,7 @@
                             type="submit" value="Add Risk to Project">Add Risk To Portfolio</button><br>
 
                     <h5 class="text-danger" ng-show="newRisk.name == null ||
+                                  newRisk.owner == null ||
                                   newRisk.project_id == null ||
                                   newRisk.impact_rating == null ||
                                   newRisk.probability == null ||
@@ -381,6 +416,7 @@
                                   newRisk.early_impact_date == null ||
                                   newRisk.late_impact_date == null">
                         <li ng-show="newRisk.project_id == null">Project</li>
+                        <li ng-show="newRisk.owner == null">Risk Owner</li>
                         <li ng-show="newRisk.name == null">Risk Name</li>
                         <li ng-show="newRisk.impact_rating == null">Risk Impact Rating</li>
                         <li ng-show="newRisk.probability == null">Risk Probability</li>

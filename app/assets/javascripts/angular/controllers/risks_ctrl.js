@@ -16,6 +16,7 @@ app.controller('RisksCtrl', ['$scope', 'Risk', function($scope, Risk) {
         attr.risk_control_category_id = ($scope.newRisk.risk_control_category_id);
         attr.project_id = ($scope.newRisk.project_id);
         attr.critical = ($scope.newRisk.critical);
+        attr.owner = ($scope.newRisk.owner)
         var newRisk = Risk.create(attr);
         $scope.risks.push(newRisk);
         $scope.newRisk.name = "";
@@ -30,6 +31,7 @@ app.controller('RisksCtrl', ['$scope', 'Risk', function($scope, Risk) {
         $scope.newRisk.risk_type_id = "";
         $scope.newRisk.risk_status_id = "";
         $scope.newRisk.risk_control_category_id = "";
+        $scope.newRisk.owner = "";
         if($scope.portfolio.risks == null) {
             $scope.portfolio.risks = [];
         }
