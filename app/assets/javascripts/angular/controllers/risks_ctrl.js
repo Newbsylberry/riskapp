@@ -36,7 +36,6 @@ app.controller('RisksCtrl', ['$scope', 'Risk', function($scope, Risk) {
         $scope.portfolio.risks.push(newRisk)
     };
 
-    $scope.orderProp = 'probability';
 
     $scope.deleteRisk = function(id, idx) {
         $scope.risks.splice(idx, 1);
