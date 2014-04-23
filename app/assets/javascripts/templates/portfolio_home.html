@@ -25,13 +25,22 @@
                 <ul class="nav nav-pills nav-stacked" ng-show="side_display == 'risk_menu'">
                     <form class="form-inline center-block">
                         <div class="form-group">
-                            <input class= "form-control" ng-model="query" placeholder="Search risks">
+                            <input class="form-control" ng-model="query" placeholder="Search risks">
                         </div>
                         <div class="form-group">
                             <select class="form-control" ng-model="orderProp">
                                 <small>Sort Risks:</small>
                                 <option value="name">Alphabetical</option>
                                 <option value="impact_rating">Impact Rating</option>
+                            </select><br>
+                            <label>Filter by project:</label>
+                            <input type="checkbox" ng-model="projectFilter" ng-click="projectName = ''"><br>
+                            <select ng-show="projectFilter == true"
+                                    class="form-control"
+                                    ng-model="projectName"
+                                    ng-options="project.name for
+                             project in portfolio.projects">
+                                <option value="">--Choose Project Filter --</option>
                             </select>
                         </div>
                     </form>
@@ -78,13 +87,12 @@
         <highchart config="scatterPlotConfig"></highchart>
     </div>
 </div>
-<div ng-if="display == 'portfolio_risks'">
+<div ng-show="display == 'portfolio_risks'">
     <div class="RisksCtrl">
-        <ul class="list-group"  ng-repeat="risk in portfolio.risks | filter:query | orderBy:orderProp ">
+        <ul class="list-group"  ng-repeat="risk in portfolio.risks | filter:projectName.name | orderBy:orderProp ">
             <li class="list-group-item">
                 <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
-                <h2 class="pull-left">{{risk.name}}</h2>
-                <h3 class="text-center">{{risk.project}}</h3><br>
+                <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
                 <p class="small">Risk Probability:</p>
                 <div class="progress progress-striped active">
                     <div class="progress-bar" role="progressbar"
@@ -106,10 +114,11 @@
 </div>
 <div ng-if="display == 'short_term_risks'">
     <div class="RisksCtrl">
-        <ul class="list-group"  ng-repeat="risk in portfolio.short_term_risks | filter:query | orderBy:orderProp ">
+        <ul class="list-group"  ng-repeat="risk in portfolio.short_term_risks |
+        filter:projectName.name | orderBy:orderProp ">
             <li class="list-group-item">
-                <h3 class="pull-right">Exposure: {{risk.exposure}}</h3>
-                <h2>{{risk.name}}</h2>
+                <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
+                <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
                 <p class="small">Risk Probability:</p>
                 <div class="progress progress-striped active">
                     <div class="progress-bar" role="progressbar"
@@ -131,10 +140,11 @@
 </div>
 <div ng-if="display == 'mid_term_risks'">
     <div class="RisksCtrl">
-        <ul class="list-group"  ng-repeat="risk in portfolio.mid_term_risks | filter:query | orderBy:orderProp ">
+        <ul class="list-group"  ng-repeat="risk in portfolio.mid_term_risks |
+        filter:projectName.name | orderBy:orderProp ">
             <li class="list-group-item">
-                <h3 class="pull-right">Exposure: {{risk.exposure}}</h3>
-                <h2>{{risk.name}}</h2>
+                <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
+                <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
                 <p class="small">Risk Probability:</p>
                 <div class="progress progress-striped active">
                     <div class="progress-bar" role="progressbar"
@@ -156,10 +166,11 @@
 </div>
 <div ng-if="display == 'long_term_risks'">
     <div class="RisksCtrl">
-        <ul class="list-group"  ng-repeat="risk in portfolio.long_term_risks | filter:query | orderBy:orderProp ">
+        <ul class="list-group"  ng-repeat="risk in portfolio.long_term_risks |
+        filter:projectName.name | orderBy:orderProp ">
             <li class="list-group-item">
-                <h3 class="pull-right">Exposure: {{risk.exposure}}</h3>
-                <h2>{{risk.name}}</h2>
+                <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
+                <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
                 <p class="small">Risk Probability:</p>
                 <div class="progress progress-striped active">
                     <div class="progress-bar" role="progressbar"

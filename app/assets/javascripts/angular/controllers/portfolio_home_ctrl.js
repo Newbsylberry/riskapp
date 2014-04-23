@@ -3,6 +3,7 @@ app.controller('PortfolioHomeCtrl', ['$scope', '$routeParams', 'Portfolio',
 
         $scope.display = 'portfolio_dashboard';
         $scope.side_display = '';
+        $scope.projectName = '';
 
         // addRiskToChart pushes the risks from the Portfolio.get into chartConfig.series.data
         //  so that it can be displayed in html
