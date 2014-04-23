@@ -82,8 +82,9 @@
     <div class="RisksCtrl">
         <ul class="list-group"  ng-repeat="risk in portfolio.risks | filter:query | orderBy:orderProp ">
             <li class="list-group-item">
-                <h3 class="pull-right">Exposure: {{risk.exposure}}</h3>
-                <h2>{{risk.name}}</h2>
+                <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
+                <h2 class="pull-left">{{risk.name}}</h2>
+                <h3 class="text-center">{{risk.project}}</h3><br>
                 <p class="small">Risk Probability:</p>
                 <div class="progress progress-striped active">
                     <div class="progress-bar" role="progressbar"
@@ -293,26 +294,25 @@
                                   newRisk.early_impact_date != null &&
                                   newRisk.late_impact_date != null &&
                                   newRisk.probability != null"
-                           type="submit" value="Add Risk to Project">Add Risk To Portfolio</button><br>
-                            <h5 class="text-danger">Fields Still Required:</h5>
-                            <ul ng-if="newRisk.name == null ||
+                            type="submit" value="Add Risk to Project">Add Risk To Portfolio</button><br>
+                    <h5 class="text-danger">Fields Still Required:</h5>
+                    <ul ng-if="newRisk.name == null ||
                                   newRisk.project_id == null ||
                                   newRisk.impact_rating == null ||
                                   newRisk.probability == null ||
                                   newRisk.early_impact_date == null ||
                                   newRisk.late_impact_date == null">
-                                <li ng-show="newRisk.project_id == null">Project</li>
-                                <li ng-show="newRisk.name == null">Risk Name</li>
-                                <li ng-show="newRisk.impact_rating == null">Risk Impact Rating</li>
-                                <li ng-show="newRisk.probability == null">Risk Probability</li>
-                                <li ng-show="newRisk.early_impact_date == null">Early Impact Date</li>
-                                <li ng-show="newRisk.late_impact_date == null">Late Impact Date</li>
-                            </ul>
+                        <li ng-show="newRisk.project_id == null">Project</li>
+                        <li ng-show="newRisk.name == null">Risk Name</li>
+                        <li ng-show="newRisk.impact_rating == null">Risk Impact Rating</li>
+                        <li ng-show="newRisk.probability == null">Risk Probability</li>
+                        <li ng-show="newRisk.early_impact_date == null">Early Impact Date</li>
+                        <li ng-show="newRisk.late_impact_date == null">Late Impact Date</li>
+                    </ul>
                 </div>
             </div>
         </form>
     </div>
-
 </div>
 </div>
 </div>
