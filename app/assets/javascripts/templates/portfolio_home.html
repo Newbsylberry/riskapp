@@ -26,10 +26,10 @@
                     <form class="form-inline center-block">
                         <div class="form-group">
                             <input class="form-control" ng-model="query" placeholder="Search risks">
-                        </div>
+                        </div><br>
                         <div class="form-group">
+                            <small>Sort Risks:</small>
                             <select class="form-control" ng-model="orderProp">
-                                <small>Sort Risks:</small>
                                 <option ng-click="orderProp = name; reverse=false">
                                     Alphabetical</option>
                                 <option ng-click="orderProp = early_impact_date; reverse=false">
@@ -38,7 +38,7 @@
                                 <option value="impact_rating">Impact Rating</option>
                                 <option value="exposure">Exposure</option>
                             </select><br>
-                            <label>Filter by project:</label>
+                            <small>Filter by project:</small>
                             <input type="checkbox" ng-model="projectFilter" ng-click="projectName = ''"><br>
                             <select ng-show="projectFilter == true"
                                     class="form-control"
@@ -77,7 +77,7 @@
         </div>
     </div>
 </div>
-<button class="btn btn-default btn-lg pull-right" ng-click="display = 'new_risk'">Add Risk</button>
+<button class="btn btn-default btn-lg pull-right" ng-click="display = 'new_risk'; side_display = ''">Add Risk</button>
 <div class="col-xs-9">
 <div ng-if="display == 'portfolio_dashboard'">
     <div class="row">
@@ -94,7 +94,8 @@
 </div>
 <div ng-show="display == 'portfolio_risks'">
     <div class="RisksCtrl">
-        <ul class="list-group"  ng-repeat="risk in portfolio.risks | filter:projectName.name | orderBy:orderProp:true">
+        <ul class="list-group"  ng-repeat="risk in portfolio.risks |
+        filter:projectName.name:query | orderBy:orderProp:true">
             <li class="list-group-item">
                 <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
                 <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
@@ -120,7 +121,7 @@
 <div ng-if="display == 'short_term_risks'">
     <div class="RisksCtrl">
         <ul class="list-group"  ng-repeat="risk in portfolio.short_term_risks |
-        filter:projectName.name | orderBy:orderProp ">
+        filter:projectName.name:query | orderBy:orderProp:true ">
             <li class="list-group-item">
                 <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
                 <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
@@ -146,7 +147,7 @@
 <div ng-if="display == 'mid_term_risks'">
     <div class="RisksCtrl">
         <ul class="list-group"  ng-repeat="risk in portfolio.mid_term_risks |
-        filter:projectName.name | orderBy:orderProp ">
+        filter:projectName.name:query | orderBy:orderProp:true ">
             <li class="list-group-item">
                 <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
                 <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
@@ -172,7 +173,7 @@
 <div ng-if="display == 'long_term_risks'">
     <div class="RisksCtrl">
         <ul class="list-group"  ng-repeat="risk in portfolio.long_term_risks |
-        filter:projectName.name | orderBy:orderProp ">
+        filter:projectName.name:query | orderBy:orderProp:true ">
             <li class="list-group-item">
                 <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
                 <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
@@ -311,7 +312,13 @@
                                   newRisk.late_impact_date != null &&
                                   newRisk.probability != null"
                             type="submit" value="Add Risk to Project">Add Risk To Portfolio</button><br>
-                    <h5 class="text-danger">Fields Still Required:</h5>
+
+                    <h5 class="text-danger" ng-show="newRisk.name == null ||
+                                  newRisk.project_id == null ||
+                                  newRisk.impact_rating == null ||
+                                  newRisk.probability == null ||
+                                  newRisk.early_impact_date == null ||
+                                  newRisk.late_impact_date == null">Fields Still Required:</h5>
                     <ul ng-if="newRisk.name == null ||
                                   newRisk.project_id == null ||
                                   newRisk.impact_rating == null ||

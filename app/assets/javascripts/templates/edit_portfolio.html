@@ -9,10 +9,6 @@
         <div class="panel panel-default">
             <div class=panel-body>
             <ul class="nav nav-pills nav-stacked">
-                <li><a ng-model="display" ng-click="display = 'general_portfolio_config'">
-                    General Portfolio Configuration</a></li>
-                <li><a ng-model="display" ng-click="display = 'portfolio_events'">
-                    Portfolio Event Configuration Settings</a></li>
                 <li><a ng-model="display" ng-click="display = 'portfolio_risk_controls'">
                     Portfolio Risk Control Settings
                 </a></li>
@@ -27,42 +23,6 @@
         </div>
     </div>
     <div class="col-xs-9">
-        <div ng-if="display == 'general_portfolio_config'">
-            {{display}}
-        </div>
-        <div ng-if="display == 'portfolio_events'">
-            {{display}}
-            <div ng-controller="EventsCtrl">
-                <form class="form-inline" role="form" ng-submit="createEvent()">
-                    <div class="form-group">
-                        <label class="sr-only">Event Name:</label>
-                        <input type="text" ng-model='newEvent.name'
-                               placeholder="Enter Name of New Event"
-                               class="form-control"><br>
-                    </div>
-                    <div class="form-group">
-                        <label class="sr-only">Event Description</label>
-                        <input type="text" ng-model='newEvent.description'
-                               placeholder="Describe this Event"
-                               class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="date" ng-model='newEvent.event_date'
-                               name='event_date'>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" class="btn btn-default" value="Add Event">
-                    </div>
-                </form>
-                <h3>List of {{portfolio.name}} Events:</h3>
-                <div class="row" ng-repeat="event in portfolio.events">
-                    <div class="col-xs-9 col-xs-offset-3">
-                        {{event.name}} - {{event.description}}
-                        <a href='' ng-click="deleteEvent(event.id, $index)">Remove</a>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div ng-if="display == 'portfolio_risk_controls'">
             {{display}}
             <div ng-controller="RiskControlCatsCtrl">
