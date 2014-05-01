@@ -18,6 +18,7 @@
                     <ul class="nav nav-pills nav-stacked">
                         <li><a ng-click="display = 'risk_history'">Risk History</a></li>
                         <li><a ng-click="display = 'edit_risk'">Edit Risk</a></li>
+                        <li><a ng-click="display = 'related_risks'">Related Risks</a></li>
                     </ul>
                 </div>
             </div>
@@ -144,5 +145,31 @@
                     </div>
                 </form>
             </div>
+        <div ng-if="display == 'related_risks'" class="col-xs-9">
+            <ul ng-repeat="risk in related_risks">
+                <li class="list-group-item">
+                    <h3 class="text-danger pull-right">Exposure: {{risk.exposure}}</h3>
+                    <h2>{{risk.name}} <small>{{risk.project}}</small></h2>
+                    <a href='#/risk_home/{{risk.id}}'>More Information About {{risk.name}}</a><br>
+                    <p class="small">Owner: {{risk.owner}}</p>
+                    <p class="small">Risk Earliest Impact Date: {{risk.early_impact_date | date:midDate }}</p>
+                    <p class="small">Risk Probability:</p>
+                    <div class="progress progress-striped active">
+                        <div class="progress-bar" role="progressbar"
+                             aria-valuemin="0" aria-valuemax="100"
+                             style="width:{{risk.probability * 100}}%">
+                        </div>
+                    </div>
+                    <p class="small">Risk Impact:</p>
+                    <div class="progress progress-striped active">
+                        <div class="progress-bar progress-bar-danger" role="progressbar"
+                             are-valuenow="{{risk.impact_rating}}"
+                             aria-valuemin="0" aria-valuemax="10"
+                             style="width:{{risk.impact_rating}}%">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
 </div>
 </div>

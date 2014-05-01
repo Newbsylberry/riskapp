@@ -33,6 +33,17 @@ class RisksController < ApplicationController
   def show
     @risk = Risk.find(params[:id])
     @portfolio = Portfolio.find(@risk.project.portfolio)
+    @key_words = @risk.name.split(" ")
+    @related_risks = Array.new
+        @portfolio.risks.each do |risk|
+          if risk != @risk
+            @related_array = risk.name.split(" ")
+            @intersect = @key_words & @related_array
+            if @intersect.count > 0
+              @related_risks.push(risk)
+            end
+          end
+        end
   end
 
 
