@@ -28,8 +28,8 @@
                 <li>{{risk.created_at | date:'h:mm:ss a - EEEE, MMMM, dd, yyyy'}} - {{risk.exposure}}</li>
             </ul>
         </div>
-        <div ng-if="display == 'edit_risk'" class="col-xs-9">
-            <div ng-controller="RisksCtrl">
+        <div ng-show="display == 'edit_risk'" class="col-xs-9">
+                <h1>{{risk.name}}</h1>
                 <form class="form-horizontal" ng-submit="updateRisk()">
                     <div class="col-xs-2">
                         <div class="form-group">
@@ -144,6 +144,5 @@
                     </div>
                 </form>
             </div>
-        </div>
 </div>
 </div>

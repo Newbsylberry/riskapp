@@ -54,7 +54,6 @@ app.controller('RisksCtrl', ['$scope', 'Risk', function($scope, Risk) {
         attr.critical = ($scope.updatedRisk.critical);
         attr.owner = ($scope.updatedRisk.owner);
         var updatedRisk = Risk.update(attr);
-        $scope.risks.push(updatedRisk);
         $scope.risk = updatedRisk;
         $scope.updatedRisk.early_impact_date = null;
         $scope.updatedRisk.late_impact_date = null;
