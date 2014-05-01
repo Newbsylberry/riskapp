@@ -19,6 +19,10 @@ app.controller('RisksCtrl', ['$scope', 'Risk', function($scope, Risk) {
         attr.owner = ($scope.newRisk.owner);
         var newRisk = Risk.create(attr);
         $scope.risks.push(newRisk);
+        if($scope.portfolio.risks == null) {
+            $scope.portfolio.risks = [];
+        }
+        $scope.portfolio.risks.push(newRisk)
         $scope.newRisk.name = "";
         $scope.newRisk.description = "";
         $scope.newRisk.early_impact_date = "";
@@ -32,10 +36,6 @@ app.controller('RisksCtrl', ['$scope', 'Risk', function($scope, Risk) {
         $scope.newRisk.risk_status_id = "";
         $scope.newRisk.risk_control_category_id = "";
         $scope.newRisk.owner = "";
-        if($scope.portfolio.risks == null) {
-            $scope.portfolio.risks = [];
-        }
-        $scope.portfolio.risks.push(newRisk)
     };
 
     $scope.updateRisk = function() {
@@ -53,8 +53,21 @@ app.controller('RisksCtrl', ['$scope', 'Risk', function($scope, Risk) {
         attr.project_id = ($scope.updatedRisk.project_id);
         attr.critical = ($scope.updatedRisk.critical);
         attr.owner = ($scope.updatedRisk.owner);
-        Risk.update(attr);
-    }
+        var updatedRisk = Risk.update(attr);
+        $scope.risks.push(updatedRisk);
+        $scope.risk = updatedRisk;
+        $scope.updatedRisk.early_impact_date = null;
+        $scope.updatedRisk.late_impact_date = null;
+        $scope.updatedRisk.impact_rating = null;
+        $scope.updatedRisk.probability = null;
+        $scope.updatedRisk.schedule_impact = "";
+        $scope.updatedRisk.critical ="";
+        $scope.updatedRisk.project_id = "";
+        $scope.updatedRisk.risk_type_id = "";
+        $scope.updatedRisk.risk_status_id = "";
+        $scope.updatedRisk.risk_control_category_id = "";
+        $scope.updatedRisk.owner = null;
+    };
 
 
     $scope.deleteRisk = function(id, idx) {

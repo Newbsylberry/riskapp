@@ -24,7 +24,7 @@
         </div>
         <div ng-if="display == 'risk_history'" class="col-xs-9">
             <h1>Risk Exposure History</h1>
-            <ul ng-repeat="risk in risk_historicals">
+            <ul ng-repeat="risk in risk_historicals | orderBy:created_at">
                 <li>{{risk.created_at | date:'h:mm:ss a - EEEE, MMMM, dd, yyyy'}} - {{risk.exposure}}</li>
             </ul>
         </div>
@@ -118,7 +118,9 @@
                                   updatedRisk.early_impact_date != null &&
                                   updatedRisk.late_impact_date != null &&
                                   updatedRisk.probability != null"
-                                    type="submit" value="Add Risk to Project">Add Risk To Portfolio</button><br>
+                                    type="submit"
+                                    value="Add Risk to Project"
+                                    >Add Risk To Portfolio</button><br>
 
                             <h5 class="text-danger" ng-if="
                                   updatedRisk.owner == null ||

@@ -1,5 +1,7 @@
 app.controller('RiskHomeCtrl', ['$scope', '$routeParams', 'Risk',
     function($scope, $routeParams, Risk) {
+        $scope.display = 'risk_history';
+
         Risk.get({riskId: $routeParams.riskId}, function(successResponse) {
             $scope.risk = successResponse;
             $scope.key_words = successResponse.name.split(" ");
@@ -11,5 +13,9 @@ app.controller('RiskHomeCtrl', ['$scope', '$routeParams', 'Risk',
             console.log(errorResponse);
             angular.forEach(successResponse.related_risks, relatedRisk(successResponse.name, related_risk))
         });
+
+
+
+
 
     }]);
