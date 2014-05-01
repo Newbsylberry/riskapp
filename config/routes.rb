@@ -1,6 +1,9 @@
 RiskPortfolio::Application.routes.draw do
 
+
+
   scope :api do
+    resources :risk_histories, defaults: {format: :json}
     resources :events, defaults: {format: :json}
     resources :risks, defaults: {format: :json}
     resources :portfolios, defaults: {format: :json}

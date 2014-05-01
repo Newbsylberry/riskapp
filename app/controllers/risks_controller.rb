@@ -11,7 +11,19 @@ class RisksController < ApplicationController
   end
 
   def update
-    respond_with Risk.find(params[:id]).update_attributes(risk_params)
+    @initial_risk = Risk.find(params[:id])
+    @risk = Risk.find(params[:id])
+    respond_with @risk.update_attributes(risk_params)
+    if @risk.update(risk_params)
+      RiskHistory.create(risk_id: @initial_risk.id, impact_rating: @initial_risk.impact_rating,
+                         early_impact_date: @initial_risk.early_impact_date,
+                         late_impact_date: @initial_risk.late_impact_date,
+                         critical: @initial_risk.critical, probability: @initial_risk.probability,
+                         schedule_impact: @schedule_impact,
+                         risk_type_id: @initial_risk.risk_type_id, risk_status_id: @initial_risk.risk_status_id,
+                         risk_control_category_id: @initial_risk.risk_control_category_id, owner: @initial_risk.owner)
+
+    end
   end
 
   def destroy

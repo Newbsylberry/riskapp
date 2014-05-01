@@ -16,10 +16,17 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <ul class="nav nav-pills nav-stacked">
+                        <li><a ng-click="display = 'risk_history'">Risk History</a></li>
                         <li><a ng-click="display = 'edit_risk'">Edit Risk</a></li>
                     </ul>
                 </div>
             </div>
+        </div>
+        <div ng-if="display == 'risk_history'" class="col-xs-9">
+            <h1>Risk Exposure History</h1>
+            <ul ng-repeat="risk in risk_historicals">
+                <li>{{risk.created_at | date:'h:mm:ss a - EEEE, MMMM, dd, yyyy'}} - {{risk.exposure}}</li>
+            </ul>
         </div>
         <div ng-if="display == 'edit_risk'" class="col-xs-9">
             <div ng-controller="RisksCtrl">

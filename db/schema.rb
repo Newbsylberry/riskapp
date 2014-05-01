@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140423204648) do
+ActiveRecord::Schema.define(version: 20140501162322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,23 @@ ActiveRecord::Schema.define(version: 20140423204648) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "portfolio_id"
+  end
+
+  create_table "risk_histories", force: true do |t|
+    t.integer  "risk_id"
+    t.boolean  "critical"
+    t.integer  "impact_rating"
+    t.datetime "early_impact_date"
+    t.datetime "late_impact_date"
+    t.integer  "schedule_impact"
+    t.decimal  "probability"
+    t.integer  "event_id"
+    t.integer  "risk_type_id"
+    t.integer  "risk_status_id"
+    t.integer  "risk_control_category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "owner"
   end
 
   create_table "risk_statuses", force: true do |t|

@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  risk_id: 1
+  critical: false
+  impact_rating: 1
+  early_impact_date: 2014-05-01 12:07:53
+  late_impact_date: 2014-05-01 12:07:53
+  schedule_impact: 1
+  probability: 9.99
+  event_id: 1
+  risk_type_id: 1
+  risk_status_id: 1
+  risk_control_category_id: 1
+
+two:
+  risk_id: 1
+  critical: false
+  impact_rating: 1
+  early_impact_date: 2014-05-01 12:07:53
+  late_impact_date: 2014-05-01 12:07:53
+  schedule_impact: 1
+  probability: 9.99
+  event_id: 1
+  risk_type_id: 1
+  risk_status_id: 1
+  risk_control_category_id: 1

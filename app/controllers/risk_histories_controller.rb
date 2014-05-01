@@ -1,0 +1,2 @@
+class RiskHistoriesController < ApplicationController
+end

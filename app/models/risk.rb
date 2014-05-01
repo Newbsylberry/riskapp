@@ -3,6 +3,7 @@ class Risk < ActiveRecord::Base
   belongs_to :risk_status
   belongs_to :risk_control_category
   belongs_to :project
+  has_many :risk_histories
 
 
   validates :name, presence: :true
