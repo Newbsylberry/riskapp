@@ -10,6 +10,10 @@ class RisksController < ApplicationController
     respond_with Risk.create(risk_params)
   end
 
+  def update
+    respond_with Risk.update(params[:id], params[risk_params])
+  end
+
   def destroy
     respond_with Risk.destroy(params[:id])
   end
