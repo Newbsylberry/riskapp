@@ -16,7 +16,7 @@ app.controller('RisksCtrl', ['$scope', 'Risk', function($scope, Risk) {
         attr.risk_control_category_id = ($scope.newRisk.risk_control_category_id);
         attr.project_id = ($scope.newRisk.project_id);
         attr.critical = ($scope.newRisk.critical);
-        attr.owner = ($scope.newRisk.owner)
+        attr.owner = ($scope.newRisk.owner);
         var newRisk = Risk.create(attr);
         $scope.risks.push(newRisk);
         $scope.newRisk.name = "";
@@ -37,6 +37,24 @@ app.controller('RisksCtrl', ['$scope', 'Risk', function($scope, Risk) {
         }
         $scope.portfolio.risks.push(newRisk)
     };
+
+    $scope.updateRisk = function() {
+        var attr = {};
+        attr.id = ($scope.risk.id);
+        attr.early_impact_date = ($scope.updatedRisk.early_impact_date);
+        attr.late_impact_date = ($scope.updatedRisk.late_impact_date);
+        attr.impact_rating = ($scope.updatedRisk.impact_rating);
+        attr.probability = ($scope.updatedRisk.probability / 100 );
+        attr.schedule_impact = ($scope.updatedRisk.schedule_impact);
+        attr.event_id = ($scope.updatedRisk.event_id);
+        attr.risk_type_id = ($scope.updatedRisk.risk_type_id);
+        attr.risk_status_id = ($scope.updatedRisk.risk_status_id);
+        attr.risk_control_category_id = ($scope.updatedRisk.risk_control_category_id);
+        attr.project_id = ($scope.updatedRisk.project_id);
+        attr.critical = ($scope.updatedRisk.critical);
+        attr.owner = ($scope.updatedRisk.owner);
+        Risk.update(attr);
+    }
 
 
     $scope.deleteRisk = function(id, idx) {

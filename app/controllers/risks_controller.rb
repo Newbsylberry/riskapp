@@ -11,7 +11,7 @@ class RisksController < ApplicationController
   end
 
   def update
-    respond_with Risk.update(params[:id], params[risk_params])
+    respond_with Risk.find(params[:id]).update_attributes(risk_params)
   end
 
   def destroy

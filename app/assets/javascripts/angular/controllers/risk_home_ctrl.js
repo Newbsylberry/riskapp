@@ -3,7 +3,6 @@ app.controller('RiskHomeCtrl', ['$scope', '$routeParams', 'Risk',
         Risk.get({riskId: $routeParams.riskId}, function(successResponse) {
             $scope.risk = successResponse;
             $scope.key_words = successResponse.name.split(" ");
-            angular.forEach(successResponse.related_risks, riskNameArray) ;
             console.log("success response");
             console.log(successResponse);
         }, function(errorResponse) {

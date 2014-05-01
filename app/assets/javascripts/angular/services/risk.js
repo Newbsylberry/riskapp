@@ -1,6 +1,6 @@
 app.factory('Risk', ['$resource', function($resource) {
     function Risk() {
-        this.service = $resource('/api/risks/:riskId', {riskId: '@id'});
+        this.service = $resource('/api/risks/:riskId', {riskId: '@id'}, {update: {method: 'PATCH'}});
     };
     Risk.prototype.all = function() {
       return this.service.query();
@@ -13,6 +13,9 @@ app.factory('Risk', ['$resource', function($resource) {
     };
     Risk.prototype.create = function(attr) {
         return this.service.save(attr);
+    }
+    Risk.prototype.update = function(attr) {
+        return this.service.update(attr);
     }
     return new Risk;
 }]);
