@@ -107,7 +107,7 @@ app.controller('PortfolioHomeCtrl', ['$scope', '$routeParams', 'Portfolio',
         $scope.scatterPlotConfig = {
             options: {
                 chart: {
-                    type: 'scatter'
+                    type: 'bubble'
                 },
                 zoomType: 'xy'
             },

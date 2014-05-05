@@ -15,8 +15,43 @@ app.controller('RiskHomeCtrl', ['$scope', '$routeParams', 'Risk',
             ]);
         };
 
+        var dashAddBands = function(risk) {
+            var probability = {};
+            probability.value = risk.probability * 100;
+            probability.color = 'blue';
+            probability.width = 2;
+            var label = {};
+            label.text = 'Current Risk Probability: ' + risk.probability * 100 + "%";
+            probability.label = label;
+            probability.zIndex = 10;
+            probability.dashStyle = 'Dot';
+            $scope.riskDashboardConfig.yAxis.plotLines.push(probability);
+            var impact_rating = {};
+            impact_rating.value = risk.impact_rating;
+            impact_rating.color = 'black';
+            impact_rating.width = 2;
+            var label = {};
+            label.text = 'Current Risk Impact Rating: ' + risk.impact_rating;
+            impact_rating.label = label;
+            impact_rating.zIndex = 10;
+            impact_rating.dashStyle = 'LongDashDotDot';
+            $scope.riskDashboardConfig.yAxis.plotLines.push(impact_rating);
+            var exposure = {};
+            exposure.value = risk.exposure;
+            exposure.color = 'green';
+            exposure.width = 2;
+            var label = {};
+            label.text = 'Current Risk Exposure: ' + risk.exposure;
+            exposure.label = label;
+            exposure.zIndex = 10;
+            exposure.dashStyle = 'Solid';
+            $scope.riskDashboardConfig.yAxis.plotLines.push(exposure);
+        };
+
         Risk.get({riskId: $routeParams.riskId}, function(successResponse) {
+            dashAddBands(successResponse);
             $scope.risk = successResponse;
+            angular.forEach(successResponse.risks, dashAddBands);
             $scope.key_words = successResponse.name.split(" ");
             $scope.risk_historicals = successResponse.risk_historicals;
             angular.forEach(successResponse.risk_historicals, dashAddProbability);
@@ -68,7 +103,7 @@ app.controller('RiskHomeCtrl', ['$scope', '$routeParams', 'Risk',
         $scope.riskDashboardConfig = {
             options: {
                 chart: {
-                    type: 'area'
+                    type: 'line'
                 },
                 zoomType: 'xy'
             },
@@ -87,6 +122,9 @@ app.controller('RiskHomeCtrl', ['$scope', '$routeParams', 'Risk',
             },
             xAxis: {
                 type: 'datetime'
+            },
+            yAxis: {
+                plotLines:[]
             },
             loading: false
         }
