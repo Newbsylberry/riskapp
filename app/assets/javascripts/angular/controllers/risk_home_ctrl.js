@@ -1,11 +1,27 @@
 app.controller('RiskHomeCtrl', ['$scope', '$routeParams', 'Risk',
     function($scope, $routeParams, Risk) {
-        $scope.display = 'risk_history';
+        $scope.display = 'risk_dashboard';
+
+        var dashAddProbability = function(risk) {
+            $scope.riskDashboardConfig.series[0].data.push([risk.created_at, parseFloat(risk.probability * 100)
+                ]);
+        };
+        var dashAddImpact = function(risk) {
+            $scope.riskDashboardConfig.series[1].data.push([risk.created_at, parseFloat(risk.impact_rating)
+            ]);
+        };
+        var dashAddExposure = function(risk) {
+            $scope.riskDashboardConfig.series[2].data.push([risk.created_at, parseFloat(risk.exposure)
+            ]);
+        };
 
         Risk.get({riskId: $routeParams.riskId}, function(successResponse) {
             $scope.risk = successResponse;
             $scope.key_words = successResponse.name.split(" ");
             $scope.risk_historicals = successResponse.risk_historicals;
+            angular.forEach(successResponse.risk_historicals, dashAddProbability);
+            angular.forEach(successResponse.risk_historicals, dashAddImpact);
+            angular.forEach(successResponse.risk_historicals, dashAddExposure);
             $scope.related_risks = successResponse.related_risks;
             console.log("success response");
             console.log(successResponse);
@@ -47,6 +63,33 @@ app.controller('RiskHomeCtrl', ['$scope', '$routeParams', 'Risk',
             $scope.updatedRisk.risk_control_category_id = "";
             $scope.updatedRisk.owner = null;
         };
+
+
+        $scope.riskDashboardConfig = {
+            options: {
+                chart: {
+                    type: 'area'
+                },
+                zoomType: 'xy'
+            },
+            series: [{
+                name: 'Probability',
+                data: []
+            }, {
+                name: 'Impact Rating',
+                data: []
+            }, {
+                name: 'Exposure',
+                data: []
+            }],
+            title: {
+                text: 'Risk History'
+            },
+            xAxis: {
+                type: 'datetime'
+            },
+            loading: false
+        }
 
 
 

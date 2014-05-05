@@ -34,7 +34,7 @@ class RisksController < ApplicationController
     @risk = Risk.find(params[:id])
     @portfolio = Portfolio.find(@risk.project.portfolio)
     @stop_words = ["a", "about", "all", "allow", "almost", "also", "am", "an", "and", "any", "are",
-                   "as", "at", "be", "from", "get", "go", "had", "into", "is", "isn't", "it",
+                   "as", "at", "be", "don't", "from", "get", "go", "had", "into", "is", "isn't", "it",
                    "because", "both", "but", "by", "can", "do", "does", "doesn't", "etc", "few", "for",
                    "has", "have", "he", "her", "him", "his", "how", "I", "i.e.", "ie", "in", "if", "in",
                    "it's", "its", "just", "keep", "know", "last", "let", "like", "likely", "many",

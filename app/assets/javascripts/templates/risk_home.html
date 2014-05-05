@@ -16,12 +16,16 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <ul class="nav nav-pills nav-stacked">
+                        <li><a ng-click="display = 'risk_dashboard'">Risk Dashboard</a></li>
                         <li><a ng-click="display = 'risk_history'">Risk History</a></li>
                         <li><a ng-click="display = 'edit_risk'">Edit Risk</a></li>
                         <li><a ng-click="display = 'related_risks'">Related Risks</a></li>
                     </ul>
                 </div>
             </div>
+        </div>
+        <div ng-if="display == 'risk_dashboard'" class="col-xs-9">
+            <highchart config="riskDashboardConfig"></highchart>
         </div>
         <div ng-if="display == 'risk_history'" class="col-xs-9">
             <h1>Risk Exposure History</h1>
